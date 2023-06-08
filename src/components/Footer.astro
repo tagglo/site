@@ -1,0 +1,32 @@
+---
+import Pin from '../assets/svg/Icon-pin.svg'
+import Phone from '../assets/svg/Icon-phone.svg'
+import Mail from '../assets/svg/Icon-mail.svg'
+import Logo from '../assets/svg/LoansLogoWhite.svg'
+
+const currentYear = new Date().getFullYear()
+
+const { pageContent } = Astro.props
+---
+
+<div class="bg-black text-white">
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="flex flex-col md:flex-row md:justify-between py-3 md:py-6">
+        <div class="block md:hidden pb-6">LOGO</div>
+        <div class="order-2 md:order-1">
+          <div class="hidden md:block pb-3">LOGO</div>
+          <div style="max-width: 350px;">
+            We are a marketing tech company specializing in improving businesses marketing
+            performance - and ensuring our clients are ahead of their day-to-day conversion
+            tracking.
+          </div>
+        </div>
+        <div class="font-interRegular text-sm order-1 md:order-2 pb-12 md:pb-0">Contanct info</div>
+      </div>
+      <div class="py-6 text-center md:text-right text-xs">
+        © Copyright - {currentYear} Tagglo
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+---
+const { buttonText } = Astro.props
+---
+
+<a href="https://minasidor.enklare.se" target="_blank" rel="noopener noreferrer">
+  <button
+    class={'login-button button rounded  flex justify-center items-center text-dark-gray text-sm border border-dark-gray mr-3'}
+  >
+    {buttonText}
+  </button></a
+>
+
+<style lang="less">
+  .button {
+    background: transparent;
+    width: 74px;
+    height: 32px;
+    @media screen and (max-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+</style>

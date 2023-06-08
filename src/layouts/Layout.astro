@@ -1,0 +1,284 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import 'animate.css'
+import { Schema } from 'astro-seo-schema'
+
+const { pageContent } = Astro.props
+
+// let jsonBreadCrumb: any
+// if (Astro.url.pathname.includes('ordlista')) {
+//   jsonBreadCrumb = [
+//     {
+//       '@type': 'ListItem',
+//       position: 1,
+//       name: 'Ordlista',
+//       item: Astro.url.href,
+//     },
+//   ]
+
+//   if (Astro.url.pathname.length > 10) {
+//     const listItem: any = {
+//       '@type': 'ListItem',
+//       position: 2,
+//       name: pageContent.frontmatter['title'],
+//     }
+//     jsonBreadCrumb.push(listItem)
+//   }
+// } else if (Astro.url.pathname.includes('partners')) {
+//   jsonBreadCrumb = [
+//     {
+//       '@type': 'ListItem',
+//       position: 1,
+//       name: 'Partners',
+//       item: Astro.url.href,
+//     },
+//   ]
+//   if (Astro.url.pathname.length > 10) {
+//     const listItem: any = {
+//       '@type': 'ListItem',
+//       position: 2,
+//       name: pageContent.frontmatter['title'],
+//     }
+//     jsonBreadCrumb.push(listItem)
+//   }
+// } else {
+//   if (Astro.url.pathname !== '/') {
+//     jsonBreadCrumb = [
+//       {
+//         '@type': 'ListItem',
+//         position: 1,
+//         name: pageContent.frontmatter['title'],
+//         item: Astro.url.href,
+//       },
+//     ]
+//   }
+// }
+---
+
+<!DOCTYPE html>
+<html lang={pageContent.frontmatter.lang}>
+  <head>
+    <title>{pageContent.frontmatter['meta-title']}</title>
+    <!--Meta -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={pageContent.frontmatter['meta-description']} />
+    <meta name="keywords" content={pageContent.frontmatter['meta-keywords']} />
+    <meta name="author" content="Tagglo" />
+    <meta
+      name="robots"
+      content={pageContent.frontmatter.indexed
+        ? 'index, follow'
+        : 'noindex, nofollow, noimageindex, nosnippet, noarchive, nocache'}
+    />
+    <meta
+      name="googlebot"
+      content={pageContent.frontmatter.indexed
+        ? 'index, follow'
+        : 'noindex, nofollow, noimageindex, nosnippet, noarchive, nocache'}
+    />
+
+    <meta name="og:title" property="og:title" content={pageContent.frontmatter['meta-title']} />
+    <meta
+      name="og:description"
+      property="og:description"
+      content={pageContent.frontmatter['meta-description']}
+    />
+    <meta name="og:type" property="og:type" content="website" />
+    <meta name="og:url" property="og:url" content={Astro.url.href} />
+    <meta name="og:site_name" property="og:site_name" content="Tagglo.se" />
+    <meta
+      name="og:image"
+      property="og:image"
+      content={Astro.url.host + '/Tagglo-opengraph-image.png'}
+    />
+    <meta name="twitter:title" content={pageContent.frontmatter['meta-title']} />
+    <meta name="twitter:description" content={pageContent.frontmatter['meta-description']} />
+
+    <!--Icons -->
+    <!-- <link rel="canonical" href={Astro.url.href} />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#7c3aed" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" /> -->
+
+    <script>
+      // import { vendors } from '../assets/js/vendors'
+
+      // vendors.map((vendor: any) => {
+      //   const vendorScript = document.createElement('link')
+      //   vendorScript.setAttribute('name', vendor.name)
+      //   vendorScript.setAttribute('rel', 'preconnect')
+      //   vendorScript.setAttribute('href', `/vendors/${vendor.filename}`)
+      //   vendorScript.setAttribute('key', `${vendor.name}`)
+      //   document.head.appendChild(vendorScript)
+      // })
+
+      // vendors.map((vendor) => {
+      //   if (vendor.inHead) {
+      //     const vendorScript = document.createElement('script')
+      //     vendorScript.setAttribute('name', vendor.name)
+      //     vendorScript.setAttribute('async', '')
+      //     vendorScript.setAttribute('src', `/vendors/${vendor.filename}`)
+      //     if (vendor.attribute) {
+      //       vendorScript.setAttribute(vendor.attribute[0], `${vendor.attribute[1]}`)
+      //     }
+      //     vendorScript.setAttribute('key', `${vendor.name}`)
+      //     document.head.appendChild(vendorScript)
+      //   }
+      // })
+    </script>
+
+    <!-- <Schema
+      item={{
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'Tagglo',
+        url: 'https://Tagglo.se/',
+        image: 'http://Tagglo.se/Tagglo_logo.png',
+        sameAs: [
+          'https://se.BlockTrustpilot.com/review/Tagglo.se',
+          'https://www.facebook.com/Tagglo.se/',
+          'https://www.linkedin.com/company/Tagglo/',
+          'https://www.youtube.com/channel/UCLXEYlvWo16tVFDXScy54Ew',
+        ],
+        logo: 'http://Tagglo.se/Tagglo_logo.png',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Skeppargatan 26',
+          addressRegion: 'Stockholm',
+          postalCode: '114 52',
+          addressCountry: 'Sverige',
+        },
+        openingHours: ['Mo,Tu,We,Th,Fr,Sa,Su 00:00-00:00'],
+        telephone: '0770330777',
+        priceRange: '5000 - 600000',
+      }}
+    />
+    <Schema
+      item={{
+        '@context': 'https://schema.org',
+        '@type': 'FinancialService',
+        legalName: 'Tagglo Ekonomi Sverige AB',
+        name: 'Tagglo',
+        logo: 'http://Tagglo.se/Tagglo_logo.png',
+        image: 'http://Tagglo.se/Tagglo_logo.png',
+        telephone: '0770330777',
+        url: 'https://Tagglo.se/',
+        email: 'kontakt@Tagglo.se',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Skeppargatan 26',
+          addressLocality: 'Stockholm',
+          postalCode: '114 52',
+        },
+        openingHours: ['Mo,Tu,We,Th,Fr,Sa,Su 00:00-00:00'],
+        priceRange: '5000 - 600000',
+      }}
+    /> -->
+
+    <!-- {
+      jsonBreadCrumb ? (
+        <Schema
+          item={{
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: jsonBreadCrumb,
+          }}
+        />
+      ) : null
+    }
+    {
+      Astro.url.pathname !== '/' ? (
+        <Schema
+          item={{
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `${Astro.url.href}`,
+            },
+            headline: '',
+            image: [],
+            datePublished: `${new Date(pageContent.frontmatter.datePublished)}`,
+            dateModified: `${new Date(pageContent.frontmatter.dateModified)}`,
+            publisher: {
+              '@type': 'Organization',
+              name: 'Tagglo Ekonomi Sverige AB',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'http://Tagglo.se/Tagglo_logo.png',
+              },
+            },
+          }}
+        />
+      ) : null
+    } -->
+
+    <!--styles -->
+    <style lang="less">
+      @import url('../assets/css/fonts.less');
+    </style>
+  </head>
+
+  <body class="antialiased font-regular text-black text-base md:text-lg">
+    <Header pageContent={pageContent} />
+
+    <slot />
+    <Footer pageContent={pageContent} />
+
+    <style lang="less" is:global>
+      body {
+        @apply text-black font-interMedium;
+      }
+      * {
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      :root {
+        --menu-break-point: 1080px;
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+      }
+
+      *:focus {
+        outline: none;
+      }
+
+      .content-wrapper {
+        width: 100%;
+        max-width: 1040px;
+        padding: 0 15px;
+        margin: 0 auto;
+        // @media screen and (max-width: 1100px) {
+        //   @apply flex-col-reverse;
+        // }
+
+        .content {
+          width: 100%;
+          margin: 0 auto;
+          height: 100%;
+
+          .post-image {
+            width: 100%;
+            max-width: 647px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+          }
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+---
+import { marked } from 'marked'
+const { data } = Astro.props
+
+const { language } = Astro.props
+---
+
+<div class="">
+  <div class="hero-bg-holder">
+    <div class="hero-content-holder py-24">
+      <div class="font-interbold text-4xl">Automated tag detection for digital marketers</div>
+
+      <h1 class="font-interBold text-6xl py-6">
+        Keep tabs on your tags:<br /> Monitor and optimize with Tagglo
+      </h1>
+    </div>
+  </div>
+</div>
+
+<style lang="less">
+  .hero-bg-holder {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 800px;
+    overflow: hidden;
+    background-image: url('../assets/svg/Hero.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    .hero-content-holder {
+      width: 100%;
+      max-width: 1040px;
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+</style>

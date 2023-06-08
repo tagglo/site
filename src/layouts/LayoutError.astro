@@ -1,0 +1,54 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import ErrorHero404 from '../components/ErrorHero404.astro'
+import ErrorHero500 from '../components/ErrorHero500.astro'
+
+const { title, error } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="'width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <link
+      rel="preload"
+      href="/fonts/BrownLL-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/BrownLL-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/BrownLLTT-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/BrownPro-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <style lang="less">
+      @import url('../assets/styles/fonts.less');
+    </style></head
+  >
+
+  <body>
+    <Header />
+    {error === '404' ? <ErrorHero404 /> : <ErrorHero500 />}
+    <Footer />
+  </body>
+</html>

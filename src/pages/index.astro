@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Heroblock from '../components/Heroblock.astro'
+import Platforms from '../components/SupportedPlatforms.astro'
+
+import * as page from '../../content/en.md'
+import Features from '../components/Features.astro'
+import Benefits from '../components/Benefits.astro'
+import Pricing from '../components/Pricing.astro'
+import RequestDemo from '../components/RequestDemo.astro'
+import Faq from '../components/Faq.astro'
+import LearnMore from '../components/LearnMore.astro'
+import FeaturedBlogPosts from '../components/FeaturedBlogPosts.astro'
+---
+
+<Layout pageContent={page}>
+  <Heroblock data={page.frontmatter.heroblock} language="en" />
+  <Platforms />
+  <Features />
+  <Benefits />
+  <Pricing />
+  <LearnMore />
+  <RequestDemo />
+  <Faq />
+  <FeaturedBlogPosts />
+  <!-- <div class="bg-dark-gray text-white">Dark Gary</div>
+  <div class="bg-dark-brown text-white">Dark Brown</div>
+  <div class="bg-sunset-yellow">Sunset Yellow</div>
+  <div class="bg-desert-dark">Desert Dark</div>
+  <div class="bg-desert-light">Desert Light</div>
+  <div class="bg-green-light">Green Light</div>
+  <div class="bg-green-dark text-white">Green Dark</div> -->
+</Layout>

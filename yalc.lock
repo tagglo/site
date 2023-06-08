@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@enklare-packages/private-loan-form": {
+      "signature": "84db51486d56e16b50bd6c4c36b524a2",
+      "file": true
+    }
+  }
+}

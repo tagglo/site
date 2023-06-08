@@ -1,0 +1,27 @@
+---
+const { buttonText } = Astro.props
+---
+
+<button
+  class={'apply-loan-button button rounded-lg font-bold flex justify-center items-center text-white relative h-14 text-base tracking-wider shadow-lg '}
+>
+  {buttonText}
+</button>
+
+<script lang="ts">
+  const applyLoanButton = document.querySelector('.apply-loan-button')
+
+  applyLoanButton.addEventListener('click', () => {
+    window.scrollTo(0, 0)
+  })
+</script>
+
+<style lang="less">
+  .button {
+    background: #4e36fc 0% 0% no-repeat padding-box;
+    width: 260px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+</style>
