@@ -9,6 +9,7 @@ module.exports = {
         'sunset-light': '#F9E6AE',
         'sunset-yellow': '#fed989',
         'desert-dark': '#f9e6ae',
+        'desert-medium': '#FFFDF8',
         'desert-light': '#F5EFE6',
         'green-light': '#93FFD2',
         'green-dark': '#103e2b',

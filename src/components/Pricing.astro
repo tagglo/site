@@ -1,8 +1,41 @@
 ---
 ---
 
-<div class="bg-white">
-  <div class="content-wrapper">
-    <div class="content">Pricing</div>
+<div class="">
+  <div class="content-wrapper grad">
+    <div class="content">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+          <h2 class="font-interBold text-6xl text-center py-12">Pricing</h2>
+          <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            Here at Flowbite we focus on markets where technology, innovation, and capital can
+            unlock long-term value and drive economic growth.
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center" style="height:500px">
+          <!-- Pricing Card -->
+          <div
+            class="price-card h-4/5 border md:border-0 md:border-t md:border-b md:border-l rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl"
+          >
+            Card
+          </div>
+          <div class="price-card h-full border rounded-xl">Card</div>
+          <div
+            class="price-card h-4/5 border md:border-0 md:border-t md:border-b md:border-r rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl"
+          >
+            Card
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <style lang="less">
+    .grad {
+      background-image: linear-gradient(180deg, #fffdf8, #93ffd2);
+    }
+    .price-card {
+      @apply flex w-full flex-col p-6 mx-auto max-w-lg  text-center text-gray-900 bg-desert-medium border-dark-gray shadow-lg mb-6 md:mb-0;
+    }
+  </style>
 </div>

@@ -2,7 +2,7 @@
 import BlogCard from './BlogCard.astro'
 ---
 
-<div class="bg-green-light py-24">
+<div class="bg-green-light pt-24 pb-48 wave">
   <div class="content-wrapper">
     <div class="content">
       <div class="font-interBold text-center text-2xl">Blog</div>
@@ -15,3 +15,14 @@ import BlogCard from './BlogCard.astro'
     </div>
   </div>
 </div>
+
+<style lang="less">
+  .wave {
+    overflow: hidden;
+    background-image: url('../assets/svg/wave.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 1440px;
+    margin: 0 auto;
+  }
+</style>

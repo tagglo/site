@@ -19,9 +19,11 @@ console.log('Astro config loaded')
 //   fs.writeFileSync('public/vendors/' + vendor.filename, await download(vendor.path))
 // })
 
+console.log(process.env.NODE_ENV)
+
 // https://astro.build/config
 export default defineConfig({
-  base: '/tagglo',
+  base: process.env.NODE_ENV == 'production' ? '/tagglo' : '/',
   output: 'static',
   site: 'https://tagglo.co',
   integrations: [tailwind(), prefetch(), sitemap(), image(), compress()],

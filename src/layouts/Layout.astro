@@ -6,54 +6,18 @@ import { Schema } from 'astro-seo-schema'
 
 const { pageContent } = Astro.props
 
-// let jsonBreadCrumb: any
-// if (Astro.url.pathname.includes('ordlista')) {
-//   jsonBreadCrumb = [
-//     {
-//       '@type': 'ListItem',
-//       position: 1,
-//       name: 'Ordlista',
-//       item: Astro.url.href,
-//     },
-//   ]
-
-//   if (Astro.url.pathname.length > 10) {
-//     const listItem: any = {
-//       '@type': 'ListItem',
-//       position: 2,
-//       name: pageContent.frontmatter['title'],
-//     }
-//     jsonBreadCrumb.push(listItem)
-//   }
-// } else if (Astro.url.pathname.includes('partners')) {
-//   jsonBreadCrumb = [
-//     {
-//       '@type': 'ListItem',
-//       position: 1,
-//       name: 'Partners',
-//       item: Astro.url.href,
-//     },
-//   ]
-//   if (Astro.url.pathname.length > 10) {
-//     const listItem: any = {
-//       '@type': 'ListItem',
-//       position: 2,
-//       name: pageContent.frontmatter['title'],
-//     }
-//     jsonBreadCrumb.push(listItem)
-//   }
-// } else {
-//   if (Astro.url.pathname !== '/') {
-//     jsonBreadCrumb = [
-//       {
-//         '@type': 'ListItem',
-//         position: 1,
-//         name: pageContent.frontmatter['title'],
-//         item: Astro.url.href,
-//       },
-//     ]
-//   }
-// }
+let faqStructuredData: any
+if (pageContent.frontmatter.faq) {
+  faqStructuredData = pageContent.frontmatter.faq.map((item: any, index: number) => ({
+    '@type': 'Question',
+    position: index + 1,
+    name: item.title,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  }))
+}
 ---
 
 <!DOCTYPE html>
@@ -185,46 +149,17 @@ const { pageContent } = Astro.props
         priceRange: '5000 - 600000',
       }}
     /> -->
-
-    <!-- {
-      jsonBreadCrumb ? (
+    {
+      faqStructuredData ? (
         <Schema
           item={{
             '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: jsonBreadCrumb,
+            '@type': 'FAQPage',
+            mainEntity: faqStructuredData,
           }}
         />
       ) : null
     }
-    {
-      Astro.url.pathname !== '/' ? (
-        <Schema
-          item={{
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `${Astro.url.href}`,
-            },
-            headline: '',
-            image: [],
-            datePublished: `${new Date(pageContent.frontmatter.datePublished)}`,
-            dateModified: `${new Date(pageContent.frontmatter.dateModified)}`,
-            publisher: {
-              '@type': 'Organization',
-              name: 'Tagglo Ekonomi Sverige AB',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'http://Tagglo.se/Tagglo_logo.png',
-              },
-            },
-          }}
-        />
-      ) : null
-    } -->
-
-    <!--styles -->
     <style lang="less">
       @import url('../assets/css/fonts.less');
     </style>
@@ -238,7 +173,7 @@ const { pageContent } = Astro.props
 
     <style lang="less" is:global>
       body {
-        @apply text-black font-interMedium;
+        @apply text-black font-interMedium bg-desert-medium;
       }
       * {
         -ms-touch-action: manipulation;
@@ -256,9 +191,17 @@ const { pageContent } = Astro.props
         outline: none;
       }
 
+      ul {
+        list-style: disc;
+        padding: 1rem 0 1rem 1.1rem;
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+
       .content-wrapper {
         width: 100%;
-        max-width: 1040px;
+        max-width: 1440px;
         padding: 0 15px;
         margin: 0 auto;
         // @media screen and (max-width: 1100px) {
@@ -267,6 +210,7 @@ const { pageContent } = Astro.props
 
         .content {
           width: 100%;
+          max-width: 1040px;
           margin: 0 auto;
           height: 100%;
 

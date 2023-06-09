@@ -1,8 +1,119 @@
 ---
+import { marked } from 'marked'
+
+const { faq } = Astro.props
 ---
 
-<div class="bg-white">
+<div class="bg-desert-medium">
   <div class="content-wrapper">
-    <div class="content">Faq</div>
+    <div class="content">
+      <h2 class="font-interBold text-6xl text-center py-12">Faq</h2>
+      <div class="collapse-content border-t mb-24">
+        {
+          faq.map((item: any) => (
+            <>
+              <div class="faq">
+                <div class="faq-item cursor-pointer px-2 py-3 border-b text-green-500 text-xl flex justify-between">
+                  <div class="title font-bold text-base md:text-xl">{item.title}</div>
+                  <i class="close-button" />
+                </div>
+                <div class="faq-content max-h-0 overflow-hidden">
+                  <div
+                    class="inner-content border-b px-4 pt-4 pb-8 text-sm"
+                    set:html={marked.parse(item.answer)}
+                  />
+                </div>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq')
+  for (var i = 0; i < faqItems.length; i++) {
+    faqItems[i].addEventListener('click', function (this: any) {
+      var current = document.getElementsByClassName('faq-active')
+
+      // If there's no active class
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(' faq-active', '')
+      }
+      this.className += ' faq-active'
+    })
+  }
+</script>
+
+<style lang="less">
+  .faq {
+    .header {
+      @media screen and (max-width: 500px) {
+        padding: 0.9rem 0.5rem;
+      }
+    }
+    .title {
+      @media screen and (max-width: 500px) {
+        max-width: 240px;
+      }
+    }
+    .faq-content {
+      transition: 0.3s linear 0s;
+    }
+  }
+
+  .faq-active .faq-content {
+    @apply border-b-0 bg-white;
+    max-height: 25em;
+  }
+  // ---- [ Close Button ] ---- //
+  .transition (@prop: all, @time: 1s, @ease: ease-out) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+  }
+  .rotate(@degrees) {
+    -webkit-transform: rotate(@degrees);
+    -moz-transform: rotate(@degrees);
+    -ms-transform: rotate(@degrees);
+    -o-transform: rotate(@degrees);
+    transform: rotate(@degrees);
+  }
+
+  .close-button {
+    width: 35px;
+    height: 35px;
+    box-shadow: 0px 10 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    text-indent: -9999px;
+
+    &:before,
+    &:after {
+      content: '';
+      width: 55%;
+      height: 3px;
+      @apply bg-dark-gray;
+      position: absolute;
+      top: 48%;
+      left: 22%;
+      .rotate(0deg);
+    }
+
+    &:after {
+      .rotate(90deg);
+      .transition(@time: 0.3s);
+    }
+  }
+  .faq-active .close-button {
+    &:before,
+    &:after {
+      .rotate(180deg);
+    }
+  }
+</style>
