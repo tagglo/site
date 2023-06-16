@@ -1,29 +1,31 @@
 ---
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import 'animate.css'
-import { Schema } from 'astro-seo-schema'
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "animate.css";
+import { Schema } from "astro-seo-schema";
 
-const { pageContent } = Astro.props
+const { pageContent } = Astro.props;
 
-let faqStructuredData: any
+let faqStructuredData: any;
 if (pageContent.frontmatter.faq) {
-  faqStructuredData = pageContent.frontmatter.faq.map((item: any, index: number) => ({
-    '@type': 'Question',
-    position: index + 1,
-    name: item.title,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer,
-    },
-  }))
+  faqStructuredData = pageContent.frontmatter.faq.map(
+    (item: any, index: number) => ({
+      "@type": "Question",
+      position: index + 1,
+      name: item.title,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })
+  );
 }
 ---
 
 <!DOCTYPE html>
 <html lang={pageContent.frontmatter.lang}>
   <head>
-    <title>{pageContent.frontmatter['meta-title']}</title>
+    <title>{pageContent.frontmatter["meta-title"]}</title>
     <!--Meta -->
     <meta charset="UTF-8" />
     <meta
@@ -31,27 +33,34 @@ if (pageContent.frontmatter.faq) {
       content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
     />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={pageContent.frontmatter['meta-description']} />
-    <meta name="keywords" content={pageContent.frontmatter['meta-keywords']} />
+    <meta
+      name="description"
+      content={pageContent.frontmatter["meta-description"]}
+    />
+    <meta name="keywords" content={pageContent.frontmatter["meta-keywords"]} />
     <meta name="author" content="Tagglo" />
     <meta
       name="robots"
       content={pageContent.frontmatter.indexed
-        ? 'index, follow'
-        : 'noindex, nofollow, noimageindex, nosnippet, noarchive, nocache'}
+        ? "index, follow"
+        : "noindex, nofollow, noimageindex, nosnippet, noarchive, nocache"}
     />
     <meta
       name="googlebot"
       content={pageContent.frontmatter.indexed
-        ? 'index, follow'
-        : 'noindex, nofollow, noimageindex, nosnippet, noarchive, nocache'}
+        ? "index, follow"
+        : "noindex, nofollow, noimageindex, nosnippet, noarchive, nocache"}
     />
 
-    <meta name="og:title" property="og:title" content={pageContent.frontmatter['meta-title']} />
+    <meta
+      name="og:title"
+      property="og:title"
+      content={pageContent.frontmatter["meta-title"]}
+    />
     <meta
       name="og:description"
       property="og:description"
-      content={pageContent.frontmatter['meta-description']}
+      content={pageContent.frontmatter["meta-description"]}
     />
     <meta name="og:type" property="og:type" content="website" />
     <meta name="og:url" property="og:url" content={Astro.url.href} />
@@ -59,10 +68,16 @@ if (pageContent.frontmatter.faq) {
     <meta
       name="og:image"
       property="og:image"
-      content={Astro.url.host + '/Tagglo-opengraph-image.png'}
+      content={Astro.url.host + "/Tagglo-opengraph-image.png"}
     />
-    <meta name="twitter:title" content={pageContent.frontmatter['meta-title']} />
-    <meta name="twitter:description" content={pageContent.frontmatter['meta-description']} />
+    <meta
+      name="twitter:title"
+      content={pageContent.frontmatter["meta-title"]}
+    />
+    <meta
+      name="twitter:description"
+      content={pageContent.frontmatter["meta-description"]}
+    />
 
     <!--Icons -->
     <!-- <link rel="canonical" href={Astro.url.href} />
@@ -153,15 +168,15 @@ if (pageContent.frontmatter.faq) {
       faqStructuredData ? (
         <Schema
           item={{
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
             mainEntity: faqStructuredData,
           }}
         />
       ) : null
     }
     <style lang="less">
-      @import url('../assets/css/fonts.less');
+      @import url("../assets/css/fonts.less");
     </style>
   </head>
 
@@ -184,7 +199,12 @@ if (pageContent.frontmatter.faq) {
       :root {
         --menu-break-point: 1080px;
         --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          #da62c4 30%,
+          white 60%
+        );
       }
 
       *:focus {
@@ -222,6 +242,24 @@ if (pageContent.frontmatter.faq) {
             display: block;
           }
         }
+      }
+      .wave-sand {
+        overflow: hidden;
+        background-image: url("../assets/svg/dune.svg"),
+          linear-gradient(180deg, #fffdf8 20.79%, #ffdf83 154.75%);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+        margin: 0 auto;
+      }
+      .wave-green {
+        overflow: hidden;
+        background-image: url("../assets/svg/dune.svg"),
+          linear-gradient(180deg, #fffdf8 20.79%, #acffdc 154.75%);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+        margin: 0 auto;
       }
     </style>
   </body>

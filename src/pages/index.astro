@@ -1,16 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Heroblock from '../components/Heroblock.astro'
-import Platforms from '../components/SupportedPlatforms.astro'
+import Layout from "../layouts/Layout.astro";
+import Heroblock from "../components/Heroblock.astro";
+import Platforms from "../components/SupportedPlatforms.astro";
 
-import * as page from '../../content/en.md'
-import Features from '../components/Features.astro'
-import Benefits from '../components/Benefits.astro'
-import Pricing from '../components/Pricing.astro'
-import RequestDemo from '../components/RequestDemo.astro'
-import Faq from '../components/Faq.astro'
-import LearnMore from '../components/LearnMore.astro'
-import FeaturedBlogPosts from '../components/FeaturedBlogPosts.astro'
+import * as page from "../../content/en.md";
+import Features from "../components/Features.astro";
+import Benefits from "../components/Benefits.astro";
+import Pricing from "../components/Pricing.astro";
+import RequestDemo from "../components/RequestDemo.astro";
+import Faq from "../components/Faq.astro";
+import LearnMore from "../components/LearnMore.astro";
+import FeaturedBlogPosts from "../components/FeaturedBlogPosts.astro";
 ---
 
 <Layout pageContent={page}>
@@ -19,7 +19,6 @@ import FeaturedBlogPosts from '../components/FeaturedBlogPosts.astro'
   <Features />
   <Benefits />
   <Pricing />
-  <LearnMore />
   <RequestDemo />
   <Faq faq={page.frontmatter.faq} />
   <FeaturedBlogPosts />
