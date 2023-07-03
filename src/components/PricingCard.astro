@@ -1,0 +1,39 @@
+---
+import SignUpButtonPricing from "./SignUpButtonPricing.astro";
+const { planType, plans } = Astro.props;
+
+const plan = plans.find((plan) => {
+  if (plan.type === planType) {
+    return plan;
+  }
+});
+---
+
+<div class="font-interBold text-2xl pb-3">{plan.title}</div>
+<div>{plan.price}</div>
+<div class="py-6" set:html={plan.description} />
+
+<ul class="price-list text-left pb-12 flex-grow">
+  {
+    plan.features.map((feature) => {
+      return <li class={feature.active ? "" : "inactive"}>{feature.text}</li>;
+    })
+  }
+</ul>
+
+<SignUpButtonPricing buttonText="Use for free" plan="free" />
+
+<style lang="less">
+  .price-list {
+    list-style-image: url("/svg/checkmark.svg");
+    padding: 1rem 0 1rem 1.1rem;
+    li {
+      margin-bottom: 0.5rem;
+
+      &.inactive {
+        text-decoration: line-through;
+        list-style: none;
+      }
+    }
+  }
+</style>

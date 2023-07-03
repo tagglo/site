@@ -1,0 +1,28 @@
+---
+const { buttonText, plan } = Astro.props;
+---
+
+<button
+  data-plan={plan}
+  class={"signup-button-pricing button  flex justify-center items-center text-white font-interBold text-lg rounded-lg bg-dark-gray h-14 w-full"}
+>
+  {buttonText}
+</button>
+
+<script define:vars={{ plan }}>
+const button = document.querySelector(`[data-plan= "${plan}"]`);
+button ? button.addEventListener("click", SignUpOverlayOpen) : null;
+function SignUpOverlayOpen() {
+  localStorage.setItem("plan", plan);
+  const storageEvent = new StorageEvent("storage", {
+    key: "plan",
+    newValue: plan,
+  });
+  window.dispatchEvent(storageEvent);
+
+  const signUpOverlay = document.getElementById("signup-overlay");
+  signUpOverlay ? (signUpOverlay.style.display = "block") : null;
+  const body = document.querySelector("body");
+  body.classList.add("overflow-hidden");
+}
+</script>

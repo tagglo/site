@@ -1,23 +1,118 @@
 ---
 lang: en
 title: Startpage
-meta-title: 'Tagglo'
+meta-title: "Tagglo"
 meta-description: Tagglo.
 indexed: true
 loginButtonText: Login
 signUpButton: Sign up
 heroblock:
-  title: 'Loan comparison for<br> the cost-conscious.'
-  subtitle: 'Get the interest rate you deserve, but leave the negotiations with the lenders to us'
+  title: "Loan comparison for<br> the cost-conscious."
+  subtitle: "Get the interest rate you deserve, but leave the negotiations with the lenders to us"
   taglines:
     tagline1: Free, 100% digital comparison
     tagline2: Save money with lower interest rates
     tagline3: Instant answers from up to 39 Swedish lenders
 footer:
   text:
-    'We are a marketing tech company specializing in improving businesses marketing performance -
-    and ensuring our clients are ahead of their day-to-day conversion tracking.'
-
+    "We are a marketing tech company specializing in improving businesses marketing performance -
+    and ensuring our clients are ahead of their day-to-day conversion tracking."
+features:
+  title: "Retrieve failed tag data and get the metrics you need to succeed"
+benefits:
+  title: What’s the best tag line for our benefits??
+  cards:
+    [
+      {
+        icon: "IconClock",
+        title: "Save time",
+        description: "You don't have to manually check whether your tags are firing correctly on your website.",
+      },
+      {
+        icon: "IconSearch",
+        title: "Find lost tags",
+        description: "Collect the lost data and upload it to your preferred analytics platform.",
+      },
+      {
+        icon: "IconDiagram",
+        title: "Improve marketing performance",
+        description: "Collect the accurate data and drive more revenue for your business.",
+      },
+      {
+        icon: "IconCrossHair",
+        title: "Enhance user experience",
+        description: "Accurate data will help you keep your visitors engaged with your website.",
+      },
+      {
+        icon: "IconPiggyBank",
+        title: "Optimize marketing spend",
+        description: "Maximize your return on investment by ensuring that your tags are firing correctly.",
+      },
+      {
+        icon: "IconRunningMan",
+        title: "Get started in no time",
+        description: "Our tool is easy to install, and it automatically tracks all tags on your website for you.",
+      },
+    ]
+pricing:
+  title: Some cool headline about our offerings
+  plans:
+    [
+      {
+        type: free,
+        title: Free,
+        price: Free for everyone,
+        description: "The basics for personal projects, hobby sites, or experiments.",
+        features:
+          [
+            { text: Track 6 tags per platform, active: true },
+            { text: Dashboard, active: true },
+            { text: 1 container, active: true },
+            { text: Data saved for 30 days, active: true },
+            { text: Tag recovery tools, active: false },
+            { text: Daily summary, active: false },
+            { text: Email notifications, active: false },
+            { text: Slack push notifications, active: false },
+          ],
+        buttonText: User for free,
+      },
+      {
+        type: professional,
+        title: Professional,
+        price: $199 per month,
+        description: "Free trial for 14 days No credit card required <br> <br> Advanced texts and support for professional web projects.",
+        features:
+          [
+            { text: Track 6 tags per platform, active: true },
+            { text: Dashboard, active: true },
+            { text: 1 container, active: true },
+            { text: Data saved for 30 days, active: true },
+            { text: Tag recovery tools, active: true },
+            { text: Daily summary, active: true },
+            { text: Email notifications, active: true },
+            { text: Slack push notifications, active: false },
+          ],
+        buttonText: Sign up for professional,
+      },
+      {
+        type: enterprice,
+        title: Enterprice,
+        price: We have to negotiate...,
+        description: "Everything in Professional and more.",
+        features:
+          [
+            { text: Track 6 tags per platform, active: true },
+            { text: Dashboard, active: true },
+            { text: 1 container, active: true },
+            { text: Data saved for 30 days, active: true },
+            { text: Tag recovery tools, active: true },
+            { text: Daily summary, active: true },
+            { text: Email notifications, active: true },
+            { text: Slack push notifications, active: true },
+          ],
+        buttonText: Contact sales,
+      },
+    ]
 faq:
   - title: How can Tagglo help my company's marketing investment?
     answer: Tagglo can enhance your company's marketing investment by providing valuable insights into the performance of your website's tags and the overall health of your tracking. With Tagglo, you gain a comprehensive understanding of how your tags are functioning, ensuring that your marketing efforts are based on accurate and reliable data. By monitoring tag performance, identifying errors, and retrieving data from failed tags, Tagglo empowers you to make data-driven decisions, optimise your marketing strategies, and maximise the return on your marketing investment.
@@ -28,7 +123,7 @@ faq:
     answer: >-
       Tagglo actively monitors the tags within your Google Tag Manager container, tracking essential data points such as Tag ID, Tag Name, Tag Status, Tag URL, Tag Type, Container ID, Browser, OS, Device, Timestamp, Execution Time, Container Version, Browser Version, and OS Version.
   - title: Is it GDPR compliant?
-    answer: '**Short answer:** Yes. Tagglo ensures GDPR compliance by monitoring your tags only after your website users have given their consent.'
+    answer: "**Short answer:** Yes. Tagglo ensures GDPR compliance by monitoring your tags only after your website users have given their consent."
   - title: How can I get started and monitor my tags?
     answer: >-
       To get started and begin monitoring your tags, simply fill in your email address in the contact form on our website. Our team will promptly get in touch with you to assist you further. Start monitoring your tag tracking today!
@@ -55,7 +150,7 @@ faq:
         <li>The execution time of your tags, helping you analyse their efficiency and identify any potential bottlenecks.</li>
       </ul>
 
-      And that's not all! Our dashboard offers even more valuable insights and features to empower you in optimising your tag setup. Gain a deeper understanding of your tag performance and make data-driven decisions with ease.
+      And that's not all! Our dashboard offers even more valuable insights and texts to empower you in optimising your tag setup. Gain a deeper understanding of your tag performance and make data-driven decisions with ease.
 
   - title: Will I get real-time notifications when a tag fails to execute?
     answer: Detta behöver vi diskutera vidare innan vi kan besvara.

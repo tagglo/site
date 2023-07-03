@@ -6,8 +6,10 @@ module.exports = {
       colors: {
         'dark-gray': '#333333',
         'dark-brown': '#975b00',
+        'dark-gray': '#103E2B',
         'sunset-light': '#F9E6AE',
         'sunset-yellow': '#fed989',
+        'desert': '#FFFEF2',
         'desert-dark': '#f9e6ae',
         'desert-medium': '#FFFDF8',
         'desert-light': '#F5EFE6',

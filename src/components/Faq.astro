@@ -1,10 +1,10 @@
 ---
-import { marked } from 'marked'
+import { marked } from "marked";
 
-const { faq } = Astro.props
+const { faq } = Astro.props;
 ---
 
-<div class="bg-desert-medium">
+<div class="">
   <div class="content-wrapper">
     <div class="content">
       <h2 class="font-interBold text-6xl text-center py-12">Faq</h2>
@@ -33,17 +33,17 @@ const { faq } = Astro.props
 </div>
 
 <script>
-  const faqItems = document.querySelectorAll('.faq')
+  const faqItems = document.querySelectorAll(".faq");
   for (var i = 0; i < faqItems.length; i++) {
-    faqItems[i].addEventListener('click', function (this: any) {
-      var current = document.getElementsByClassName('faq-active')
+    faqItems[i].addEventListener("click", function (this: any) {
+      var current = document.getElementsByClassName("faq-active");
 
       // If there's no active class
       if (current.length > 0) {
-        current[0].className = current[0].className.replace(' faq-active', '')
+        current[0].className = current[0].className.replace(" faq-active", "");
       }
-      this.className += ' faq-active'
-    })
+      this.className += " faq-active";
+    });
   }
 </script>
 
@@ -95,7 +95,7 @@ const { faq } = Astro.props
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       width: 55%;
       height: 3px;
       @apply bg-dark-gray;

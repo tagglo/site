@@ -1,14 +1,14 @@
 ---
-import LoginButton from './LoginButton.astro'
-import SignUpButton from './SignUpButton.astro'
-import Logo from '../assets/svg/tagglo-logo.svg'
+import LoginButton from "./LoginButton.astro";
+import SignUpButton from "./SignUpButton.astro";
+import Logo from "../assets/svg/tagglo-logo.svg";
 
-const { pageContent } = Astro.props
+const { pageContent } = Astro.props;
 ---
 
-<div class="top-menu-holder text-sm w-full z-10" style="background-color: #fefaee;">
-  <div class="content-wrapper border-gray-400">
-    <div class="content border-b">
+<div class="top-menu-holder text-sm w-full z-10 bg-desert border-gray-200 border-b">
+  <div class="content-wrapper">
+    <div class="content">
       <div class="flex justify-between items-center">
         <div class="flex-grow">
           <img src={Logo.src} alt="Tagglo logo" />
@@ -21,15 +21,15 @@ const { pageContent } = Astro.props
 </div>
 
 <script is:inline>
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.top-menu-holder');
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".top-menu-holder");
   if (header) {
-    if (window.scrollY >= 800) {
-      header.classList.add('fixed', 'animate__animated', 'animate__slideInDown');
+    if (window.scrollY >= 450) {
+      header.classList.add("fixed", "animate__animated", "animate__slideInDown");
     }
     if (window.scrollY == 0) {
       //header.classList.remove('animate__slideInDown');
-      header.classList.remove('fixed', 'animate__animated', 'animate__slideInDown');
+      header.classList.remove("fixed", "animate__animated", "animate__slideInDown");
       //header.classList.add('animate__slideInUp');
     }
   }

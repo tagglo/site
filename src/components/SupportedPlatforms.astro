@@ -1,22 +1,29 @@
 ---
-import { platform } from 'os'
-const platforms = await Astro.glob('../assets/svg/platforms/*.svg')
+import { platform } from "os";
+const platforms = await Astro.glob("../assets/svg/platforms/*.svg");
+
+import GoogleTagmanager from "../assets/svg/platforms/Google_Tagmanager.svg";
+import GoogleAnalytics from "../assets/svg/platforms/Google_Analytics.svg";
+import Meta from "../assets/svg/platforms/Meta.svg";
+import GoogleAds from "../assets/svg/platforms/Google_Ads.svg";
 ---
 
-<div class="bg-dester-medium border-b">
-  <div class="content bg-green-light text-center font-interSemibold py-3">Supported Platforms</div>
-  <div class="content-wrapper">
-    <div class="content inner">
-      <div class="flex justify-around">
-        {
-          platforms.map((platform) => {
-            return (
-              <div class="flex flex-col items-center justify-center">
-                <img src={platform.default.src} width="158" height="80" />
-              </div>
-            )
-          })
-        }
+<div class="pt-24 max-w-2xl mx-auto">
+  <div class="flex justify-center">
+    <div class="pb-1 border-b border-black">Supported platforms</div>
+  </div>
+
+  <div class="flex justify-between pt-6">
+    <div>
+      <div class="font-interBold text-center">Integrate with</div>
+      <img src={GoogleTagmanager.src} width="176" height="80" />
+    </div>
+    <div>
+      <div class="font-interBold">Monitor and recover tags from these platforms</div>
+      <div class="flex justify-between">
+        <img src={GoogleAnalytics.src} width="143" height="80" />
+        <img src={Meta.src} width="159" height="80" />
+        <img src={GoogleAds.src} width="141" height="80" />
       </div>
     </div>
   </div>

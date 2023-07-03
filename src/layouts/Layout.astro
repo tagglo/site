@@ -3,22 +3,21 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "animate.css";
 import { Schema } from "astro-seo-schema";
+import SignUpOverlay from "../components/SignUpOverlay.astro";
 
 const { pageContent } = Astro.props;
 
 let faqStructuredData: any;
 if (pageContent.frontmatter.faq) {
-  faqStructuredData = pageContent.frontmatter.faq.map(
-    (item: any, index: number) => ({
-      "@type": "Question",
-      position: index + 1,
-      name: item.title,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })
-  );
+  faqStructuredData = pageContent.frontmatter.faq.map((item: any, index: number) => ({
+    "@type": "Question",
+    position: index + 1,
+    name: item.title,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }));
 }
 ---
 
@@ -33,10 +32,7 @@ if (pageContent.frontmatter.faq) {
       content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
     />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content={pageContent.frontmatter["meta-description"]}
-    />
+    <meta name="description" content={pageContent.frontmatter["meta-description"]} />
     <meta name="keywords" content={pageContent.frontmatter["meta-keywords"]} />
     <meta name="author" content="Tagglo" />
     <meta
@@ -52,11 +48,7 @@ if (pageContent.frontmatter.faq) {
         : "noindex, nofollow, noimageindex, nosnippet, noarchive, nocache"}
     />
 
-    <meta
-      name="og:title"
-      property="og:title"
-      content={pageContent.frontmatter["meta-title"]}
-    />
+    <meta name="og:title" property="og:title" content={pageContent.frontmatter["meta-title"]} />
     <meta
       name="og:description"
       property="og:description"
@@ -70,14 +62,8 @@ if (pageContent.frontmatter.faq) {
       property="og:image"
       content={Astro.url.host + "/Tagglo-opengraph-image.png"}
     />
-    <meta
-      name="twitter:title"
-      content={pageContent.frontmatter["meta-title"]}
-    />
-    <meta
-      name="twitter:description"
-      content={pageContent.frontmatter["meta-description"]}
-    />
+    <meta name="twitter:title" content={pageContent.frontmatter["meta-title"]} />
+    <meta name="twitter:description" content={pageContent.frontmatter["meta-description"]} />
 
     <!--Icons -->
     <!-- <link rel="canonical" href={Astro.url.href} />
@@ -184,11 +170,12 @@ if (pageContent.frontmatter.faq) {
     <Header pageContent={pageContent} />
 
     <slot />
+    <SignUpOverlay />
     <Footer pageContent={pageContent} />
 
     <style lang="less" is:global>
       body {
-        @apply text-black font-interMedium bg-desert-medium;
+        @apply text-black font-interMedium bg-desert;
       }
       * {
         -ms-touch-action: manipulation;
@@ -199,24 +186,11 @@ if (pageContent.frontmatter.faq) {
       :root {
         --menu-break-point: 1080px;
         --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-          45deg,
-          rgb(var(--accent)),
-          #da62c4 30%,
-          white 60%
-        );
+        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
       }
 
       *:focus {
         outline: none;
-      }
-
-      ul {
-        list-style: disc;
-        padding: 1rem 0 1rem 1.1rem;
-        li {
-          margin-bottom: 0.5rem;
-        }
       }
 
       .content-wrapper {
@@ -243,19 +217,19 @@ if (pageContent.frontmatter.faq) {
           }
         }
       }
-      .wave-sand {
+      .dunes-right {
         overflow: hidden;
-        background-image: url("../assets/svg/dune.svg"),
-          linear-gradient(180deg, #fffdf8 20.79%, #ffdf83 154.75%);
+        background-image: url("../assets/svg/dunes-right.svg");
+        background-color: #fffef2;
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: contain;
         margin: 0 auto;
       }
-      .wave-green {
+      .dunes-left {
         overflow: hidden;
-        background-image: url("../assets/svg/dune.svg"),
-          linear-gradient(180deg, #fffdf8 20.79%, #acffdc 154.75%);
+        background-image: url("../assets/svg/dunes-left.svg");
+        background-color: #fffef2;
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: contain;

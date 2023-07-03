@@ -1,22 +1,35 @@
 ---
-const { buttonText } = Astro.props
+const { buttonText } = Astro.props;
 ---
 
-<a href="https://minasidor.enklare.se" target="_blank" rel="noopener noreferrer">
-  <button
-    class={'sign-up-button button rounded  flex justify-center items-center text-white text-sm bg-dark-gray'}
-  >
-    {buttonText}
-  </button></a
+<button
+  class={"signup-button button rounded  flex justify-center items-center text-white text-sm bg-dark-gray"}
+  onclick="SignUpOverlayOpenHeader()"
 >
+  {buttonText}
+</button>
+
+<script lang="ts">
+function SignUpOverlayOpenHeader() {
+  const signUpOverlay = document.getElementById("signup-overlay");
+  signUpOverlay ? (signUpOverlay.style.display = "block") : null;
+
+  const body = document.querySelector("body");
+  body.classList.add("overflow-hidden");
+
+  localStorage.setItem("plan", null);
+
+  const storageEvent = new StorageEvent("storage", {
+    key: "plan",
+    newValue: null,
+  });
+  window.dispatchEvent(storageEvent);
+}
+</script>
 
 <style lang="less">
   .button {
     width: 74px;
     height: 32px;
-    @media screen and (max-width: 768px) {
-      width: 32px;
-      height: 32px;
-    }
   }
 </style>
