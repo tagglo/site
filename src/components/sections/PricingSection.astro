@@ -1,29 +1,29 @@
 ---
-import PricingCard from "./PricingCard.astro";
-const { pricing } = Astro.props;
+import PricingCard from "../PricingCard.astro";
+const { data } = Astro.props;
 ---
 
-<div class="dunes">
+<div class="py-24">
   <div class="content-wrapper">
-    <div class="content pb-20">
+    <div class="content">
       <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-md text-center">
-          <h2 class="font-interBold text-6xl text-center py-12">Pricing</h2>
-        </div>
+        <div class="font-interBold text-center text-2xl">Pricing</div>
+        <h2 class="font-interBold text-6xl text-center pt-6 pb-24">{data.title}</h2>
+
         <div class="flex flex-col md:flex-row justify-center items-center" style="height:800px;">
           <!-- Pricing Card -->
           <div
             class="price-card border md:border-0 md:border-t-2 md:border-b-2 md:border-l-2 rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl"
           >
-            <PricingCard planType="free" plans={pricing.plans} />
+            <PricingCard planType="free" plans={data.plans} />
           </div>
           <div class="price-card h-full border-2 rounded-xl">
-            <PricingCard planType="professional" plans={pricing.plans} />
+            <PricingCard planType="professional" plans={data.plans} />
           </div>
           <div
             class="price-card border md:border-0 md:border-t-2 md:border-b-2 md:border-r-2 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl"
           >
-            <PricingCard planType="enterprice" plans={pricing.plans} />
+            <PricingCard planType="enterprice" plans={data.plans} />
           </div>
         </div>
       </div>

@@ -1,29 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Heroblock from "../components/Heroblock.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
 
 import * as page from "../../content/en.md";
-import Features from "../components/Features.astro";
-import Benefits from "../components/Benefits.astro";
-import Pricing from "../components/Pricing.astro";
-import RequestDemo from "../components/RequestDemo.astro";
-import Faq from "../components/Faq.astro";
-import FeaturedBlogPosts from "../components/FeaturedBlogPosts.astro";
+import FeaturesSection from "../components/sections/FeaturesSection.astro";
+import BenefitsSection from "../components/sections/BenefitsSection.astro";
+import PricingSection from "../components/sections/PricingSection.astro";
+import RequestDemoSection from "../components/sections/RequestDemoSection.astro";
+import FaqSection from "../components/sections/FaqSection.astro";
+import ArticlesSection from "../components/sections/ArticlesSection.astro";
+import HowItWorksSection from "../components/sections/HowItWorksSection.astro";
 ---
 
 <Layout pageContent={page}>
-  <Heroblock data={page.frontmatter.heroblock} language="en" />
-  <Features data={page.frontmatter.features} />
-  <Benefits data={page.frontmatter.benefits} />
-  <Pricing pricing={page.frontmatter.pricing} />
-  <RequestDemo />
-  <Faq faq={page.frontmatter.faq} />
-  <FeaturedBlogPosts />
-  <!-- <div class="bg-dark-gray text-white">Dark Gary</div>
-  <div class="bg-dark-brown text-white">Dark Brown</div>
-  <div class="bg-sunset-yellow">Sunset Yellow</div>
-  <div class="bg-desert-dark">Desert Dark</div>
-  <div class="bg-desert-light">Desert Light</div>
-  <div class="bg-green-light">Green Light</div>
-  <div class="bg-green-dark text-white">Green Dark</div> -->
+  <HeroSection data={page.frontmatter.heroSection} language="en" />
+  <HowItWorksSection data={page.frontmatter.howItWorksSection} />
+  <FeaturesSection data={page.frontmatter.featuresSection} />
+  <BenefitsSection data={page.frontmatter.benefitsSection} />
+  <PricingSection data={page.frontmatter.pricingSection} />
+  <RequestDemoSection data={page.frontmatter.requestDemoSection} />
+  <FaqSection data={page.frontmatter.faqSection} />
+  <ArticlesSection />
 </Layout>

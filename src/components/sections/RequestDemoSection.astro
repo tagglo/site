@@ -1,0 +1,21 @@
+---
+import RequestDemoForm from "../RequestDemoForm.astro";
+const { data } = Astro.props;
+---
+
+<div class="pt-24 pb-48 dunes-right">
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="font-interBold text-center text-2xl">Request free demo</div>
+      <h2 class="font-interBold text-6xl text-center pt-6 pb-24">
+        {data.title}
+      </h2>
+
+      <div class="max-w-3xl mx-auto border-2 border-black p-12 rounded-lg mb-24">
+        <RequestDemoForm />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="less"></style>

@@ -11,7 +11,7 @@ const { pageContent } = Astro.props;
     <div class="content">
       <div class="flex justify-between items-center">
         <div class="flex-grow">
-          <img src={Logo.src} alt="Tagglo logo" />
+          <a href="/"><img src={Logo.src} alt="Tagglo logo" /></a>
         </div>
         <LoginButton buttonText={pageContent.frontmatter.loginButtonText} />
         <SignUpButton buttonText={pageContent.frontmatter.signUpButton} />

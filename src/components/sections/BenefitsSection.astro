@@ -1,10 +1,10 @@
 ---
-import IconSearch from "../assets/svg/icons/Icon-Search.svg";
-import IconClock from "../assets/svg/icons/Icon-Clock.svg";
-import IconPiggyBank from "../assets/svg/icons/Icon-piggy-bank.svg";
-import IconCrossHair from "../assets/svg/icons/Icon-CrossHair.svg";
-import IconRunningMan from "../assets/svg/icons/Icon-RunningMan.svg";
-import IconDiagram from "../assets/svg/icons/Icon-diagram.svg";
+import IconSearch from "../../assets/svg/icons/Icon-Search.svg";
+import IconClock from "../../assets/svg/icons/Icon-Clock.svg";
+import IconPiggyBank from "../../assets/svg/icons/Icon-piggy-bank.svg";
+import IconCrossHair from "../../assets/svg/icons/Icon-CrossHair.svg";
+import IconRunningMan from "../../assets/svg/icons/Icon-RunningMan.svg";
+import IconDiagram from "../../assets/svg/icons/Icon-diagram.svg";
 
 var icons = [
   {
@@ -43,24 +43,25 @@ data.cards.map((item: any) => {
 });
 ---
 
-<div class="py-48">
+<div class="py-24">
   <div class="content-wrapper">
     <div class="content">
       <div class="font-interBold text-center text-2xl">Benefits</div>
-      <h2 class="font-interBold text-6xl text-center py-12">
-        What’s the best tag line for our benefits?
+      <h2 class="font-interBold text-6xl text-center pt-6 pb-24">
+        {data.title}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {
           data.cards.map((item: any) => (
             <>
               <div class="border-2 border-black bg-white rounded-xl p-6">
-                <div class="flex justify-center bg-green-light w-12 h-12 rounded-full">
+                <div class="flex justify-center items-center bg-green-light w-12 h-12 rounded-full">
                   <img
+                    style={`width: ${item.icon.width}px!important; height: ${item.icon.height}px!important`}
                     width={item.icon.width}
                     height={item.icon.height}
                     src={item.icon.src}
-                    alt=""
+                    alt={item.title}
                   />
                 </div>
                 <div class="p-2 mt-2">

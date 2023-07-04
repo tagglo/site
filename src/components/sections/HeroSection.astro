@@ -1,0 +1,37 @@
+---
+import SupportedPlatforms from "../SupportedPlatforms.astro";
+import RequestDemoForm from "../RequestDemoForm.astro";
+
+const { data } = Astro.props;
+---
+
+<div class="pt-48 pb-56 dunes-right">
+  <div class="content-wrapper">
+    <div class="content-hero">
+      <div class="font-interMedium text-center text-8xl">{data.pretitle}</div>
+      <h2 class="font-interBold text-8xl text-center py-6" set:html={data.title} />
+      <p class="text-center text-2xl" set:html={data.subtitle} />
+      <div class="reguest-demo-header max-w-2xl mx-auto pt-12">
+        <RequestDemoForm buttonText={data.buttonText} />
+        <SupportedPlatforms />
+      </div>
+    </div>
+  </div>
+
+  <style lang="less">
+    .content-hero {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100%;
+      .reguest-demo-header {
+        input,
+        button {
+          width: 100%;
+          max-width: 320px;
+          height: 56px;
+        }
+      }
+    }
+  </style>
+</div>
