@@ -2,277 +2,345 @@
 import close from "../assets/svg/close.svg";
 ---
 
-<div id="signup-form-holder" class="bg-white rounded-2xl p-5 border border-dark-gray shadow-lg">
+<div id="signup-form-holder" class="bg-white rounded-2xl p-5 border-2 border-black shadow-lg">
   <div class="flex justify-between items-center">
     <h2 class="text-3xl font-interMedium mb-2">Sign up</h2>
     <div class="close-overlay flex items-center font-interRegular text-base">
       Close <img class="ml-2" src={close.src} width="13" height="13" alt="Close Signup form" />
     </div>
   </div>
-  <div class="font-interMedium text-xl pt-6 pb-4">Choose product</div>
-  <div class="button-holder rounded-lg border border-black grid grid-cols-3 gap-0">
-    <button data-plans="free" class="plan-buttons p-3 text-center rounded-l-lg">Free</button>
-    <button data-plans="professional" class="plan-buttons p-3 border-l border-dark-gray text-center"
-      >Professional</button
-    >
-    <button
-      data-plans="enterprise"
-      class="plan-buttons p-3 border-l border-dark-gray text-center rounded-r-lg">Enterprise</button
-    >
-  </div>
-  <div id="form-error-plan" class="error text-red-500 hidden text-xs pl-1 pt-1 text-center">
-    Error
-  </div>
-  <div>
-    <div class="font-interMedium text-xl pt-6 pb-4">Your details</div>
-    <form id="signup-form" method="POST">
-      <div class="mb-3">
-        <label for="name" class="block text-sm font-interMedium text-dark-gray pb-2"
-          >Name <span class="text-xs italic">Required</span></label
-        >
-        <input
-          type="text"
-          name="name"
-          class="formInput bg-gray-50 border border-dark-gray text-gray-900 text-sm rounded block w-full p-2.5"
-          placeholder="e.g Elon Musk"
-        />
-        <div id="form-error-name" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="block text-sm font-interMedium text-dark-gray pb-2"
-          >Email <span class="text-xs italic">Required</span></label
-        >
-        <input
-          type="text"
-          name="email"
-          class="formInput bg-gray-50 border border-dark-gray text-gray-900 text-sm rounded block w-full p-2.5"
-          placeholder="e.g elon@tagglo.co"
-        />
-        <div id="form-error-email" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
-      </div>
-      <div class="mb-3">
-        <label for="website" class="block text-sm font-interMedium text-dark-gray pb-2"
-          >Website <span class="text-xs italic">Required</span></label
-        >
-        <input
-          type="text"
-          name="website"
-          class="formInput bg-gray-50 border border-dark-gray text-gray-900 text-sm rounded block w-full p-2.5"
-          placeholder="e.g tagglo.co"
-        />
-        <div id="form-error-website" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
-      </div>
-      <div id="visits" class="mb-3 hidden">
-        <label for="visits" class="block text-sm font-interMedium text-dark-gray pb-2"
-          >Montly visits <span class="text-xs italic">Required</span></label
-        >
-        <input
-          type="text"
-          name="montly_visits"
-          class="formInput bg-gray-50 border border-dark-gray text-gray-900 text-sm rounded block w-full p-2.5"
-          placeholder="e.g 10 000"
-        />
-        <div id="form-error-visits" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
-      </div>
-      <div class="mb-3">
-        <label for="title" class="block text-sm font-interMedium text-dark-gray pb-2"
-          >Jobtitle <span class="text-xs italic">optional</span></label
-        >
-        <input
-          type="text"
-          name="title"
-          class="formInput bg-gray-50 border border-dark-gray text-gray-900 text-sm rounded block w-full p-2.5"
-          placeholder="e.g Head of e-commerce"
-        />
-        <div id="form-error-title" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="company" class="block text-sm font-interMedium text-dark-gray pb-2"
-          >Company <span class="text-xs italic">optional</span></label
-        >
-        <input
-          type="text"
-          name="company"
-          class="formInput bg-gray-50 border border-dark-gray text-gray-900 text-sm rounded block w-full p-2.5"
-          placeholder="e.g Tagglo"
-        />
-        <div id="form-error-company" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
-      </div>
-
-      <button
-        type="submit"
-        class="text-white bg-black font-interBold text-lg rounded-lg w-full mt-6 px-6 py-4 text-center"
-        >Submit</button
+  <div class="form-start">
+    <div class="font-interMedium text-xl pt-6 pb-4">Choose product</div>
+    <div class="button-holder rounded-lg border border-black grid grid-cols-3 gap-0">
+      <button data-plans="free" class="plan-buttons p-3 text-center rounded-l-lg">Free</button>
+      <button data-plans="professional" class="plan-buttons p-3 border-l border-black text-center"
+        >Professional</button
       >
-    </form>
+      <button
+        data-plans="enterprise"
+        class="plan-buttons p-3 border-l border-black text-center rounded-r-lg">Enterprise</button
+      >
+    </div>
+    <div id="form-error-plan" class="error text-red-500 hidden text-xs pl-1 pt-1 text-center">
+      Error
+    </div>
+    <div>
+      <div class="font-interMedium text-xl pt-6 pb-4">Your details</div>
+      <form id="signup-form" method="POST">
+        <div class="mb-3">
+          <label for="name" class="block text-sm font-interMedium text-black pb-2"
+            >Name <span class="text-xs italic">Required</span></label
+          >
+          <input
+            type="text"
+            name="name"
+            class="formInput bg-gray-50 border border-black text-black text-sm rounded block w-full p-2.5"
+            placeholder="e.g Elon Musk"
+          />
+          <div id="form-error-name" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="block text-sm font-interMedium text-black pb-2"
+            >Email <span class="text-xs italic">Required</span></label
+          >
+          <input
+            type="text"
+            name="email"
+            class="formInput bg-gray-50 border border-black text-black text-sm rounded block w-full p-2.5"
+            placeholder="e.g elon@tagglo.co"
+          />
+          <div id="form-error-email" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
+        </div>
+        <div class="mb-3">
+          <label for="website" class="block text-sm font-interMedium text-black pb-2"
+            >Website <span class="text-xs italic">Required</span></label
+          >
+          <input
+            type="text"
+            name="website"
+            class="formInput bg-gray-50 border border-black text-black text-sm rounded block w-full p-2.5"
+            placeholder="e.g tagglo.co"
+          />
+          <div id="form-error-website" class="error text-red-500 hidden text-xs pl-1 pt-1">
+            Error
+          </div>
+        </div>
+        <div id="visits" class="mb-3 hidden">
+          <label for="visits" class="block text-sm font-interMedium text-black pb-2"
+            >Montly visits <span class="text-xs italic">Required</span></label
+          >
+          <input
+            type="text"
+            name="montly_visits"
+            class="formInput bg-gray-50 border border-black text-black text-sm rounded block w-full p-2.5"
+            placeholder="e.g 10 000"
+          />
+          <div id="form-error-visits" class="error text-red-500 hidden text-xs pl-1 pt-1">
+            Error
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="title" class="block text-sm font-interMedium text-black pb-2"
+            >Jobtitle <span class="text-xs italic">optional</span></label
+          >
+          <input
+            type="text"
+            name="title"
+            class="formInput bg-gray-50 border border-black text-black text-sm rounded block w-full p-2.5"
+            placeholder="e.g Head of e-commerce"
+          />
+          <div id="form-error-title" class="error text-red-500 hidden text-xs pl-1 pt-1">Error</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="company" class="block text-sm font-interMedium text-black pb-2"
+            >Company <span class="text-xs italic">optional</span></label
+          >
+          <input
+            type="text"
+            name="company"
+            class="formInput bg-gray-50 border border-black text-black text-sm rounded block w-full p-2.5"
+            placeholder="e.g Tagglo"
+          />
+          <div id="form-error-company" class="error text-red-500 hidden text-xs pl-1 pt-1">
+            Error
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="text-white bg-black font-interBold text-lg rounded-lg w-full mt-6 px-6 py-4 text-center"
+          >Submit</button
+        >
+      </form>
+    </div>
+  </div>
+  <div class="form-exist py-6" style="display: none">
+    <h2 class="font-interBold text-5xl text-center">Ops!</h2>
+    <p class="text-center pt-6">
+      It seams that you allready have an account<br /> with us. Please login to your <a
+        class="text-blue-500 underline"
+        href="portal.tagglo.co">account</a
+      >
+    </p>
+  </div>
+  <div class="form-success py-6" style="display: none">
+    <h2 class="font-interBold text-5xl text-center">Thank you for your interest in our tool!</h2>
+    <p class="text-center pt-6">
+      We've received your request and will<br /> reach out to you soon via email!
+    </p>
   </div>
 </div>
 
-<script is:inline>
-window.addEventListener("storage", (event) => {
-  if (
-    event.newValue == "free" ||
-    event.newValue == "professional" ||
-    event.newValue == "enterprise"
-  ) {
-    const button = document.querySelector(`[data-plans="${event.newValue}"]`);
-    button ? button.classList.add("active") : null;
+<script>
+  import validator from "validator";
 
-    if (event.newValue == "enterprise") {
-      const visits = document.querySelector("#visits");
-      visits ? (visits.style.display = "block") : null;
+  const errorPlan = document.querySelector("#form-error-plan") as HTMLElement;
+  const errorName = document.querySelector("#form-error-name") as HTMLElement;
+  const errorEmail = document.querySelector("#form-error-email") as HTMLElement;
+  const errorWebsite = document.querySelector("#form-error-website") as HTMLElement;
+  const errorTitle = document.querySelector("#form-error-title") as HTMLElement;
+  const errorCompany = document.querySelector("#form-error-company") as HTMLElement;
+  const errorVisits = document.querySelector("#form-error-visits") as HTMLElement;
+
+  const formStart = document.querySelector(".form-start") as HTMLElement;
+  const formSuccess = document.querySelector(".form-success") as HTMLElement;
+  const formExist = document.querySelector(".form-exist") as HTMLElement;
+
+  window.addEventListener("storage", (event) => {
+    if (
+      event.newValue == "free" ||
+      event.newValue == "professional" ||
+      event.newValue == "enterprise"
+    ) {
+      const button = document.querySelector(`[data-plans="${event.newValue}"]`);
+      button ? button.classList.add("active") : null;
+
+      if (event.newValue == "enterprise") {
+        const visits = document.querySelector("#visits") as HTMLElement;
+        visits ? (visits.style.display = "block") : null;
+      }
+    } else {
+      const buttons = document.querySelectorAll(".plan-buttons");
+      buttons.forEach((button) => {
+        button.classList.remove("active");
+      });
     }
-  } else {
-    const buttons = document.querySelectorAll(".plan-buttons");
-    buttons.forEach((button) => {
-      button.classList.remove("active");
+  });
+
+  const closeOverlayButton = document.querySelector(".close-overlay") as HTMLElement;
+  closeOverlayButton.addEventListener("click", () => signUpOverlayClose());
+
+  function signUpOverlayClose() {
+    const signUpOverlay = document.getElementById("signup-overlay");
+
+    signUpOverlay ? (signUpOverlay.style.display = "none") : null;
+
+    const body = document.querySelector("body") as HTMLElement;
+    body.classList.remove("overflow-hidden");
+
+    const allElements = document.querySelectorAll(".plan-buttons");
+    allElements.forEach((element) => {
+      element.classList.remove("active");
+    });
+
+    const allErrorElements = document.querySelectorAll(".error") as NodeListOf<HTMLElement>;
+    allErrorElements.forEach((element) => {
+      element.style.display = "none";
+    });
+
+    formExist.style.display = "none";
+    formStart.style.display = "block";
+    formSuccess.style.display = "none";
+  }
+
+  const btns = document.querySelectorAll(".plan-buttons");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function (this: any) {
+      var current = document.querySelectorAll(".active") as NodeListOf<HTMLElement>;
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(" active", "");
+      }
+      this.className += " active";
+      localStorage.setItem("plan", this.dataset.plans);
+
+      if (this.dataset.plans == "enterprise") {
+        const visits = document.querySelector("#visits") as HTMLElement;
+        visits ? (visits.style.display = "block") : null;
+      } else {
+        const visits = document.querySelector("#visits") as HTMLElement;
+        visits ? (visits.style.display = "none") : null;
+      }
+
+      const planErrorElements = document.querySelector("#form-error-plan") as HTMLElement;
+      planErrorElements.style.display = "none";
     });
   }
-});
 
-const closeOverlayButton = document.querySelector(".close-overlay");
-closeOverlayButton.addEventListener("click", () => signUpOverlayClose());
+  const inputs = document.querySelectorAll("input");
+  inputs.forEach((input) => {
+    input.addEventListener("focus", () => {
+      const error = document.querySelector(`#form-error-${input.name}`) as HTMLElement;
 
-function signUpOverlayClose() {
-  const signUpOverlay = document.getElementById("signup-overlay");
-
-  signUpOverlay ? (signUpOverlay.style.display = "none") : null;
-
-  const body = document.querySelector("body");
-  body.classList.remove("overflow-hidden");
-
-  const allElements = document.querySelectorAll(".plan-buttons");
-  allElements.forEach((element) => {
-    element.classList.remove("active");
+      error ? (error.style.display = "none") : null;
+    });
   });
 
-  const allErrorElements = document.querySelectorAll(".error");
-  allErrorElements.forEach((element) => {
-    element.style.display = "none";
-  });
-}
+  const form = document.querySelector("#signup-form") as HTMLFormElement;
+  form.addEventListener("submit", onFormSubmit);
 
-const btns = document.querySelectorAll(".plan-buttons");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    var current = document.querySelectorAll(".active");
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
-    }
-    this.className += " active";
-    localStorage.setItem("plan", this.dataset.plans);
+  function onFormSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-    if (this.dataset.plans == "enterprise") {
-      const visits = document.querySelector("#visits");
-      visits ? (visits.style.display = "block") : null;
-    } else {
-      const visits = document.querySelector("#visits");
-      visits ? (visits.style.display = "none") : null;
-    }
-
-    const planErrorElements = document.querySelectorAll("#form-error-plan");
-    planErrorElements.style.display = "none";
-  });
-}
-
-const inputs = document.querySelectorAll("input");
-inputs.forEach((input) => {
-  input.addEventListener("focus", () => {
-    const error = document.querySelector(`#form-error-${input.name}`);
-
-    error ? (error.style.display = "none") : null;
-  });
-});
-
-const form = document.querySelector("#signup-form");
-form.addEventListener("submit", onFormSubmit);
-
-function onFormSubmit(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-
-  const errorPlan = document.querySelector("#form-error-plan");
-  const errorName = document.querySelector("#form-error-name");
-  const errorEmail = document.querySelector("#form-error-email");
-  const errorWebsite = document.querySelector("#form-error-website");
-  const errorTitle = document.querySelector("#form-error-title");
-  const errorCompany = document.querySelector("#form-error-company");
-  const errorVisits = document.querySelector("#form-error-visits");
-
-  if (errorPlan && errorName && errorEmail) {
-    const plan = localStorage.getItem("plan");
-    //Form validation
-    if (plan == "null") {
-      errorPlan.style.display = "block";
-      errorPlan.innerHTML = "Please select a plan";
-      hasError = true;
-    }
-    if (data.name == "" || data.name == null || data.name == undefined || data.name.length < 2) {
-      console.log(data.name);
-      errorName.style.display = "block";
-      errorName.innerHTML = "Please enter your name";
-      return;
-    }
-    if (
-      data.email == "" ||
-      data.email == null ||
-      data.email == undefined ||
-      data.email.length < 3
-    ) {
-      errorEmail.style.display = "block";
-      errorEmail.innerHTML = "Please enter your email";
-      return;
-    }
-    if (
-      data.website == "" ||
-      data.website == null ||
-      data.website == undefined ||
-      data.website.length < 3
-    ) {
-      errorWebsite.style.display = "block";
-      errorWebsite.innerHTML = "Please enter your website";
-      return;
-    }
-    // if (
-    //   data.title == "" ||
-    //   data.title == null ||
-    //   data.title == undefined ||
-    //   data.title ||
-    //   data.title.length < 3
-    // ) {
-    //   errorTitle.style.display = "block";
-    //   errorTitle.innerHTML = "Please enter your job title";
-    //   hasError = true;
-    // }
-    // if (
-    //   data.company == "" ||
-    //   data.company == null ||
-    //   data.company == undefined ||
-    //   data.company ||
-    //   data.company.length < 3
-    // ) {
-    //   errorCompany.style.display = "block";
-    //   errorCompany.innerHTML = "Please enter your company";
-    //   hasError = true;
-    // }
-    if (plan == "enterprise") {
-      if (
-        data.montly_visits == "" ||
-        data.montly_visits == null ||
-        data.montly_visits == undefined ||
-        data.montly_visits.length < 3
-      ) {
-        errorVisits.style.display = "block";
-        errorVisits.innerHTML = "Please enter website monthly visits";
+    if (errorPlan && errorName && errorEmail) {
+      const plan = localStorage.getItem("plan");
+      //Form validation
+      if (plan == "null") {
+        errorPlan.style.display = "block";
+        errorPlan.innerHTML = "Please select a plan";
+      }
+      if (data.name == "" || data.name == null || data.name == undefined || data.name.length < 2) {
+        console.log(data.name);
+        errorName.style.display = "block";
+        errorName.innerHTML = "Please enter your name";
         return;
       }
+      if (data.email == "" || data.email == null || data.email == undefined) {
+        errorEmail.style.display = "block";
+        errorEmail.innerHTML = "Please enter your email";
+        return;
+      }
+
+      if (data.email.length < 3) {
+        errorEmail.style.display = "block";
+        errorEmail.innerHTML = "Please enter more than 2 characters";
+        return;
+      }
+      if (validator.isEmail(data.email) === false) {
+        errorEmail.style.display = "block";
+        errorEmail.innerHTML = "Please enter a valid email";
+        return;
+      }
+
+      if (
+        data.website == "" ||
+        data.website == null ||
+        data.website == undefined ||
+        data.website.length < 3
+      ) {
+        errorWebsite.style.display = "block";
+        errorWebsite.innerHTML = "Please enter your website";
+        return;
+      }
+      // if (
+      //   data.title == "" ||
+      //   data.title == null ||
+      //   data.title == undefined ||
+      //   data.title ||
+      //   data.title.length < 3
+      // ) {
+      //   errorTitle.style.display = "block";
+      //   errorTitle.innerHTML = "Please enter your job title";
+      //   hasError = true;
+      // }
+      // if (
+      //   data.company == "" ||
+      //   data.company == null ||
+      //   data.company == undefined ||
+      //   data.company ||
+      //   data.company.length < 3
+      // ) {
+      //   errorCompany.style.display = "block";
+      //   errorCompany.innerHTML = "Please enter your company";
+      //   hasError = true;
+      // }
+      if (plan == "enterprise") {
+        if (
+          data.montly_visits == "" ||
+          data.montly_visits == null ||
+          data.montly_visits == undefined ||
+          data.montly_visits.length < 3
+        ) {
+          errorVisits.style.display = "block";
+          errorVisits.innerHTML = "Please enter website monthly visits";
+          return;
+        }
+      }
     }
+    const backendUrl = import.meta.env.PUBLIC_SITE_BACKEND_URL + "/saveClientData";
+    console.log(backendUrl, data);
+
+    const postData = {
+      name: data.name,
+      email: data.email,
+      website: data.website,
+      title: data.title,
+      company: data.company,
+      plan: localStorage.getItem("plan"),
+      montly_visits: data.montly_visits,
+    };
+
+    fetch(backendUrl, {
+      method: "post",
+      body: JSON.stringify(postData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(function (response) {
+      if (response.status == 200) {
+        formSuccess.style.display = "block";
+        formStart.style.display = "none";
+        return;
+      }
+      if (response.status == 422) {
+        formExist.style.display = "block";
+        formStart.style.display = "none";
+        return;
+      }
+    });
   }
-  const backendUrl = import.meta.env.VITE_SITE_BACKEND_URL;
-  console.log(backendUrl, data);
-}
 </script>
 
 <style lang="less">

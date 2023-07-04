@@ -3,27 +3,28 @@ import PricingCard from "../PricingCard.astro";
 const { data } = Astro.props;
 ---
 
-<div class="py-24">
+<div id="pricing" class="py-12 md:py-24">
   <div class="content-wrapper">
     <div class="content">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="font-interBold text-center text-2xl">Pricing</div>
-        <h2 class="font-interBold text-6xl text-center pt-6 pb-24">{data.title}</h2>
-
-        <div class="flex flex-col md:flex-row justify-center items-center" style="height:800px;">
+      <div class="py-8 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="font-interBold text-black text-center text-base md:text-2xl">Pricing</div>
+        <h2 class="font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24">
+          {data.title}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
           <!-- Pricing Card -->
           <div
-            class="price-card border md:border-0 md:border-t-2 md:border-b-2 md:border-l-2 rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl"
+            class="price-card side border md:border-0 md:border-t-2 md:border-b-2 md:border-l-2 rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl"
           >
             <PricingCard planType="free" plans={data.plans} />
           </div>
-          <div class="price-card h-full border-2 rounded-xl">
+          <div style="height:750px" class="price-card border-2 rounded-xl">
             <PricingCard planType="professional" plans={data.plans} />
           </div>
           <div
-            class="price-card border md:border-0 md:border-t-2 md:border-b-2 md:border-r-2 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl"
+            class="price-card side border md:border-0 md:border-t-2 md:border-b-2 md:border-r-2 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl"
           >
-            <PricingCard planType="enterprice" plans={data.plans} />
+            <PricingCard planType="enterprise" plans={data.plans} />
           </div>
         </div>
       </div>
@@ -34,5 +35,13 @@ const { data } = Astro.props;
 <style lang="less">
   .price-card {
     @apply flex w-full flex-col p-6 mx-auto max-w-lg  text-center text-gray-900 bg-desert-medium border-dark-gray shadow-lg mb-6 md:mb-0;
+    &.side {
+      height: 650px;
+      margin-top: 50px;
+      @media screen and (max-width: 500px) {
+        height: 550px;
+        margin-top: 0;
+      }
+    }
   }
 </style>

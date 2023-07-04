@@ -4,11 +4,13 @@ import { marked } from "marked";
 const { data } = Astro.props;
 ---
 
-<div class="py-24">
+<div id="faq" class="py-12 md:py-24">
   <div class="content-wrapper">
     <div class="content">
-      <div class="font-interBold text-center text-2xl">Faq</div>
-      <h2 class="font-interBold text-6xl text-center pt-6 pb-24">{data.title}</h2>
+      <div class="font-interBold text-black text-center text-base md:text-2xl">Faq</div>
+      <h2 class="font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24">
+        {data.title}
+      </h2>
       <div class="collapse-content border-t">
         {
           data.faqs.map((item: any) => (
@@ -20,7 +22,7 @@ const { data } = Astro.props;
                 </div>
                 <div class="faq-content max-h-0 overflow-hidden">
                   <div
-                    class="inner-content border-b px-4 pt-4 pb-8 text-sm font-interRegular"
+                    class="inner-content border-b px-4 pt-4 pb-8 font-interRegular text-dark-gray"
                     set:html={marked.parse(item.answer)}
                   />
                 </div>

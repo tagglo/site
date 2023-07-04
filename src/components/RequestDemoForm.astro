@@ -1,18 +1,101 @@
 ---
+const { formId, buttonText } = Astro.props;
 ---
 
-<div class="grid marker:grid-cols-1 md:grid-cols-2 gap-4">
-  <div class="text-center">
-    <input
-      type="text"
-      name="email"
-      class="formInput border-2 bg-gray-50 border-dark-gray text-gray-900 rounded-lg block w-full p-2.5 font-interRegular text-2xl"
-      placeholder="Email adress"
-    />
+<astro-form-request data-formid={formId}></astro-form-request>
+<form id={formId} data-formId={formId} method="POST">
+  <div class="grid marker:grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="text-center">
+      <input
+        id={`${formId}-email`}
+        type="text"
+        name="email"
+        class="formRequestInput h-14 border-2 bg-gray-50 border-dark-gray text-gray-900 rounded-lg block w-full p-2.5 font-interRegular text-base md:text-lg"
+        placeholder="Email adress"
+      />
+    </div>
+    <button
+      type="submit"
+      class="request-demo-button h-14 text-center bg-black text-white rounded-lg flex justify-center items-center font-interBold text-lg md:text-lg"
+    >
+      {buttonText}
+    </button>
   </div>
-  <button
-    class="text-center bg-black text-white rounded-lg flex justify-center items-center font-interBold text-2xl"
-  >
-    Request a free demo
-  </button>
-</div>
+  <div id={`${formId}-error-email`} class="error text-red-500 hidden text-xs pl-2 pt-1">Error</div>
+  <div id={`${formId}-success-email`} class="error text-green-500 hidden text-xs pl-2 pt-1">
+    Thanks for your request
+  </div>
+</form>
+
+<script>
+  import validator from "validator";
+  class AstroFormRequest extends HTMLElement {
+    constructor() {
+      super();
+
+      const formId = this.dataset.formid;
+
+      const errorEmail = document.querySelector(`#${formId}-error-email`) as HTMLDivElement;
+      const successEmail = document.querySelector(`#${formId}-success-email`) as HTMLDivElement;
+      const input = document.querySelector(`#${formId}-email`) as HTMLInputElement;
+
+      input.addEventListener("focus", () => {
+        errorEmail ? (errorEmail.style.display = "none") : null;
+      });
+
+      // Read the message from the data attribute.
+
+      const form = document.querySelector(`#${formId}`) as HTMLFormElement;
+      form.addEventListener("submit", onFormSubmit);
+
+      function onFormSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        const data = Object.fromEntries(formData.entries());
+        console.log("form submitted", formId, data);
+
+        if (data.email == "" || data.email == null || data.email == undefined) {
+          errorEmail.style.display = "block";
+          errorEmail.innerHTML = "Please enter your email";
+          return;
+        }
+
+        if (data.email.length < 3) {
+          errorEmail.style.display = "block";
+          errorEmail.innerHTML = "Please enter more than 2 characters";
+          return;
+        }
+        if (validator.isEmail(data.email) === false) {
+          errorEmail.style.display = "block";
+          errorEmail.innerHTML = "Please enter a valid email";
+          return;
+        }
+        const backendUrl = import.meta.env.PUBLIC_SITE_BACKEND_URL + "/requestDemo";
+        const postData = {
+          email: data.email,
+        };
+
+        console.log(backendUrl, postData);
+
+        fetch(backendUrl, {
+          method: "post",
+          body: JSON.stringify(postData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then(function (response) {
+          if (response.status == 200) {
+            successEmail.style.display = "block";
+          } else {
+            errorEmail.style.display = "block";
+            errorEmail.innerHTML = "Something went wrong, please try again later";
+          }
+          return;
+        });
+      }
+    }
+  }
+
+  customElements.define("astro-form-request", AstroFormRequest);
+</script>

@@ -1,6 +1,6 @@
 // https://astro.build/config
 import compress from 'astro-compress'
-import { defineConfig } from 'astro/config'
+import {defineConfig} from 'astro/config'
 import download from 'download'
 import fs from 'fs'
 import image from '@astrojs/image'

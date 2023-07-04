@@ -166,7 +166,7 @@ if (pageContent.frontmatter.faq) {
     </style>
   </head>
 
-  <body class="antialiased font-regular text-black text-base md:text-lg">
+  <body id="start" class="antialiased font-regular text-black text-base md:text-lg">
     <Header pageContent={pageContent} />
 
     <slot />
@@ -175,18 +175,16 @@ if (pageContent.frontmatter.faq) {
 
     <style lang="less" is:global>
       body {
-        @apply text-black font-interMedium bg-desert;
+        @apply font-interMedium bg-desert;
+        color: #333;
+      }
+      html {
+        scroll-behavior: smooth;
       }
       * {
         -ms-touch-action: manipulation;
         touch-action: manipulation;
         -webkit-font-smoothing: antialiased;
-      }
-
-      :root {
-        --menu-break-point: 1080px;
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
       }
 
       *:focus {
@@ -198,9 +196,6 @@ if (pageContent.frontmatter.faq) {
         max-width: 1440px;
         padding: 0 15px;
         margin: 0 auto;
-        // @media screen and (max-width: 1100px) {
-        //   @apply flex-col-reverse;
-        // }
 
         .content {
           width: 100%;

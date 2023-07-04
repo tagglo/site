@@ -8,7 +8,7 @@ loginButtonText: Login
 signUpButton: Sign up
 heroSection:
   pretitle: "Stay ahead"
-  title: "with automated<br /> tag detection"
+  title: "with automated tag detection"
   subtitle: "Retrieve failed tag data and supercharge your marketing efforts today – with Tagglo."
   buttonText: "Request a free demo"
 footer:
@@ -95,8 +95,8 @@ pricingSection:
         buttonText: Sign up for professional,
       },
       {
-        type: enterprice,
-        title: Enterprice,
+        type: enterprise,
+        title: Enterprise,
         price: We have to negotiate...,
         description: "Everything in Professional and more.",
         features:

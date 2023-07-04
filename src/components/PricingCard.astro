@@ -9,11 +9,11 @@ const plan = plans.find((plan) => {
 });
 ---
 
-<div class="font-interBold text-2xl pb-3">{plan.title}</div>
-<div>{plan.price}</div>
-<div class="py-6" set:html={plan.description} />
+<div class="font-interMedium text-2xl pb-3">{plan.title}</div>
+<div class="font-interRegular">{plan.price}</div>
+<div class="py-6 font-interRegular" set:html={plan.description} />
 
-<ul class="price-list text-left pb-12 flex-grow">
+<ul class="price-list text-left pb-12 flex-grow font-interRegular">
   {
     plan.features.map((feature) => {
       return <li class={feature.active ? "" : "inactive"}>{feature.text}</li>;
@@ -21,7 +21,7 @@ const plan = plans.find((plan) => {
   }
 </ul>
 
-<SignUpButtonPricing buttonText="Use for free" plan="free" />
+<SignUpButtonPricing buttonText={plan.buttonText} plan={plan.type} />
 
 <style lang="less">
   .price-list {

@@ -10,9 +10,18 @@ const { pageContent } = Astro.props;
   <div class="content-wrapper">
     <div class="content">
       <div class="flex justify-between items-center">
-        <div class="flex-grow">
+        <div class="flex flex-grow items-center">
           <a href="/"><img src={Logo.src} alt="Tagglo logo" /></a>
+          <div class="nav-links pl-3">
+            <a href="#features">Feature</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#demo">Request demo</a>
+            <a href="#faq">FAQ</a>
+            <a href="/blog">Blog</a>
+          </div>
         </div>
+
         <LoginButton buttonText={pageContent.frontmatter.loginButtonText} />
         <SignUpButton buttonText={pageContent.frontmatter.signUpButton} />
       </div>
@@ -35,3 +44,14 @@ window.addEventListener("scroll", () => {
   }
 });
 </script>
+
+<style lang="less">
+  .nav-links {
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+    a {
+      padding-left: 2rem;
+    }
+  }
+</style>
