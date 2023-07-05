@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
-  branch: develop # Branch to update (optional; defaults to master)
+  branch: master # Branch to update (optional; defaults to master)
+  repo: tagglo/site
 
 
 media_folder: astro/public/img

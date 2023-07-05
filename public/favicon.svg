@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.4.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!-- Generator: Adobe Illustrator 27.6.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 525.3 450.6" style="enable-background:new 0 0 525.3 450.6;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#1F1F1F;}
-	.st1{fill:#4A39F6;}
-	.st2{opacity:0.2;fill:#FFFFFF;}
+	.st0{fill:#333333;}
+	.st1{fill:#F9E6AE;}
 </style>
-<g>
-	<rect x="126.6" y="-0.6" class="st0" width="105.7" height="451.2"/>
-	
-		<rect x="224.8" y="256.5" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 675.4687 130.1187)" class="st1" width="95.7" height="292.6"/>
-	<rect x="126.6" y="355" class="st2" width="105.7" height="95.7"/>
-</g>
+<path class="st0" d="M241.6,0.8h42.1c7.7,0,14,6.3,14,14v420.9c0,7.7-6.3,14-14,14h-42.1c-7.7,0-14-6.3-14-14V14.8
+	C227.6,7.1,233.9,0.8,241.6,0.8z"/>
+<path class="st0" d="M346.8,162.2h35.1c7.7,0,14,6.3,14,14v70.2c0,7.7-6.3,14-14,14h-35.1c-7.7,0-14-6.3-14-14v-70.2
+	C332.8,168.4,339.1,162.2,346.8,162.2z"/>
+<path class="st0" d="M143.4,92h35.1c7.7,0,14,6.3,14,14v105.2c0,7.7-6.3,14-14,14h-35.1c-7.7,0-14-6.3-14-14V106
+	C129.4,98.3,135.6,92,143.4,92z"/>
+<rect class="st1" width="525.3" height="449.8"/>
+<path class="st0" d="M246.7,33.7h31.9c8.8,0,15.9,6.1,15.9,13.7v355c0,7.5-7.1,13.7-15.9,13.7h-31.9c-8.8,0-15.9-6.1-15.9-13.7v-355
+	C230.8,39.8,237.9,33.7,246.7,33.7z"/>
+<path class="st0" d="M326.4,170.3h31.9c8.8,0,15.9,6.1,15.9,13.7v54.6c0,7.5-7.1,13.7-15.9,13.7h-31.9c-8.8,0-15.9-6.1-15.9-13.7
+	v-54.6C310.5,176.4,317.6,170.3,326.4,170.3z"/>
+<path class="st0" d="M167,115.7h31.9c8.8,0,15.9,6.1,15.9,13.7v81.9c0,7.5-7.1,13.7-15.9,13.7H167c-8.8,0-15.9-6.1-15.9-13.7v-81.9
+	C151,121.8,158.2,115.7,167,115.7z"/>
 </svg>
