@@ -20,7 +20,7 @@ const { pageContent } = Astro.props;
           <div class="hidden md:block pb-3">
             <a href="/"><img src={Logo.src} alt="Tagglo logo" /></a>
           </div>
-          <div class="text-sm max-w-md" set:html={pageContent.frontmatter.footer.text} />
+          <div class="text-sm max-w-md text-left" set:html={pageContent.frontmatter.footer.text} />
         </div>
         <div class="font-interRegular text-sm order-1 md:order-2 pb-12 md:pb-0">
           <a href="/terms" class="mr-6">Terms</a><a href="/privacy" class="mr-6">Privacy</a>
