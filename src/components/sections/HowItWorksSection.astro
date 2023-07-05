@@ -1,15 +1,16 @@
 ---
+import HowItWorks from "../../assets/svg/how-it-works.svg";
 const { data } = Astro.props;
 ---
 
-<div class="py-12 md:py-24">
+<div id="howitworks" class="py-12 md:py-24">
   <div class="content-wrapper">
     <div class="content">
-      <div class="font-interBold tewxt-black text-center text-base md:text-2xll">How it works</div>
-      <h2 class="font-interBold tewxt-black text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24">
+      <div class="section-heading">{data.heading}</div>
+      <h2 class="section-title">
         {data.title}
       </h2>
-      <div class="flex justify-center">Image</div>
+      <img src={HowItWorks.src} alt="" />
     </div>
   </div>
 </div>

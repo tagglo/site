@@ -23,6 +23,7 @@
     "dom-parser": "^0.1.6",
     "download": "^8.0.0",
     "fs": "^0.0.1-security",
+    "klaro": "^0.7.18",
     "markdown-contents": "^1.0.11",
     "rimraf": "^4.1.1",
     "swiper": "^9.0.5",

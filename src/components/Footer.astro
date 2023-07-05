@@ -23,7 +23,12 @@ const { pageContent } = Astro.props;
           <div class="text-sm max-w-md" set:html={pageContent.frontmatter.footer.text} />
         </div>
         <div class="font-interRegular text-sm order-1 md:order-2 pb-12 md:pb-0">
-          <a href="/terms" class="mr-6">Terms</a><a href="/privacy">Privacy</a>
+          <a href="/terms" class="mr-6">Terms</a><a href="/privacy" class="mr-6">Privacy</a>
+          <a style="cursor:pointer" onclick="
+          return klaro.show();
+          "
+            >Consent settings</a
+          >
         </div>
       </div>
       <div class="pb-6 text-center md:text-right text-xs">

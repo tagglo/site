@@ -1,14 +1,110 @@
 ---
+import summary from "../../assets/svg/summary.svg";
+import dashboard from "../../assets/svg/dashboard.svg";
+import dataRecovery from "../../assets/svg/data-recover.svg";
+
 const { data } = Astro.props;
 ---
 
-<div id="features" class="py-12 md:py-24 dunes-right">
+<div id="features" class="py-12 md:py-0 md:pt-24 md:pb-48 dunes-right">
   <div class="content-wrapper">
     <div class="content">
-      <div class="font-interBold text-black text-center text-base md:text-2xl">Features</div>
-      <h2 class="font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24">
+      <div class="section-heading">{data.heading}</div>
+      <h2 class="section-title">
         {data.title}
       </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex justify-center items-center">
+          <div class="stacked">
+            <img class="stacked-images" src={summary.src} alt="Daily Summary" />
+            <img class="stacked-images" src={dashboard.src} alt="Check the dashboard" />
+            <img class="stacked-images" src={dataRecovery.src} alt="Data recovery" />
+          </div>
+        </div>
+        <div class="flex justify-center items-center w-full">
+          <div class="w-full">
+            {
+              data.features.map((feature, index) => (
+                <>
+                  <div data-index={index} class="feature-buttons">
+                    <div class="title">{feature.title}</div>
+                    <div class="inner">{feature.description}</div>
+                  </div>
+                </>
+              ))
+            }
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  const stackedImages = document.querySelectorAll(".stacked-images");
+
+  const btns = document.querySelectorAll(".feature-buttons");
+  btns[0].className += " active";
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function (this: any) {
+      var current = document.querySelectorAll(".active") as NodeListOf<HTMLElement>;
+      current.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      this.className += " active";
+
+      stackedImages.forEach((image) => {
+        image.classList.remove("active");
+      });
+
+      stackedImages[this.dataset.index].classList.add("active");
+    });
+  }
+</script>
+
+<style lang="less">
+  .stacked {
+    position: relative;
+    width: 100%;
+    min-height: 20rem;
+    img {
+      position: absolute;
+      width: 75%;
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+        z-index: 3;
+      }
+      &:nth-child(2) {
+        top: 3rem;
+        left: 3rem;
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        top: 6rem;
+        left: 6rem;
+        z-index: 1;
+      }
+      &.active {
+        z-index: 4;
+      }
+    }
+  }
+  .feature-buttons {
+    @apply text-left border-2 border-black rounded-lg p-3 mb-3 w-full;
+    .title {
+      @apply font-interBold;
+    }
+    .inner {
+      @apply font-interRegular;
+      display: none;
+    }
+    &.active {
+      @apply bg-green-light shadow-lg;
+      .inner {
+        display: block;
+      }
+    }
+  }
+</style>

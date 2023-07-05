@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro";
 import "animate.css";
 import { Schema } from "astro-seo-schema";
 import SignUpOverlay from "../components/SignUpOverlay.astro";
+import "../assets/css/fonts.less";
+import "../assets/css/klaro.less";
 
 const { pageContent } = Astro.props;
 
@@ -161,15 +163,44 @@ if (pageContent.frontmatter.faq) {
         />
       ) : null
     }
-    <style lang="less">
-      @import url("../assets/css/fonts.less");
-    </style>
+
+    <!-- Google Tag Manager -->
+    <script data-name="google-tag-manager">
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T9P3S58");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+      import * as Klaro from "klaro/dist/klaro-no-css";
+      import { klaroConfig } from "../assets/js/klaro-config";
+      window.klaro = Klaro;
+      window.klaroConfig = klaroConfig;
+      Klaro.setup(klaroConfig);
+    </script>
   </head>
 
   <body id="start" class="antialiased font-regular text-black text-base md:text-lg">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        data-name="google-tag-manager"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T9P3S58"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <Header pageContent={pageContent} />
-
-    <slot />
+    <main><slot /></main>
     <SignUpOverlay />
     <Footer pageContent={pageContent} />
 
@@ -202,6 +233,7 @@ if (pageContent.frontmatter.faq) {
           max-width: 1040px;
           margin: 0 auto;
           height: 100%;
+          text-align: center;
 
           .post-image {
             width: 100%;
@@ -229,6 +261,12 @@ if (pageContent.frontmatter.faq) {
         background-position: center bottom;
         background-size: contain;
         margin: 0 auto;
+      }
+      .section-heading {
+        @apply inline-block mx-auto font-interBold text-black text-center text-base md:text-2xl bg-green-light px-6 py-2;
+      }
+      .section-title {
+        @apply font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24;
       }
     </style>
   </body>

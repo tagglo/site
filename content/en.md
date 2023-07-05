@@ -16,10 +16,28 @@ footer:
     "We are a marketing tech company specializing in improving businesses marketing performance -
     and ensuring our clients are ahead of their day-to-day conversion tracking."
 howItWorksSection:
+  heading: How it works
   title: A tagline that summarizes our secret sauce
 featuresSection:
+  heading: "Features"
   title: "Retrieve failed tag data and get the metrics you need to succeed"
+  features:
+    [
+      {
+        title: "Get notified",
+        description: "Set up customized notification settings for your tags, ensuring that you never miss an important update.",
+      },
+      {
+        title: "Check the dashboard",
+        description: "Gain deeper insights into how your tags are performing, and make more informed decisions about how to optimize them for better results.",
+      },
+      {
+        title: "Recover lost data",
+        description: "Stay on top of any issues that may arise with your tags, and fix them before they become bigger problems.",
+      },
+    ]
 benefitsSection:
+  heading: "Benefits"
   title: What’s the best tag line for our benefits??
   cards:
     [
@@ -55,6 +73,7 @@ benefitsSection:
       },
     ]
 pricingSection:
+  heading: Pricing
   title: Some cool headline about our offerings
   plans:
     [
@@ -114,6 +133,7 @@ pricingSection:
       },
     ]
 faqSection:
+  heading: FAQ
   title: Frequently asked questions
   faqs:
     - title: How can Tagglo help my company's marketing investment?
@@ -157,6 +177,7 @@ faqSection:
     - title: Will I get real-time notifications when a tag fails to execute?
       answer: Detta behöver vi diskutera vidare innan vi kan besvara.
 requestDemoSection:
+  heading: Request a demo
   title: Are you an agency? Your feedback is important too
   buttonText: Request a free demo
 ---

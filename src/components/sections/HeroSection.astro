@@ -1,6 +1,6 @@
 ---
-import SupportedPlatforms from "../SupportedPlatforms.astro";
 import RequestDemoForm from "../RequestDemoForm.astro";
+import ChevronDown from "../../assets/svg/chevron-down.svg";
 
 const { data } = Astro.props;
 ---
@@ -18,7 +18,12 @@ const { data } = Astro.props;
       <p class="text-center text-black text-base md:text-2xl" set:html={data.subtitle} />
       <div class="reguest-demo-header max-w-2xl mx-auto pt-12">
         <RequestDemoForm formId="requestone" buttonText={data.buttonText} />
-        <div class="pt-24 flex justify-center">How it works</div>
+        <div class="pt-12 flex justify-center">
+          <a href="#howitworks">
+            How it works<br />
+            <img class="mx-auto" src={ChevronDown.src} alt="Down arrow" />
+          </a>
+        </div>
       </div>
     </div>
   </div>

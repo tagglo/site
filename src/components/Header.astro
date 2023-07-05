@@ -36,7 +36,7 @@ window.addEventListener("scroll", () => {
     if (window.scrollY >= 450) {
       header.classList.add("fixed", "animate__animated", "animate__slideInDown");
     }
-    if (window.scrollY == 0) {
+    if (window.scrollY <= 450) {
       //header.classList.remove('animate__slideInDown');
       header.classList.remove("fixed", "animate__animated", "animate__slideInDown");
       //header.classList.add('animate__slideInUp');

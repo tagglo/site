@@ -197,10 +197,10 @@ import close from "../assets/svg/close.svg";
   const btns = document.querySelectorAll(".plan-buttons");
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function (this: any) {
-      var current = document.querySelectorAll(".active") as NodeListOf<HTMLElement>;
-      if (current.length > 0) {
-        current[0].className = current[0].className.replace(" active", "");
-      }
+      const current = document.querySelectorAll(".active") as NodeListOf<HTMLElement>;
+      current.forEach((item) => {
+        item.classList.remove("active");
+      });
       this.className += " active";
       localStorage.setItem("plan", this.dataset.plans);
 
