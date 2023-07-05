@@ -1,0 +1,11 @@
+backend:
+  name: git-gateway
+  branch: develop # Branch to update (optional; defaults to master)
+
+
+media_folder: astro/public/img
+public_folder: /img
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
