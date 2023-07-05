@@ -1,1 +1,6 @@
 ---
+
+heading:
+title:
+subtitle:
+buttonText:

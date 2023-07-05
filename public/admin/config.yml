@@ -3,8 +3,16 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
   repo: tagglo/site
 
+# local_backend: true
+# url: http://localhost:8081/api/v1
+# allowed_hosts:
+#   - localhost:8081
+#   - localhost:8080
+#   - localhost:3000
 
-media_folder: astro/public/img
+publish_mode: editorial_workflow
+
+media_folder: public/img
 public_folder: /img
 slug:
   encoding: 'ascii'
@@ -15,14 +23,14 @@ collections:
   - name: "settings"
     label: "Settings"
     files:
-      - file: content/Settings.md
+      - file: src/content/Settings.md
         label: Settings
         name: Settings
         fields:
           - { label: Heading, name: heading, widget: markdown, minimal: true}
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
-    folder: "content/blog" # The path to the folder where the documents are stored
+    folder: "src/content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -34,7 +42,7 @@ collections:
   - name: Blocks
     label: blocks
     files:
-      - file: content/sections/Hero.md
+      - file: src/content/sections/Hero.md
         label: HeroSection
         name: HeroSection
         fields:
