@@ -23,7 +23,7 @@ console.log(process.env.NODE_ENV)
 
 // https://astro.build/config
 export default defineConfig({
-  base: process.env.NODE_ENV == 'production' ? '/tagglo' : '/',
+  base: '/',
   output: 'static',
   site: 'https://tagglo.co',
   integrations: [tailwind(), prefetch(), sitemap(), image(), compress()],
