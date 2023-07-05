@@ -27,16 +27,39 @@ collections:
         label: Settings
         name: Settings
         fields:
-          - { label: Heading, name: heading, widget: markdown, minimal: true}
+          - { label: Site Title, name: title, widget: "string", hint: "This is the site title" }
+          - { label: Login Button Text, name: loginButtonText, widget: "string", hint: "This is the login button text"  }
+          - { label: SingUp Button Text, name: signUpButton, widget: "string", hint: "This is the sign up button text" }
+          - { label: Meta Title, name: meta-title, widget: "string", hint: "This is the meta title"}
+          - { label: Meta Description, name: meta-description, widget: "string", hint: "This is the meta description"}
+          - {
+              label: 'Search Engine Indexed',
+              name: 'indexed',
+              widget: 'boolean',
+              default: true,
+              hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
+            }
+          - { label: Footer Text, name: footerText, widget: "markdown", minimal: true, hint: "This is the footer text" }
+          # - { label: Footer Term Text, name: termText, widget: "String", hint: "This is the footer Term link text" }
+          # - { label: Footer Privacy Text, name: privacyText, widget: "String", hint: "This is the footer Privacy link text" }
+          # - { label: Footer Consent Text, name: consentText, widget: "String", hint: "This is the footer Consent link text" }
+
+          
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {
+        label: 'Search Engine Indexed',
+        name: 'indexed',
+        widget: 'boolean',
+        default: true,
+        hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
+        }
       - {label: "Featured Image", name: "fatured_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}  
   - name: Blocks
@@ -46,7 +69,13 @@ collections:
         label: HeroSection
         name: HeroSection
         fields:
-          - { label: Heading, name: heading, widget: markdown, minimal: true}
-          - { label: Title, name: title, widget: 'markdown', minimal: true }
-          - { label: Subtitle, name: subtitle, widget: 'markdown', minimal: true }
-          - { label: Button Text, name: buttonText, widget: 'markdown', minimal: true }
+          - { label: Heading, name: heading, widget: string}
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: Button Text, name: buttonText, widget: string }
+      - file: src/content/sections/HowItWorks.md
+        label: HowItWorks
+        name: HowItWorks
+        fields:
+          - { label: Heading, name: heading, widget: string}
+          - { label: Title, name: title, widget: string }
