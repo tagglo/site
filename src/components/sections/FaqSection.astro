@@ -17,7 +17,9 @@ const { data } = Astro.props;
             <>
               <div class="faq">
                 <div class="faq-item cursor-pointer px-2 py-3 border-b  text-xl flex justify-between">
-                  <div class="title font-interMedium text-base md:text-xl">{item.title}</div>
+                  <div class="title font-interMedium text-base md:text-xl text-left">
+                    {item.title}
+                  </div>
                   <i class="close-button" />
                 </div>
                 <div class="faq-content max-h-0 overflow-hidden">

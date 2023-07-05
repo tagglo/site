@@ -12,6 +12,14 @@ slug:
   sanitize_replacement: '-'
 
 collections:
+  - name: "settings"
+    label: "Settings"
+    files:
+      - file: content/Settings.md
+        label: Settings
+        name: Settings
+        fields:
+          - { label: Heading, name: heading, widget: markdown, minimal: true}
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "content/blog" # The path to the folder where the documents are stored
@@ -23,3 +31,14 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "fatured_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}  
+  - name: Blocks
+    label: blocks
+    files:
+      - file: content/sections/Hero.md
+        label: HeroSection
+        name: HeroSection
+        fields:
+          - { label: Heading, name: heading, widget: markdown, minimal: true}
+          - { label: Title, name: title, widget: 'markdown', minimal: true }
+          - { label: Subtitle, name: subtitle, widget: 'markdown', minimal: true }
+          - { label: Button Text, name: buttonText, widget: 'markdown', minimal: true }

@@ -86,7 +86,18 @@ declare module 'astro:content' {
 	>;
 
 	const entryMap: {
-		
+		"blog": {
+},
+"sections": {
+"Hero.md": {
+  id: "Hero.md",
+  slug: "hero",
+  body: string,
+  collection: "sections",
+  data: any
+} & { render(): Render[".md"] },
+},
+
 	};
 
 	type ContentConfig = never;
