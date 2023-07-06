@@ -140,7 +140,6 @@ collections:
           hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
         }
       - {label: "Content", name: "content", widget: "markdown"}  
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: sections
     label: Sections
     files:

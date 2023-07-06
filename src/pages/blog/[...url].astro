@@ -37,7 +37,7 @@ console.log(content);
 <Layout pageContent={post}>
   <main class="pt-24 pb-56 dunes-left">
     <div class="content-wrapper">
-      <div class="content">
+      <div class="content blog">
         <h1 class="section-title">{post.frontmatter.title}</h1>
         {
           post.frontmatter.image ? (
@@ -52,14 +52,16 @@ console.log(content);
         }
         <BloggPostinfoBar author={post.frontmatter.author} date={date} />
 
-        <article
-          class="text-left"
-          set:html={marked.parse("# Marked in the browser\n\nRendered by **marked**.")}
-        />
-        <br />
-        <article class="text-left">{content}</article>
-        <br />
+        <article class="text-left" set:html={marked.parse(post.frontmatter.content)} />
       </div>
     </div>
   </main>
 </Layout>
+
+<style lang="less" is:global>
+  .blog {
+    h2 {
+      @apply font-interBold text-black text-2xl md:text-6xl py-3;
+    }
+  }
+</style>
