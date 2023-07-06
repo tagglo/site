@@ -22,7 +22,7 @@ slug:
   sanitize_replacement: '-'
 
 collections:
-  - name: "Settings"
+  - name: "settings"
     label: "Settings"
     files:
       - file: src/content/Settings.md
@@ -63,8 +63,8 @@ collections:
         hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
         }
       - {label: "Featured Image", name: "fatured_image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}  
-  - name: Sections
+      - {label: "Body", name: "body", widget: "markdown", minimal: true}  
+  - name: sections
     label: Sections
     files:
       - file: src/content/sections/Hero.md
@@ -77,14 +77,28 @@ collections:
           - { label: Button Text, name: buttonText, widget: string }
       - file: src/content/sections/HowItWorks.md
         label: HowItWorks
-        name: HowItWorks
+        name: howItWorks
         fields:
           - { label: Heading, name: heading, widget: string}
           - { label: Title, name: title, widget: string }
       - file: src/content/sections/RequestDemo.md
         label: RequestDemo
-        name: RequestDemo
+        name: requestDemo
         fields:
           - { label: Heading, name: heading, widget: string}
           - { label: Title, name: title, widget: string }
           - { label: Button Text, name: buttonText, widget: string }
+      - file: src/content/sections/Features.md
+        label: Features
+        name: features
+        fields:
+          - { label: Heading, name: heading, widget: string}
+          - { label: Title, name: title, widget: string }
+          - label: 'Features'
+            name: 'features'
+            widget: list
+            summary: '{{fields.gender}} - {{fields.age}} - {{fields.city}}'
+            fields:
+              - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: "markdown", minimal: true }
