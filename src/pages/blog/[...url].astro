@@ -28,6 +28,10 @@ const { post, author } = Astro.props;
 const date = post.frontmatter.dateModified
   ? post.frontmatter.modifiedAt
   : post.frontmatter.publishedAt;
+
+const content = post.rawContent;
+
+console.log(content);
 ---
 
 <Layout pageContent={post}>
@@ -47,7 +51,14 @@ const date = post.frontmatter.dateModified
           )
         }
         <BloggPostinfoBar author={post.frontmatter.author} date={date} />
-        <article class="text-left" set:html={post.compiledContent} />
+
+        <article
+          class="text-left"
+          set:html={marked.parse("# Marked in the browser\n\nRendered by **marked**.")}
+        />
+        <br />
+        <article class="text-left">{content}</article>
+        <br />
       </div>
     </div>
   </main>
