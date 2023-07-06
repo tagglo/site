@@ -97,8 +97,24 @@ collections:
           - label: 'Features'
             name: 'features'
             widget: list
-            summary: '{{fields.gender}} - {{fields.age}} - {{fields.city}}'
+            summary: '{{fields.title}}'
+            max: 3
             fields:
               - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: "markdown", minimal: true }
+      - file: src/content/sections/Benefits.md
+        label: Benefits
+        name: benefits
+        fields:
+          - { label: Heading, name: heading, widget: string}
+          - { label: Title, name: title, widget: string }
+          - label: 'Benfits'
+            name: 'benefits'
+            widget: list
+            summary: '{{fields.title}}'
+            max: 3
+            fields:
+              - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: "markdown", minimal: true }              
