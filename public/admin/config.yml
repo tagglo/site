@@ -122,10 +122,10 @@ collections:
         fields:
           - { label: Heading, name: heading, widget: string}
           - { label: Title, name: title, widget: string }
-          - label: 'Faq´s'
+          - label: 'Faqs'
             name: 'faqs'
             widget: list
             summary: '{{fields.title}}'
             fields:
               - { label: Title, name: title, widget: string }
-              - { label: Answer, name: answer, widget: "markdown", minimal: true }                        
+              - { label: Answer, name: answer, widget: "markdown", minimal: true }
