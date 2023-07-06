@@ -1,46 +1,6 @@
 ---
-import IconSearch from "../../assets/svg/icons/Icon-Search.svg";
-import IconClock from "../../assets/svg/icons/Icon-Clock.svg";
-import IconPiggyBank from "../../assets/svg/icons/Icon-piggy-bank.svg";
-import IconCrossHair from "../../assets/svg/icons/Icon-CrossHair.svg";
-import IconRunningMan from "../../assets/svg/icons/Icon-RunningMan.svg";
-import IconDiagram from "../../assets/svg/icons/Icon-diagram.svg";
-
-var icons = [
-  {
-    type: "IconSearch",
-    src: IconSearch,
-  },
-  {
-    type: "IconClock",
-    src: IconClock,
-  },
-  {
-    type: "IconPiggyBank",
-    src: IconPiggyBank,
-  },
-  {
-    type: "IconCrossHair",
-    src: IconCrossHair,
-  },
-  {
-    type: "IconRunningMan",
-    src: IconRunningMan,
-  },
-  {
-    type: "IconDiagram",
-    src: IconDiagram,
-  },
-];
-
-const { data } = Astro.props;
-data.cards.map((item: any) => {
-  const icon = icons.find((icon: any) => {
-    if (icon.type === item.icon) {
-      item.icon = icon.src;
-    }
-  });
-});
+import * as content from "../../content/sections/Benefits.md";
+const data = content.frontmatter;
 ---
 
 <div id="benefits" class="py-12 md:py-24">
@@ -52,17 +12,11 @@ data.cards.map((item: any) => {
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {
-          data.cards.map((item: any) => (
+          data.benefits.map((item: any) => (
             <>
               <div class="border-2 border-black bg-white rounded-xl p-6">
                 <div class="flex justify-center items-center bg-green-light w-12 h-12 rounded-full">
-                  <img
-                    style={`width: ${item.icon.width}px!important; height: ${item.icon.height}px!important`}
-                    width={item.icon.width}
-                    height={item.icon.height}
-                    src={item.icon.src}
-                    alt={item.title}
-                  />
+                  <img style="width: 20px!important;" src={item.icon} alt={item.title} />
                 </div>
                 <div class="p-2 mt-2 text-left">
                   <div class="font-interBold text-dark-gray">{item.title}</div>

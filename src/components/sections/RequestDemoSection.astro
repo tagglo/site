@@ -1,6 +1,7 @@
 ---
 import RequestDemoForm from "../RequestDemoForm.astro";
-const { data } = Astro.props;
+import * as content from "../../content/sections/RequestDemo.md";
+const data = content.frontmatter;
 ---
 
 <div id="demo" class="pt-12 pb-24 md:pt-24 md:pb-48 dunes-right">

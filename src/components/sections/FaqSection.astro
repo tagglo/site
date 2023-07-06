@@ -1,7 +1,8 @@
 ---
 import { marked } from "marked";
 
-const { data } = Astro.props;
+import * as content from "../../content/sections/Faq.md";
+const data = content.frontmatter;
 ---
 
 <div id="faq" class="py-12 md:py-24">
