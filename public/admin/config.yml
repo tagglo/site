@@ -100,6 +100,7 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: "markdown", minimal: true }
+              - { label: Image, name: image, widget: image }
       - file: src/content/sections/Benefits.md
         label: Benefits
         name: benefits
@@ -113,7 +114,7 @@ collections:
             max: 6
             fields:
               - { label: Title, name: title, widget: string }
-              - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
+              - { label: 'Icon', name: icon, widget: 'image', }
               - { label: Description, name: description, widget: "markdown", minimal: true }
       - file: src/content/sections/Faq.md
         label: Faq

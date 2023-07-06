@@ -2,14 +2,15 @@
 import RequestDemoForm from "../RequestDemoForm.astro";
 import ChevronDown from "../../assets/svg/chevron-down.svg";
 
-const { data } = Astro.props;
+import * as content from "../../content/sections/Hero.md";
+const data = content.frontmatter;
 ---
 
 <div class="pt-12 pb-24 md:pt-48 md:pb-56 dunes-right">
   <div class="content-wrapper">
     <div class="content-hero">
       <div class="font-interMedium text-black text-center text-4xl md:text-6xl">
-        {data.pretitle}
+        {data.heading}
       </div>
       <h2
         class="font-interBold text-black text-4xl md:text-6xl text-center pb-6"

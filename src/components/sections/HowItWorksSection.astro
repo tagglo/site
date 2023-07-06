@@ -1,6 +1,7 @@
 ---
 import HowItWorks from "../../assets/svg/how-it-works.svg";
-const { data } = Astro.props;
+import * as content from "../../content/sections/HowItWorks.md";
+const data = content.frontmatter;
 ---
 
 <div id="howitworks" class="py-12 md:py-24">
