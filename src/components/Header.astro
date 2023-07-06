@@ -3,7 +3,7 @@ import LoginButton from "./LoginButton.astro";
 import SignUpButton from "./SignUpButton.astro";
 import Logo from "../assets/svg/tagglo-logo.svg";
 
-const { pageContent } = Astro.props;
+import * as page from "../content/site/Settings.md";
 ---
 
 <div class="top-menu-holder text-sm w-full z-10 bg-desert border-gray-200 border-b">
@@ -22,8 +22,8 @@ const { pageContent } = Astro.props;
           </div>
         </div>
 
-        <LoginButton buttonText={pageContent.frontmatter.loginButtonText} />
-        <SignUpButton buttonText={pageContent.frontmatter.signUpButton} />
+        <LoginButton buttonText={page.frontmatter.loginButtonText} />
+        <SignUpButton buttonText={page.frontmatter.signUpButton} />
       </div>
     </div>
   </div>

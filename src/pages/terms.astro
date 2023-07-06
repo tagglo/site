@@ -1,15 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import * as page from "../content/en.md";
+import { marked } from "marked";
+import * as page from "../content/site/Privacy.md";
 ---
 
 <Layout pageContent={page}>
   <div class="py-24 dunes-left">
     <div class="content-wrapper">
       <div class="content">
-        <div class="font-interBold text-center text-2xl">Terms</div>
-        <h2 class="font-interBold text-6xl text-center pt-6 pb-24">Terms</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-24"></div>
+        <h2 class="section-title">{page.frontmatter.title}</h2>
+        <div class="" set:html={marked.parse(page.frontmatter.body)} />
       </div>
     </div>
   </div>

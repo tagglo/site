@@ -24,7 +24,7 @@ if (pageContent.frontmatter.faq) {
 ---
 
 <!DOCTYPE html>
-<html lang={pageContent.frontmatter.lang}>
+<html lang="en">
   <head>
     <title>{pageContent.frontmatter["meta-title"]}</title>
     <!--Meta -->
@@ -35,7 +35,6 @@ if (pageContent.frontmatter.faq) {
     />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={pageContent.frontmatter["meta-description"]} />
-    <meta name="keywords" content={pageContent.frontmatter["meta-keywords"]} />
     <meta name="author" content="Tagglo" />
     <meta
       name="robots"
@@ -186,7 +185,6 @@ if (pageContent.frontmatter.faq) {
       window.klaroConfig = klaroConfig;
       Klaro.setup(klaroConfig);
     </script>
- 
   </head>
 
   <body id="start" class="antialiased font-regular text-black text-base md:text-lg">
@@ -200,10 +198,10 @@ if (pageContent.frontmatter.faq) {
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <Header pageContent={pageContent} />
+    <Header />
     <main><slot /></main>
     <SignUpOverlay />
-    <Footer pageContent={pageContent} />
+    <Footer />
 
     <style lang="less" is:global>
       body {

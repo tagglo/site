@@ -7,6 +7,7 @@ import Logo from "../assets/svg/tagglo-logo.svg";
 const currentYear = new Date().getFullYear();
 
 const { pageContent } = Astro.props;
+import * as page from "../content/site/Settings.md";
 ---
 
 <div class="bg-desert">
@@ -20,7 +21,7 @@ const { pageContent } = Astro.props;
           <div class="hidden md:block pb-3">
             <a href="/"><img src={Logo.src} alt="Tagglo logo" /></a>
           </div>
-          <div class="text-sm max-w-md text-left" set:html={pageContent.frontmatter.footer.text} />
+          <div class="text-sm max-w-md text-left" set:html={page.frontmatter.footerText} />
         </div>
         <div class="font-interRegular text-sm order-1 md:order-2 pb-12 md:pb-0">
           <a href="/terms" class="mr-6">Terms</a><a href="/privacy" class="mr-6">Privacy</a>
