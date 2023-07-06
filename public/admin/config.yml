@@ -112,8 +112,8 @@ collections:
             summary: '{{fields.title}}'
             max: 6
             fields:
-              - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
               - { label: Title, name: title, widget: string }
+              - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
               - { label: Description, name: description, widget: "markdown", minimal: true }
       - file: src/content/sections/Faq.md
         label: Faq
