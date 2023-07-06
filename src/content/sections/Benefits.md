@@ -5,26 +5,26 @@ benefits:
   - description: >-
       You don't have to manually check whether your tags are firing correctly on
       your website.
-    icon: IconClock
+    icon: /img/icon-clock.svg
     title: Save time
   - description: Collect the lost data and upload it to your preferred analytics platform.
-    icon: IconSearch
+    icon: /img/icon-search.svg
     title: Find lost tags
   - description: Collect the accurate data and drive more revenue for your business.
-    icon: IconDiagram
+    icon: /img/icon-diagram.svg
     title: Improve marketing performance
   - description: Accurate data will help you keep your visitors engaged with your website.
-    icon: IconCrossHair
+    icon: /img/icon-crosshair.svg
     title: Enhance user experience
   - description: >-
       Maximize your return on investment by ensuring that your tags are firing
       correctly.
-    icon: IconPiggyBank
+    icon: /img/icon-piggy-bank.svg
     title: Optimize marketing spend
   - description: >-
       Our tool is easy to install, and it automatically tracks all tags on your
       website for you.
-    icon: IconRunningMan
+    icon: /img/icon-runningman.svg
     title: Get started in no time
 ---
 
