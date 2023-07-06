@@ -1,5 +1,5 @@
 ---
 heading: How it works
-title: A tagline that summarizes our secret sauce
+title: A tagline that summarizes our secret sauce.
 ---
 
