@@ -7,20 +7,7 @@ import SignUpOverlay from "../components/SignUpOverlay.astro";
 import "../assets/css/fonts.less";
 import "../assets/css/klaro.less";
 
-const { pageContent } = Astro.props;
-
-let faqStructuredData: any;
-if (pageContent.frontmatter.faq) {
-  faqStructuredData = pageContent.frontmatter.faq.map((item: any, index: number) => ({
-    "@type": "Question",
-    position: index + 1,
-    name: item.title,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  }));
-}
+const { pageContent, faqStructuredData } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -76,33 +63,6 @@ if (pageContent.frontmatter.faq) {
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
-
-    <script>
-      // import { vendors } from '../assets/js/vendors'
-
-      // vendors.map((vendor: any) => {
-      //   const vendorScript = document.createElement('link')
-      //   vendorScript.setAttribute('name', vendor.name)
-      //   vendorScript.setAttribute('rel', 'preconnect')
-      //   vendorScript.setAttribute('href', `/vendors/${vendor.filename}`)
-      //   vendorScript.setAttribute('key', `${vendor.name}`)
-      //   document.head.appendChild(vendorScript)
-      // })
-
-      // vendors.map((vendor) => {
-      //   if (vendor.inHead) {
-      //     const vendorScript = document.createElement('script')
-      //     vendorScript.setAttribute('name', vendor.name)
-      //     vendorScript.setAttribute('async', '')
-      //     vendorScript.setAttribute('src', `/vendors/${vendor.filename}`)
-      //     if (vendor.attribute) {
-      //       vendorScript.setAttribute(vendor.attribute[0], `${vendor.attribute[1]}`)
-      //     }
-      //     vendorScript.setAttribute('key', `${vendor.name}`)
-      //     document.head.appendChild(vendorScript)
-      //   }
-      // })
-    </script>
 
     <!-- <Schema
       item={{

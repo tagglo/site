@@ -1,0 +1,54 @@
+---
+import { marked } from "marked";
+
+import Layout from "../../layouts/Layout.astro";
+import BloggPostinfoBar from "../../components/BloggPostinfoBar.astro";
+
+//Componets
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../../content/blog/**/*.md");
+
+  return posts.map((post) => {
+    return {
+      params: {
+        url: post ? post.file.replace(/^.*[\\\/]/, "").replace(".md", "") : undefined,
+      },
+      props: {
+        post,
+        url: post ? post.file.replace(/^.*[\\\/]/, "").replace(".md", "") : undefined,
+        headings: post.getHeadings(),
+      },
+    };
+  });
+}
+
+const { post, author } = Astro.props;
+
+const date = post.frontmatter.dateModified
+  ? post.frontmatter.modifiedAt
+  : post.frontmatter.publishedAt;
+---
+
+<Layout pageContent={post}>
+  <main class="pt-24 pb-56 dunes-left">
+    <div class="content-wrapper">
+      <div class="content">
+        <h1 class="section-title">{post.frontmatter.title}</h1>
+        {
+          post.frontmatter.image ? (
+            <img
+              src={post.frontmatter.image}
+              alt={post.frontmatter.altText ? post.frontmatter.altText : post.frontmatter.title}
+              class="rounded-2xl w-full mb-3"
+            />
+          ) : (
+            ""
+          )
+        }
+        <BloggPostinfoBar author={post.frontmatter.author} date={date} />
+        <article class="text-left" set:html={post.compiledContent} />
+      </div>
+    </div>
+  </main>
+</Layout>

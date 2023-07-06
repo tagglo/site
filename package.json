@@ -21,6 +21,7 @@
     "astro": "^2.1.9",
     "astro-compress": "^1.1.33",
     "astro-seo-schema": "^2.0.0",
+    "date-fns": "^2.30.0",
     "dom-parser": "^0.1.6",
     "download": "^8.0.0",
     "fs": "^0.0.1-security",

@@ -1,12 +1,12 @@
 ---
-title: Demo
+title: Demo Two
 ingress: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque
   interdum lorem eget convallis. Phasellus porttitor diam at feugiat placerat.
 image: /img/demo-image.jpeg
 altText: PostImageAltText
-publishedAt: "July 3, 2023 3:25 PM"
-modifedAt: "July 3, 2023 3:25 PM"
+publishedAt: "July 4, 2023 3:25 PM"
+modifedAt: "July 4, 2023 3:25 PM"
 author: Administartor
 meta-title: Refinansiera lån & få en lägre ränta - Enklare
 meta-description: >-

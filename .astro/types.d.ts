@@ -87,6 +87,20 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
+"demo-three.md": {
+  id: "demo-three.md",
+  slug: "demo-three",
+  body: string,
+  collection: "blog",
+  data: any
+} & { render(): Render[".md"] },
+"demo-two.md": {
+  id: "demo-two.md",
+  slug: "demo-two",
+  body: string,
+  collection: "blog",
+  data: any
+} & { render(): Render[".md"] },
 "demo.md": {
   id: "demo.md",
   slug: "demo",

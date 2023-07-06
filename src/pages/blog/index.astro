@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import BlogCard from "../../components/BlogCard.astro";
+import * as page from "../../content/site/Settings.md";
+const bloggPosts = await Astro.glob("../../content/blog/*.md");
+
+bloggPosts.sort(function (a: any, b: any) {
+  return (
+    new Date(b.frontmatter.datePublished).valueOf() -
+    new Date(a.frontmatter.datePublished).valueOf()
+  );
+});
+---
+
+<Layout pageContent={page}>
+  <div class="pt-24 pb-48 dunes-left">
+    <div class="content-wrapper">
+      <div class="content">
+        <h2 class="section-title">Blog</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-6 pb-12">
+          {
+            bloggPosts.map((item) => (
+              <>
+                <BlogCard article={item} />
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

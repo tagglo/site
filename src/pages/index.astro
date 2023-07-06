@@ -8,11 +8,26 @@ import BenefitsSection from "../components/sections/BenefitsSection.astro";
 import PricingSection from "../components/sections/PricingSection.astro";
 import RequestDemoSection from "../components/sections/RequestDemoSection.astro";
 import FaqSection from "../components/sections/FaqSection.astro";
-import ArticlesSection from "../components/sections/ArticlesSection.astro";
+import BloggSection from "../components/sections/BloggSection.astro";
 import HowItWorksSection from "../components/sections/HowItWorksSection.astro";
+
+//Faq structured data
+import * as faq from "../content/sections/Faq.md";
+let faqStructuredData: any = null;
+if (faq.frontmatter.faqs) {
+  faqStructuredData = faq.frontmatter.faqs.map((item: any, index: number) => ({
+    "@type": "Question",
+    position: index + 1,
+    name: item.title,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }));
+}
 ---
 
-<Layout pageContent={page}>
+<Layout pageContent={page} faqStructuredData={faqStructuredData}>
   <HeroSection />
   <HowItWorksSection />
   <FeaturesSection />
@@ -20,5 +35,5 @@ import HowItWorksSection from "../components/sections/HowItWorksSection.astro";
   <PricingSection />
   <RequestDemoSection />
   <FaqSection />
-  <ArticlesSection />
+  <BloggSection />
 </Layout>
