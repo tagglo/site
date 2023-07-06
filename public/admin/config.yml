@@ -45,8 +45,6 @@ collections:
           # - { label: Footer Term Text, name: termText, widget: "String", hint: "This is the footer Term link text" }
           # - { label: Footer Privacy Text, name: privacyText, widget: "String", hint: "This is the footer Privacy link text" }
           # - { label: Footer Consent Text, name: consentText, widget: "String", hint: "This is the footer Consent link text" }
-
-          
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
@@ -113,8 +111,21 @@ collections:
             name: 'benefits'
             widget: list
             summary: '{{fields.title}}'
-            max: 3
+            max: 6
             fields:
               - { label: 'Icon Name', name: 'icon', widget: 'string', hint: 'Icon name ex IconClock'}
               - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: "markdown", minimal: true }              
+              - { label: Description, name: description, widget: "markdown", minimal: true }
+      - file: src/content/sections/Faq.md
+        label: Faq
+        name: faq
+        fields:
+          - { label: Heading, name: heading, widget: string}
+          - { label: Title, name: title, widget: string }
+          - label: 'Faq´s'
+            name: 'faqs'
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Answer, name: answer, widget: "markdown", minimal: true }                        

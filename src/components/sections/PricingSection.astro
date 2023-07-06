@@ -1,30 +1,31 @@
 ---
 import PricingCard from "../PricingCard.astro";
-const { data } = Astro.props;
+
+import * as data from "../../content/sections/Pricing.md";
 ---
 
 <div id="pricing" class="py-12 md:py-24">
   <div class="content-wrapper">
     <div class="content">
       <div class="py-8 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="section-heading">{data.heading}</div>
+        <div class="section-heading">{data.frontmatter.heading}</div>
         <h2 class="section-title">
-          {data.title}
+          {data.frontmatter.title}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
           <!-- Pricing Card -->
           <div
             class="price-card side border md:border-0 md:border-t-2 md:border-b-2 md:border-l-2 rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl"
           >
-            <PricingCard planType="free" plans={data.plans} />
+            <PricingCard planType="free" plans={data.frontmatter.plans} />
           </div>
           <div style="height:750px" class="price-card border-2 rounded-xl">
-            <PricingCard planType="professional" plans={data.plans} />
+            <PricingCard planType="professional" plans={data.frontmatter.plans} />
           </div>
           <div
             class="price-card side border md:border-0 md:border-t-2 md:border-b-2 md:border-r-2 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl"
           >
-            <PricingCard planType="enterprise" plans={data.plans} />
+            <PricingCard planType="enterprise" plans={data.frontmatter.plans} />
           </div>
         </div>
       </div>
