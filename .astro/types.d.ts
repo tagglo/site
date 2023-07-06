@@ -87,8 +87,36 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
+"test.md": {
+  id: "test.md",
+  slug: "test",
+  body: string,
+  collection: "blog",
+  data: any
+} & { render(): Render[".md"] },
 },
 "sections": {
+"Benefits.md": {
+  id: "Benefits.md",
+  slug: "benefits",
+  body: string,
+  collection: "sections",
+  data: any
+} & { render(): Render[".md"] },
+"Faq.md": {
+  id: "Faq.md",
+  slug: "faq",
+  body: string,
+  collection: "sections",
+  data: any
+} & { render(): Render[".md"] },
+"Features.md": {
+  id: "Features.md",
+  slug: "features",
+  body: string,
+  collection: "sections",
+  data: any
+} & { render(): Render[".md"] },
 "Hero.md": {
   id: "Hero.md",
   slug: "hero",
@@ -99,6 +127,20 @@ declare module 'astro:content' {
 "HowItWorks.md": {
   id: "HowItWorks.md",
   slug: "howitworks",
+  body: string,
+  collection: "sections",
+  data: any
+} & { render(): Render[".md"] },
+"Pricing.md": {
+  id: "Pricing.md",
+  slug: "pricing",
+  body: string,
+  collection: "sections",
+  data: any
+} & { render(): Render[".md"] },
+"RequestDemo.md": {
+  id: "RequestDemo.md",
+  slug: "requestdemo",
   body: string,
   collection: "sections",
   data: any

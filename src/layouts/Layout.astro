@@ -186,17 +186,7 @@ if (pageContent.frontmatter.faq) {
       window.klaroConfig = klaroConfig;
       Klaro.setup(klaroConfig);
     </script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+ 
   </head>
 
   <body id="start" class="antialiased font-regular text-black text-base md:text-lg">

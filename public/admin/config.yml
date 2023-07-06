@@ -1,9 +1,11 @@
+local_backend: true
+
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
   repo: tagglo/site
 
-# local_backend: true
+
 # url: http://localhost:8081/api/v1
 # allowed_hosts:
 #   - localhost:8081
@@ -20,7 +22,7 @@ slug:
   sanitize_replacement: '-'
 
 collections:
-  - name: "settings"
+  - name: "Settings"
     label: "Settings"
     files:
       - file: src/content/Settings.md
@@ -62,12 +64,12 @@ collections:
         }
       - {label: "Featured Image", name: "fatured_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}  
-  - name: Blocks
-    label: blocks
+  - name: Sections
+    label: Sections
     files:
       - file: src/content/sections/Hero.md
-        label: HeroSection
-        name: HeroSection
+        label: Hero
+        name: hero
         fields:
           - { label: Heading, name: heading, widget: string}
           - { label: Title, name: title, widget: string }
@@ -79,3 +81,10 @@ collections:
         fields:
           - { label: Heading, name: heading, widget: string}
           - { label: Title, name: title, widget: string }
+      - file: src/content/sections/RequestDemo.md
+        label: RequestDemo
+        name: RequestDemo
+        fields:
+          - { label: Heading, name: heading, widget: string}
+          - { label: Title, name: title, widget: string }
+          - { label: Button Text, name: buttonText, widget: string }
