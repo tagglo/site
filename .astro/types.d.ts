@@ -146,6 +146,29 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] },
 },
+"site": {
+"Privacy.md": {
+  id: "Privacy.md",
+  slug: "privacy",
+  body: string,
+  collection: "site",
+  data: any
+} & { render(): Render[".md"] },
+"Settings.md": {
+  id: "Settings.md",
+  slug: "settings",
+  body: string,
+  collection: "site",
+  data: any
+} & { render(): Render[".md"] },
+"Terms.md": {
+  id: "Terms.md",
+  slug: "terms",
+  body: string,
+  collection: "site",
+  data: any
+} & { render(): Render[".md"] },
+},
 
 	};
 

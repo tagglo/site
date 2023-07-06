@@ -25,7 +25,7 @@ collections:
   - name: "settings"
     label: "Settings"
     files:
-      - file: src/content/Settings.md
+      - file: src/content/site/Settings.md
         label: Settings
         name: Settings
         fields:
@@ -45,6 +45,36 @@ collections:
           # - { label: Footer Term Text, name: termText, widget: "String", hint: "This is the footer Term link text" }
           # - { label: Footer Privacy Text, name: privacyText, widget: "String", hint: "This is the footer Privacy link text" }
           # - { label: Footer Consent Text, name: consentText, widget: "String", hint: "This is the footer Consent link text" }
+      - file: src/content/site/Terms.md
+        label: Terms
+        name: Term
+        fields:
+          - { label: Site Title, name: title, widget: "string", hint: "This is the title" }
+          - { label: Meta Title, name: meta-title, widget: "string", hint: "This is the meta title"}
+          - { label: Meta Description, name: meta-description, widget: "string", hint: "This is the meta description"}
+          - {
+              label: 'Search Engine Indexed',
+              name: 'indexed',
+              widget: 'boolean',
+              default: true,
+              hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
+            }
+          - {label: "Body", name: "body", widget: "markdown", minimal: true, hint: "This is page content" }
+      - file: src/content/site/Privacy.md
+        label: Privacy
+        name: Privacy
+        fields:
+          - { label: Site Title, name: title, widget: "string", hint: "This is the title" }
+          - { label: Meta Title, name: meta-title, widget: "string", hint: "This is the meta title"}
+          - { label: Meta Description, name: meta-description, widget: "string", hint: "This is the meta description"}
+          - {
+              label: 'Search Engine Indexed',
+              name: 'indexed',
+              widget: 'boolean',
+              default: true,
+              hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
+            }
+          - {label: "Body", name: "body", widget: "markdown", minimal: true, hint: "This is page content" }
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
