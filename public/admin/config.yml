@@ -93,7 +93,7 @@ collections:
           name: 'image',
           widget: 'image',
           choose_url: true,
-          media_folder: '/public/img/blogg/',
+          media_folder: '/public/img/blog/',
           required: false,
           hint: 'Post Image, size at least 1060px wide',
         }
