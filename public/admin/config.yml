@@ -27,7 +27,7 @@ collections:
     files:
       - file: src/content/site/Settings.md
         label: Settings
-        name: Settings
+        name: settings
         fields:
           - { label: Site Title, name: title, widget: "string", hint: "This is the site title" }
           - { label: Login Button Text, name: loginButtonText, widget: "string", hint: "This is the login button text"  }
@@ -47,7 +47,7 @@ collections:
           # - { label: Footer Consent Text, name: consentText, widget: "String", hint: "This is the footer Consent link text" }
       - file: src/content/site/Terms.md
         label: Terms
-        name: Term
+        name: term
         fields:
           - { label: Site Title, name: title, widget: "string", hint: "This is the title" }
           - { label: Meta Title, name: meta-title, widget: "string", hint: "This is the meta title"}
@@ -62,7 +62,7 @@ collections:
           - {label: "Body", name: "body", widget: "markdown", minimal: true, hint: "This is page content" }
       - file: src/content/site/Privacy.md
         label: Privacy
-        name: Privacy
+        name: privacy
         fields:
           - { label: Site Title, name: title, widget: "string", hint: "This is the title" }
           - { label: Meta Title, name: meta-title, widget: "string", hint: "This is the meta title"}
@@ -81,16 +81,64 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - { label: 'Title', name: 'title', widget: 'string', hint: 'The title of the page' }
       - {
-        label: 'Search Engine Indexed',
-        name: 'indexed',
-        widget: 'boolean',
-        default: true,
-        hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
+          label: 'Post Ingress',
+          name: 'ingress',
+          widget: 'string',
+          hint: 'Post ingress and Blogg Card text',
         }
-      - {label: "Featured Image", name: "fatured_image", widget: "image"}
+      - {
+          label: 'Post Image',
+          name: 'image',
+          widget: 'image',
+          choose_url: true,
+          media_folder: '/public/img/blogg/',
+          required: false,
+          hint: 'Post Image, size at least 1060px wide',
+        }
+      - {
+            label: 'Post Image Alt Text',
+            name: 'altText',
+            widget: 'string',
+            hint: 'Post Image Alt Text',
+        }
+      - {
+          label: 'Publish Date',
+          name: 'datePublished',
+          date_format: 'YYYY-MM-DD',
+          time_format: 'HH:mm',
+          format: 'LLL',
+          widget: 'datetime',
+          hint: 'Creation date',
+        }
+      - {
+          label: 'Modified Date',
+          name: 'dateModified',
+          date_format: 'YYYY-MM-DD',
+          time_format: 'HH:mm',
+          format: 'LLL',
+          widget: 'datetime',
+          hint: 'Modified date',
+        }
+      - label: 'Author'
+        name: 'author'
+        widget: 'string'
+        hint: 'Author of page'
+      - { label: 'Meta title', name: 'meta-title', widget: 'string', hint: 'Page Meta title' }
+      - {
+          label: 'Meta description',
+          name: 'meta-description',
+          widget: 'string',
+          hint: 'Page Meta description',
+        }
+      - {
+          label: 'Search Engine Indexed',
+          name: 'indexed',
+          widget: 'boolean',
+          default: true,
+          hint: 'Option to disable page to be indexed, default it TRUE == Indexed ',
+        }
       - {label: "Body", name: "body", widget: "markdown", minimal: true}  
   - name: sections
     label: Sections
