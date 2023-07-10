@@ -3,6 +3,8 @@ import { marked } from "marked";
 
 import Layout from "../../layouts/Layout.astro";
 import BloggPostinfoBar from "../../components/BloggPostinfoBar.astro";
+import RequestDemoSection from "../../components/sections/RequestDemoSection.astro";
+import RequestDemoForm from "../../components/RequestDemoForm.astro";
 
 //Componets
 
@@ -52,7 +54,14 @@ console.log(content);
         }
         <BloggPostinfoBar author={post.frontmatter.author} date={date} />
 
-        <article class="text-left" set:html={marked.parse(post.frontmatter.content)} />
+        <article class="article" set:html={marked.parse(post.frontmatter.content)} />
+
+        <div class="section-heading">Request demo</div>
+        <h2 class="section-title">Contact us for a free demo</h2>
+
+        <div class="max-w-3xl mx-auto border-2 border-black p-6 md:p-12 rounded-lg mg-12 md:mb-24">
+          <RequestDemoForm formId="requesttwo" buttonText="Reguest a demo" />
+        </div>
       </div>
     </div>
   </main>
@@ -62,6 +71,22 @@ console.log(content);
   .blog {
     h2 {
       @apply font-interBold text-black text-2xl md:text-6xl py-3;
+    }
+    .article {
+      text-align: left;
+      @apply font-interRegular pb-24;
+      h2 {
+        @apply font-interBold text-black text-2xl md:text-6xl py-3;
+      }
+      h3 {
+        @apply font-interBold text-black text-xl md:text-5xl py-3;
+      }
+      h4 {
+        @apply font-interBold text-black text-lg md:text-4xl py-3;
+      }
+      p {
+        @apply py-3;
+      }
     }
   }
 </style>

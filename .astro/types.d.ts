@@ -101,9 +101,9 @@ declare module 'astro:content' {
   collection: "blog",
   data: any
 } & { render(): Render[".md"] },
-"demo.md": {
-  id: "demo.md",
-  slug: "demo",
+"welcome-to-tagglo-revolutionizing-tag-tracking.md": {
+  id: "welcome-to-tagglo-revolutionizing-tag-tracking.md",
+  slug: "welcome-to-tagglo-revolutionizing-tag-tracking",
   body: string,
   collection: "blog",
   data: any
