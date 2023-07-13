@@ -1,5 +1,5 @@
 ---
-import { marked } from "marked";
+import {marked} from "marked";
 
 import Layout from "../../layouts/Layout.astro";
 import BloggPostinfoBar from "../../components/BloggPostinfoBar.astro";
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { post, author } = Astro.props;
+const {post, author} = Astro.props;
 
 const date = post.frontmatter.dateModified
   ? post.frontmatter.modifiedAt
@@ -60,7 +60,7 @@ console.log(content);
         <h2 class="section-title">Contact us for a free demo</h2>
 
         <div class="max-w-3xl mx-auto border-2 border-black p-6 md:p-12 rounded-lg mg-12 md:mb-24">
-          <RequestDemoForm formId="requesttwo" buttonText="Reguest a demo" />
+          <RequestDemoForm formId="requesttwo" buttonText="Request a demo" />
         </div>
       </div>
     </div>

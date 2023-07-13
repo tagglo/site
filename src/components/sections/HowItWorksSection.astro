@@ -8,9 +8,13 @@ const data = content.frontmatter;
   <div class="content-wrapper">
     <div class="content">
       <div class="section-heading">{data.heading}</div>
-      <h2 class="section-title">
+      <h2 class="font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-3 md:pb-6">
         {data.title}
       </h2>
+      <p
+        class="text-center text-black text-base md:text-2xl pb-12 md:pb-24"
+        set:html={data.subtitle}
+      />
       <img src={HowItWorks.src} alt="" />
     </div>
   </div>

@@ -68,7 +68,11 @@ const data = content.frontmatter;
   .stacked {
     position: relative;
     width: 100%;
-    min-height: 20rem;
+    min-height: 22rem;
+    @media screen and (max-width: 768px) {
+      min-height: 17rem;
+    }
+
     img {
       position: absolute;
       width: 75%;

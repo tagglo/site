@@ -157,6 +157,7 @@ collections:
         fields:
           - { label: Heading, name: heading, widget: string}
           - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
       - file: src/content/sections/RequestDemo.md
         label: RequestDemo
         name: requestDemo
