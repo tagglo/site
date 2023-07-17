@@ -1,6 +1,6 @@
 ---
-heading: Request a demo
-title: Are you an agency? Your feedback is important too
-buttonText: Request a free demo
+heading: For agencies
+title: Are you an agency? Enhance Your Clients' Data Quality with Tagglo
+buttonText: Request a meeting
 ---
 
