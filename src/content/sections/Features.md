@@ -1,6 +1,6 @@
 ---
 heading: Features
-title: Retrieve failed tag data and get the metrics you need to succeed
+title: Monitor failed tags and retrieve the data you need to succeed
 features:
   - description: >-
       Set up customized notification settings for your tags, ensuring that you
