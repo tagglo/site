@@ -69,7 +69,11 @@ faqs:
       understanding of your tag performance and make data-driven decisions with
       ease.
     title: What data will be presented in the dashboard?
-  - answer: Detta behöver vi diskutera vidare innan vi kan besvara.
+  - answer: >-
+      Absolutely! As an enterprise customer with Tagglo, you'll enjoy the
+      benefit of receiving real-time notifications whenever a tag fails to
+      execute. Whether you prefer updates via your chosen Slack channel or
+      directly to your email address, we've got you covered.
     title: Will I get real-time notifications when a tag fails to execute?
 ---
 
