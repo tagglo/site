@@ -1,9 +1,9 @@
 ---
-heading: Stay ahead
-title: with automated tag detection
+heading: Monitor your tag container
+title: Track and recover lost data with Tagglo
 subtitle: >-
-  Retrieve failed tag data and supercharge your marketing efforts today – with
-  Tagglo.
+  Many are unaware that tag failures can lead to data loss. Don't let it catch
+  you off guard!
 buttonText: Request a free demo
 ---
 
