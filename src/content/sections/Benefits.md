@@ -1,6 +1,6 @@
 ---
 heading: Benfits
-title: Unlock the power of accurate data with Tagglo
+title: Unlock the power of accurate data
 benefits:
   - description: >-
       You don't have to manually check whether your tags are firing correctly on
