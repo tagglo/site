@@ -7,10 +7,13 @@ faqs:
       valuable insights into the performance of your website's tags and the
       overall health of your tracking. With Tagglo, you gain a comprehensive
       understanding of how your tags are functioning, ensuring that your
-      marketing efforts are based on accurate and reliable data. By monitoring
-      tag performance, identifying errors, and retrieving data from failed tags,
-      Tagglo empowers you to make data-driven decisions, optimise your marketing
-      strategies, and maximise the return on your marketing investment.
+      marketing efforts are based on accurate and reliable data. 
+
+
+      By monitoring tag performance, identifying errors, and retrieving data
+      from failed tags, Tagglo empowers you to make data-driven decisions,
+      optimise your marketing strategies, and maximise the return on your
+      marketing investment.
     title: How can Tagglo help my company's marketing investment?
   - answer: >-
       Tagglo is used by companies that actively run ad campaigns on marketing
@@ -33,14 +36,24 @@ faqs:
       touch with you to assist you further. Start monitoring your tag tracking
       today!
     title: How can I get started and monitor my tags?
-  - answer: |-
+  - answer: >-
       By signing up, you will receive the following benefits:
 
-      <ul>
-                <li>Access to your personalised dashboard in Looker Studio, empowering you to analyse the performance of your tag setup and gain valuable insights.</li>
-                <li>Customised notifications that promptly alert you whenever your tags fail to execute, ensuring that you never miss any critical issues.</li>
-                <li>The ability to log in to our platform and retrieve data from tags that have failed. You can then easily upload this data to your advertising platforms, guaranteeing that your campaigns receive all the conversions they should.Sign up today to optimise your tag performance and maximise the effectiveness of your marketing campaigns!</li>
-              </ul>
+
+      * Access to your personalised dashboard in Looker Studio, empowering you
+      to analyse the performance of your tag setup and gain valuable insights.
+
+      * Customised notifications that promptly alert you whenever your tags fail
+      to execute, ensuring that you never miss any critical issues.
+
+      * The ability to log in to our platform and retrieve data from tags that
+      have failed. You can then easily upload this data to your advertising
+      platforms, guaranteeing that your campaigns receive all the conversions
+      they should.
+
+
+      Sign up today to optimise your tag performance and maximise the
+      effectiveness of your marketing campaigns!
     title: What will I get if I sign up?
   - answer: >-
       Regaining data from failed tags is easy with our platform. Simply log in
@@ -57,12 +70,19 @@ faqs:
       data points:
 
 
-      <ul>
-                <li>The count of successes and failures for your tags over time, enabling you to track their performance and identify any issues.</li>
-                <li>Information on the devices and browsers on which your tags execute, giving you visibility into the platforms and environments where your tags are active.</li>
-                <li>The specific URLs where your tags fire, allowing you to pinpoint the pages or sections of your website where they are triggered.</li>
-                <li>The execution time of your tags, helping you analyse their efficiency and identify any potential bottlenecks.</li>
-              </ul>
+      * The count of successes and failures for your tags over time, enabling
+      you to track their performance and identify any issues.
+
+      * Information on the devices and browsers on which your tags execute,
+      giving you visibility into the platforms and environments where your tags
+      are active.
+
+      * The specific URLs where your tags fire, allowing you to pinpoint the
+      pages or sections of your website where they are triggered.
+
+      * The execution time of your tags, helping you analyse their efficiency
+      and identify any potential bottlenecks.
+
 
       And that's not all! Our dashboard offers even more valuable insights and
       texts to empower you in optimising your tag setup. Gain a deeper
