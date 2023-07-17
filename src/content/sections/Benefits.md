@@ -1,6 +1,6 @@
 ---
 heading: Benfits
-title: What’s the best tag line for our benefits?
+title: Unlock the power of accurate data with Tagglo
 benefits:
   - description: >-
       You don't have to manually check whether your tags are firing correctly on
