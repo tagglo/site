@@ -28,7 +28,7 @@ faqs:
     title: What do Tagglo monitor?
   - answer: >-
       **Short answer:** Yes. Tagglo ensures GDPR compliance by monitoring your
-      tags only after your website users have given their consent."
+      tags only after your website users have given their consent.
     title: Is it GDPR compliant?
   - answer: >-
       To get started and begin monitoring your tags, simply fill in your email
@@ -96,3 +96,4 @@ faqs:
       directly to your email address, we've got you covered.
     title: Will I get real-time notifications when a tag fails to execute?
 ---
+
