@@ -27,7 +27,7 @@ faqs:
       Execution Time, Container Version, Browser Version, and OS Version.
     title: What do Tagglo monitor?
   - answer: >-
-      **Short answer: **Yes. Tagglo ensures GDPR compliance by monitoring your
+      **Short answer:** Yes. Tagglo ensures GDPR compliance by monitoring your
       tags only after your website users have given their consent."
     title: Is it GDPR compliant?
   - answer: >-
@@ -96,4 +96,3 @@ faqs:
       directly to your email address, we've got you covered.
     title: Will I get real-time notifications when a tag fails to execute?
 ---
-

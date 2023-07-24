@@ -19,12 +19,51 @@ const data = content.frontmatter;
       <p class="text-center text-black text-base md:text-2xl" set:html={data.subtitle} />
       <div class="reguest-demo-header max-w-2xl mx-auto pt-12">
         <RequestDemoForm formId="requestone" buttonText={data.buttonText} />
-        <div class="pt-12 flex justify-center">
-          <a href="#howitworks">
-            How it works<br />
-            <img class="mx-auto" src={ChevronDown.src} alt="Down arrow" />
-          </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-24 max-w-4xl mx-auto">
+        <div class="md:flex justify-center items-center text-center pb-6 md:pb-0">
+          <div
+            class="flex justify-center items-center bg-green-light w-12 h-12 rounded-full md:mr-6 mx-auto mb-3 md:mb-0"
+          >
+            <img
+              style="width: 20px!important;"
+              src="/svg/icons/Icon-Checkmark.svg"
+              alt="Checkmark icon"
+            />
+          </div>
+          <div class="font-interSemibold md:text-2xl">Get accurate data</div>
         </div>
+        <div class="md:flex justify-center items-center text-center pb-6 md:pb-0">
+          <div
+            class="flex justify-center items-center bg-green-light w-12 h-12 rounded-full md:mr-6 mx-auto mb-3 md:mb-0"
+          >
+            <img
+              style="width: 20px!important;"
+              src="/svg/icons/Icon-Checkmark.svg"
+              alt="Checkmark icon"
+            />
+          </div>
+          <div class="font-interSemibold md:text-2xl">Be in control</div>
+        </div>
+        <div class="md:flex justify-center items-center text-center pb-6 md:pb-0">
+          <div
+            class="flex justify-center items-center bg-green-light w-12 h-12 rounded-full md:mr-6 mx-auto mb-3 md:mb-0"
+          >
+            <img
+              style="width: 20px!important;"
+              src="/svg/icons/Icon-Checkmark.svg"
+              alt="Checkmark icon"
+            />
+          </div>
+          <div class="font-interSemibold md:text-2xl">Easy to install</div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <a href="#howitworks">
+          How it works<br />
+          <img class="mx-auto" src={ChevronDown.src} alt="Down arrow" />
+        </a>
       </div>
     </div>
   </div>

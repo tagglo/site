@@ -9,9 +9,13 @@ import * as data from "../../content/sections/Pricing.md";
     <div class="content">
       <div class="py-8 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="section-heading">{data.frontmatter.heading}</div>
-        <h2 class="section-title">
+        <h2 class="font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-3 md:pb-6">
           {data.frontmatter.title}
         </h2>
+        <p
+          class="text-center text-black text-base md:text-2xl pb-12 md:pb-24"
+          set:html={data.frontmatter.subtitle}
+        />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
           <!-- Pricing Card -->
           <div

@@ -1,7 +1,8 @@
 ---
 
 heading: Pricing
-title: Some cool headline about our offerings
+title: Choose the plan that’s right for your team
+subtitle: Pay by the month, and cancel at any time
 plans: [
 {
 type: free,
