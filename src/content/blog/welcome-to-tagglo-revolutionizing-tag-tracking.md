@@ -3,7 +3,7 @@ title: 'Welcome to Tagglo: Revolutionizing Tag Tracking'
 ingress: >-
   We are live! Your new partner in reliable, comprehensive, and real-time tag
   tracking.
-image: /img/demo-image.jpeg
+image: /img/welcome_to_tagglo_revolutionizing_tag-tracking.jpg
 altText: PostImageAltText
 publishedAt: 'July 3, 2023 3:25 PM'
 modifieddAt: 'July 9, 2023 12:00 AM'
