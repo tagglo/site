@@ -1,6 +1,6 @@
 ---
 import SignUpButtonPricing from "./SignUpButtonPricing.astro";
-const { planType, plans } = Astro.props;
+const {planType, plans} = Astro.props;
 
 const plan = plans.find((plan) => {
   if (plan.type === planType) {
@@ -11,7 +11,7 @@ const plan = plans.find((plan) => {
 
 <div class="font-interMedium text-2xl pb-3">{plan.title}</div>
 <div class="font-interRegular">{plan.price}</div>
-<div class="py-6 font-interRegular" set:html={plan.description} />
+<div class="py-6 font-interRegular text-xs" set:html={plan.description} />
 
 <ul class="price-list text-left pb-12 flex-grow font-interRegular">
   {
@@ -29,10 +29,12 @@ const plan = plans.find((plan) => {
     padding: 1rem 0 1rem 1.1rem;
     li {
       margin-bottom: 0.5rem;
+      color: #000;
 
       &.inactive {
         text-decoration: line-through;
         list-style: none;
+        color: #333;
       }
     }
   }

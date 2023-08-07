@@ -12,12 +12,12 @@ const data = content.frontmatter;
       <h2 class="section-title">
         {data.title}
       </h2>
-      <div class="collapse-content border-t">
+      <div class="collapse-content border-t border-dark-gray">
         {
           data.faqs.map((item: any) => (
             <>
               <div class="faq">
-                <div class="faq-item cursor-pointer px-2 py-3 border-b  text-xl flex justify-between">
+                <div class="faq-item cursor-pointer px-2 py-3 border-b border-dark-gray  text-xl flex justify-between">
                   <div class="title font-interMedium text-base md:text-xl text-left">
                     {item.title}
                   </div>
@@ -25,7 +25,7 @@ const data = content.frontmatter;
                 </div>
                 <div class="faq-content max-h-0 overflow-hidden">
                   <div
-                    class="inner-content border-b px-4 pt-4 pb-8 font-interRegular text-dark-gray text-left"
+                    class="inner-content border-b border-dark-gray px-4 pt-4 pb-8 font-interRegular text-dark-gray text-left"
                     set:html={marked.parse(item.answer)}
                   />
                 </div>
@@ -71,8 +71,11 @@ const data = content.frontmatter;
   }
 
   .faq-active .faq-content {
-    @apply border-b-0 bg-white;
+    @apply border-b-0;
     max-height: 25em;
+  }
+  .faq-active .faq-item {
+    @apply border-b-0;
   }
   // ---- [ Close Button ] ---- //
   .transition (@prop: all, @time: 1s, @ease: ease-out) {
@@ -104,7 +107,7 @@ const data = content.frontmatter;
       content: "";
       width: 55%;
       height: 3px;
-      @apply bg-dark-gray;
+      background-color: #333;
       position: absolute;
       top: 48%;
       left: 22%;

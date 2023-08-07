@@ -6,7 +6,6 @@ module.exports = {
       colors: {
         'dark-gray': '#333333',
         'dark-brown': '#975b00',
-        'dark-gray': '#103E2B',
         'sunset-light': '#F9E6AE',
         'sunset-yellow': '#fed989',
         'desert': '#FFFEF2',
@@ -21,7 +20,7 @@ module.exports = {
         interBold: ['Inter-Bold', 'arial', 'sans-serif'],
         interRegular: ['Inter-Regular', 'arial', 'sans-serif'],
         interMedium: ['Intern-Medium', 'arial', 'sans-serif'],
-        interSemibold: ['Intern-SemiBold', 'arial', 'sans-serif'],
+        interSemibold: ['Inter-Semibold', 'arial', 'sans-serif'],
       },
       fontSize: {
         '6xl': ['3.5rem', '4.2rem'],

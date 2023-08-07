@@ -1,5 +1,6 @@
 ---
-import HowItWorks from "../../assets/svg/how-it-works.svg";
+import HowItWorksVertical from "../../assets/svg/howitworks-vertical.svg";
+import HowItWorksHorizontal from "../../assets/svg/howitworks-horizontal.svg";
 import * as content from "../../content/sections/HowItWorks.md";
 const data = content.frontmatter;
 ---
@@ -8,14 +9,12 @@ const data = content.frontmatter;
   <div class="content-wrapper">
     <div class="content">
       <div class="section-heading">{data.heading}</div>
-      <h2 class="font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-3 md:pb-6">
+      <h2 class="font-interBold text-2xl md:text-6xl text-center pt-6 pb-3 md:pb-6">
         {data.title}
       </h2>
-      <p
-        class="text-center text-black text-base md:text-2xl pb-12 md:pb-24"
-        set:html={data.subtitle}
-      />
-      <img src={HowItWorks.src} alt="" />
+      <p class="text-center text-base md:text-2xl pb-12 md:pb-24" set:html={data.subtitle} />
+      <img class="hidden md:block mx-auto" src={HowItWorksHorizontal.src} alt="How it Works" />
+      <img class="block md:hidden mx-auto" src={HowItWorksVertical.src} alt="How It Works" />
     </div>
   </div>
 </div>

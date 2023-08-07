@@ -9,14 +9,11 @@ const data = content.frontmatter;
 <div class="pt-12 pb-24 md:pt-48 md:pb-56 dunes-right">
   <div class="content-wrapper">
     <div class="content-hero">
-      <div class="font-interMedium text-black text-center text-4xl md:text-6xl">
+      <div class="font-interRegular text-center text-4xl md:text-6xl">
         {data.heading}
       </div>
-      <h2
-        class="font-interBold text-black text-4xl md:text-6xl text-center pb-6"
-        set:html={data.title}
-      />
-      <p class="text-center text-black text-base md:text-2xl" set:html={data.subtitle} />
+      <h2 class="font-interBold text-4xl md:text-6xl text-center pb-6" set:html={data.title} />
+      <p class="text-center text-base md:text-2xl font-interRegular" set:html={data.subtitle} />
       <div class="reguest-demo-header max-w-2xl mx-auto pt-12">
         <RequestDemoForm formId="requestone" buttonText={data.buttonText} />
       </div>
@@ -31,7 +28,7 @@ const data = content.frontmatter;
               alt="Checkmark icon"
             />
           </div>
-          <div class="font-interSemibold md:text-2xl">Get accurate data</div>
+          <div class="font-interSemibold md:text-lg">Get accurate data</div>
         </div>
         <div class="md:flex justify-center items-center text-center pb-6 md:pb-0">
           <div
@@ -43,7 +40,7 @@ const data = content.frontmatter;
               alt="Checkmark icon"
             />
           </div>
-          <div class="font-interSemibold md:text-2xl">Be in control</div>
+          <div class="font-interSemibold md:text-lgl">Be in control</div>
         </div>
         <div class="md:flex justify-center items-center text-center pb-6 md:pb-0">
           <div
@@ -55,7 +52,7 @@ const data = content.frontmatter;
               alt="Checkmark icon"
             />
           </div>
-          <div class="font-interSemibold md:text-2xl">Easy to install</div>
+          <div class="font-interSemibold md:text-lg">Easy to install</div>
         </div>
       </div>
 

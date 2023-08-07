@@ -147,7 +147,7 @@ const {pageContent, faqStructuredData} = Astro.props;
     </script>
   </head>
 
-  <body id="start" class="antialiased font-regular text-black text-base md:text-lg">
+  <body id="start" class="antialiased font-regular text-base md:text-lg">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -205,27 +205,36 @@ const {pageContent, faqStructuredData} = Astro.props;
       }
       .dunes-right {
         overflow: hidden;
-        background-image: url("../assets/svg/dunes-right.svg");
+        background-image: url("../assets/svg/dunes-sections-desktop.svg");
         background-color: #fffef2;
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: contain;
         margin: 0 auto;
+        @media (max-width: 500px) {
+          background-image: url("../assets/svg/dunes-sections-mobile.svg");
+        }
       }
       .dunes-left {
         overflow: hidden;
-        background-image: url("../assets/svg/dunes-left.svg");
+        background-image: url("../assets/svg/dunes-sections-desktop.svg");
         background-color: #fffef2;
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: contain;
         margin: 0 auto;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        @media (max-width: 500px) {
+          background-image: url("../assets/svg/dunes-sections-mobile.svg");
+        }
       }
       .section-heading {
-        @apply inline-block mx-auto font-interBold text-black text-center text-base md:text-2xl bg-green-light px-6 py-2;
+        @apply inline-block mx-auto font-interSemibold text-center text-base md:text-lg bg-green-light px-2 py-1;
+        color: #103e2b;
       }
       .section-title {
-        @apply font-interBold text-black text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24;
+        @apply font-interBold  text-2xl md:text-6xl text-center pt-6 pb-12 md:pb-24;
       }
 
       ul {

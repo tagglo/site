@@ -37,7 +37,7 @@ console.log(content);
 ---
 
 <Layout pageContent={post}>
-  <main class="pt-24 pb-56 dunes-left">
+  <main class="pt-24 pb-56 dunes-right">
     <div class="content-wrapper">
       <div class="content blog">
         <h1 class="section-title">{post.frontmatter.title}</h1>
@@ -70,19 +70,19 @@ console.log(content);
 <style lang="less" is:global>
   .blog {
     h2 {
-      @apply font-interBold text-black text-2xl md:text-6xl py-3;
+      @apply font-interBold  text-2xl md:text-6xl py-3;
     }
     .article {
       text-align: left;
       @apply font-interRegular pb-24;
       h2 {
-        @apply font-interBold text-black text-2xl md:text-6xl py-3;
+        @apply font-interBold  text-2xl md:text-6xl py-3;
       }
       h3 {
-        @apply font-interBold text-black text-xl md:text-5xl py-3;
+        @apply font-interBold  text-xl md:text-5xl py-3;
       }
       h4 {
-        @apply font-interBold text-black text-lg md:text-4xl py-3;
+        @apply font-interBold  text-lg md:text-4xl py-3;
       }
       p {
         @apply py-3;
