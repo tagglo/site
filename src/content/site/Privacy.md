@@ -3,7 +3,7 @@ title: Privacy & Cookie Policy
 meta-title: Our Privacy & Cookie Policy - Tagglo
 meta-description: Read our Privacy & Cookie Policy. Welcome to tagglo.co!
 indexed: true
----
+body: "
 Last Updated: 2023-09-08
 
 ## 1. Introduction
@@ -48,3 +48,5 @@ We may update our privacy/cookie policy from time to time. Any changes will be p
 ## 8. Contact Us
 
 If you have questions regarding this privacy policy, you can contact us at hey@tagglo.co.
+"
+---

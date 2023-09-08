@@ -7,7 +7,7 @@ import * as page from "../content/site/Privacy.md";
 <Layout pageContent={page}>
   <div class="py-24 dunes-right">
     <div class="content-wrapper">
-      <div class="content">
+      <div class="content" style="text-align:left!important">
         <h2 class="section-title">{page.frontmatter.title}</h2>
         <div class="" set:html={marked.parse(page.frontmatter.body)} />
       </div>
