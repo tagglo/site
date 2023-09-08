@@ -4,8 +4,6 @@ meta-title: Our Privacy & Cookie Policy - Tagglo
 meta-description: Read our Privacy & Cookie Policy. Welcome to tagglo.co!
 indexed: true
 ---
-# Privacy & Cookie Policy
-
 Last Updated: 2023-09-08
 
 ## 1. Introduction
