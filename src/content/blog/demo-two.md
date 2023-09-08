@@ -8,10 +8,8 @@ altText: PostImageAltText
 publishedAt: 'July 4, 2023 3:25 PM'
 modifieddAt: 'August 2, 2023 12:00 AM'
 author: Administartor
-meta-title: Refinansiera lån & få en lägre ränta - Enklare
-meta-description: >-
-  Att refinansiera sina lån innebär att man tar ett nytt lån med lägre ränta och
-  betalar av sina befintliga krediter. Läs mer om refinansiering här!
+meta-title: Tagglo
+meta-description: Tagglo
 indexed: true
 content: >-
   ## Headline
