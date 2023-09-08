@@ -10,35 +10,30 @@ Last Updated: 2023-09-08
 
 ## 1. Introduction
 
-Welcome to \[Your Company's Name]'s privacy policy. We respect your privacy and are committed to safeguarding your personal information. This policy sets out how we collect, use, store, and disclose your information and the use of cookies on our website.
+Welcome to Tagglo's privacy policy. We respect your privacy and are committed to safeguarding your personal information. This policy sets out how we collect, use, store, and disclose your information and the use of cookies on our website.
 
 ## 2. Information We Collect
 
 When you visit our website, we may collect and process the following types of information:
 
-Technical information: Such as your IP address, browser type, time zone settings, and information about your visit, like the pages you viewed or searched for, page response times, etc.
-
-Information provided by third-party platforms: When you interact with our website through various advertising and social media platforms like LinkedIn, Google, and Twitter.
+* Technical information: Such as your IP address, browser type, time zone settings, and information about your visit, like the pages you viewed or searched for, page response times, etc.
+* Information provided by third-party platforms: When you interact with our website through various advertising and social media platforms like LinkedIn, Google, and Twitter.
 
 ## 3. How We Use Your Information
 
 We use the information we collect to:
 
-Improve the functionality and user experience of our website.
-
-Analyze and understand our website traffic.
-
-Optimize and measure the effectiveness of our advertising campaigns.
+* Improve the functionality and user experience of our website.
+* Analyze and understand our website traffic.
+* Optimize and measure the effectiveness of our advertising campaigns.
 
 ## 4. Cookies
 
 Cookies are small files stored on your device. We use cookies to:
 
-Analyze our web traffic using tools like Google Analytics.
-
-Understand and save your preferences for future visits.
-
-Compile aggregate data about site traffic and interaction.
+* Analyze our web traffic using tools like Google Analytics.
+* Understand and save your preferences for future visits.
+* Compile aggregate data about site traffic and interaction.
 
 ## 5. How to Control Cookies
 
