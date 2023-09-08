@@ -1,5 +1,5 @@
 ---
-heading: Benfits
+heading: Benefits
 title: Unlock the power of accurate data
 benefits:
   - description: >-
