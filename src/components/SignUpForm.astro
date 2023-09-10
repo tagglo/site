@@ -134,6 +134,7 @@ import close from "../assets/svg/close.svg";
 
 <script>
   import validator from "validator";
+  import axios from "axios";
 
   const errorPlan = document.querySelector("#form-error-plan") as HTMLElement;
   const errorName = document.querySelector("#form-error-name") as HTMLElement;
@@ -322,24 +323,33 @@ import close from "../assets/svg/close.svg";
       montly_visits: data.montly_visits,
     };
 
-    fetch(backendUrl, {
+    let config = {
       method: "post",
-      body: JSON.stringify(postData),
+      maxBodyLength: Infinity,
+      url: backendUrl,
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(function (response) {
-      if (response.status == 200) {
-        formSuccess.style.display = "block";
-        formStart.style.display = "none";
-        return;
-      }
-      if (response.status == 422) {
-        formExist.style.display = "block";
-        formStart.style.display = "none";
-        return;
-      }
-    });
+      data: JSON.stringify(postData),
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        if (response.status == 200) {
+          formSuccess.style.display = "block";
+          formStart.style.display = "none";
+          return;
+        }
+        if (response.status == 422) {
+          formExist.style.display = "block";
+          formStart.style.display = "none";
+          return;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 </script>
 

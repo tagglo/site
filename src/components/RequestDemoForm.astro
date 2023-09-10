@@ -29,6 +29,7 @@ const {formId, buttonText} = Astro.props;
 
 <script>
   import validator from "validator";
+  import axios from "axios";
   class AstroFormRequest extends HTMLElement {
     constructor() {
       super();
@@ -78,21 +79,29 @@ const {formId, buttonText} = Astro.props;
 
         console.log(backendUrl, postData);
 
-        fetch(backendUrl, {
+        let config = {
           method: "post",
-          body: JSON.stringify(postData),
+          maxBodyLength: Infinity,
+          url: backendUrl,
           headers: {
             "Content-Type": "application/json",
           },
-        }).then(function (response) {
-          if (response.status == 200) {
-            successEmail.style.display = "block";
-          } else {
-            errorEmail.style.display = "block";
-            errorEmail.innerHTML = "Something went wrong, please try again later";
-          }
-          return;
-        });
+          data: JSON.stringify(postData),
+        };
+
+        axios
+          .request(config)
+          .then((response) => {
+            if (response.status == 200) {
+              successEmail.style.display = "block";
+            } else {
+              errorEmail.style.display = "block";
+              errorEmail.innerHTML = "Something went wrong, please try again later";
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
     }
   }
