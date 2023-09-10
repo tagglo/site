@@ -116,9 +116,9 @@ import close from "../assets/svg/close.svg";
     </div>
   </div>
   <div class="form-exist py-6" style="display: none">
-    <h2 class="font-interBold text-5xl text-center">Ops!</h2>
+    <h2 class="font-interBold text-5xl text-center">Oops!</h2>
     <p class="text-center pt-6">
-      It seams that you allready have an account<br /> with us. Please login to your <a
+      It seems that you already have an account<br /> with us. Please login to your <a
         class="text-blue-500 underline"
         href="portal.tagglo.co">account</a
       >
@@ -341,14 +341,14 @@ import close from "../assets/svg/close.svg";
           formStart.style.display = "none";
           return;
         }
-        if (response.status == 422) {
+      })
+      .catch((error) => {
+        console.log(error);
+        if (error.response.status == 422) {
           formExist.style.display = "block";
           formStart.style.display = "none";
           return;
         }
-      })
-      .catch((error) => {
-        console.log(error);
       });
   }
 </script>
