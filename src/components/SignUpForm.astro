@@ -243,7 +243,6 @@ import close from "../assets/svg/close.svg";
         errorPlan.innerHTML = "Please select a plan";
       }
       if (data.name == "" || data.name == null || data.name == undefined || data.name.length < 2) {
-        console.log(data.name);
         errorName.style.display = "block";
         errorName.innerHTML = "Please enter your name";
         return;
@@ -311,7 +310,6 @@ import close from "../assets/svg/close.svg";
       }
     }
     const backendUrl = import.meta.env.PUBLIC_SITE_BACKEND_URL + "/saveClientData";
-    console.log(backendUrl, data);
 
     const postData = {
       name: data.name,
@@ -343,7 +341,6 @@ import close from "../assets/svg/close.svg";
         }
       })
       .catch((error) => {
-        console.log(error);
         if (error.response.status == 422) {
           formExist.style.display = "block";
           formStart.style.display = "none";

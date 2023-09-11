@@ -54,7 +54,6 @@ const {formId, buttonText, type} = Astro.props;
         e.preventDefault();
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        console.log("form submitted", formId, formType, data);
 
         if (data.email == "" || data.email == null || data.email == undefined) {
           errorEmail.style.display = "block";
@@ -78,8 +77,6 @@ const {formId, buttonText, type} = Astro.props;
           type: formType,
         };
 
-        console.log(backendUrl, postData);
-
         let config = {
           method: "post",
           maxBodyLength: Infinity,
@@ -101,7 +98,8 @@ const {formId, buttonText, type} = Astro.props;
             }
           })
           .catch((error) => {
-            console.log(error);
+            errorEmail.style.display = "block";
+            errorEmail.innerHTML = "Something went wrong, please try again later";
           });
       }
     }

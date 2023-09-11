@@ -5,14 +5,14 @@ export const klaroConfig = {
 
   // You can customize the ID of the DIV element that Klaro will create
   // when starting up. If undefined, Klaro will use 'klaro'.
-  elementID: 'klaro',
+  elementID: "klaro",
 
   // You can override CSS style variables here. For IE11, Klaro will
   // dynamically inject the variables into the CSS. If you still consider
   // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
   // with an external stylesheet as the dynamic replacement won't work there.
   styling: {
-    theme: ['light', 'center', 'wide'],
+    theme: ["light", "center", "wide"],
   },
 
   // Setting this to true will keep Klaro from automatically loading itself
@@ -35,11 +35,11 @@ export const klaroConfig = {
 
   // How Klaro should store the user's preferences. It can be either 'cookie'
   // (the default) or 'localStorage'.
-  storageMethod: 'cookie',
+  storageMethod: "cookie",
 
   // You can customize the name of the cookie that Klaro uses for storing
   // user consent decisions. If undefined, Klaro will use 'klaro'.
-  cookieName: 'klaro',
+  cookieName: "klaro",
 
   // You can also set a custom expiration time for the Klaro cookie.
   // By default, it will expire after 120 days.
@@ -103,31 +103,30 @@ export const klaroConfig = {
     // translationsed defined under the 'zz' language code act as default
     // translations.
     zz: {
-      privacyPolicyUrl: '/#privacy',
+      privacyPolicyUrl: "/#privacy",
     },
 
     en: {
       consentModal: {
-        title: 'Services we would like to use',
+        title: "Services we would like to use",
         description:
-          'Here you can see and customize the information that we collect about you. Here you can see and customize the information that we collect about you.',
+          "Here you can see and customize the information that we collect about you. Here you can see and customize the information that we collect about you.",
       },
       purposes: {
-        analytics: 'Analytics',
-        security: 'Security',
-        livechat: 'Livechat',
-        advertising: 'Advertising',
-        styling: 'Styling',
+        analytics: "Analytics",
+        security: "Security",
+        livechat: "Livechat",
+        advertising: "Advertising",
+        styling: "Styling",
       },
     },
   },
 
   // This is a list of third-party services that Klaro will manage for you.
   services: [
-
     {
-      name: 'google-tag-manager',
-      purposes: ['marketing'],
+      name: "google-tag-manager",
+      purposes: ["marketing"],
       default: true,
       onAccept: `
           // we notify the tag manager about all services that were accepted. You can define
@@ -140,12 +139,10 @@ export const klaroConfig = {
           }
           // if consent for Google Analytics was granted we enable analytics storage
           if (opts.consents[opts.vars.googleAnalyticsName || 'google-analytics']){
-              console.log("Google analytics usage was granted")
               gtag('consent', 'update', {'analytics_storage': 'granted'})
           }
           // if consent for Google Ads was granted we enable ad storage
           if (opts.consents[opts.vars.adStorageName || 'google-ads']){
-              console.log("Google ads usage was granted")
               gtag('consent', 'update', {'ad_storage': 'granted'})
           }
       `,
@@ -164,22 +161,22 @@ export const klaroConfig = {
           gtag('set', 'ads_data_redaction', true)
       `,
       vars: {
-        googleAnalytics: 'google-analytics'
-      }
+        googleAnalytics: "google-analytics",
+      },
     },
     {
       // In GTM, you should define a custom event trigger named `klaro-google-analytics-accepted` which should trigger the Google Analytics integration.
-      name: 'google-analytics',
-      purposes: ['marketing', 'analytics'],
+      name: "google-analytics",
+      purposes: ["marketing", "analytics"],
       cookies: [
-        /^_ga(_.*)?/ // we delete the Google Analytics cookies if the user declines its use
+        /^_ga(_.*)?/, // we delete the Google Analytics cookies if the user declines its use
       ],
       default: true,
     },
     {
-      name: 'mouseflow',
-      title: 'Mouseflow',
-      purposes: ['analytics'],
+      name: "mouseflow",
+      title: "Mouseflow",
+      purposes: ["analytics"],
       default: true,
     },
 
