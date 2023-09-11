@@ -15,7 +15,7 @@ const data = content.frontmatter;
       <h2 class="font-interBold text-4xl md:text-6xl text-center pb-6" set:html={data.title} />
       <p class="text-center text-base md:text-2xl font-interRegular" set:html={data.subtitle} />
       <div class="reguest-demo-header max-w-2xl mx-auto pt-12">
-        <RequestDemoForm formId="requestone" buttonText={data.buttonText} />
+        <RequestDemoForm formId="request-demo" buttonText={data.buttonText} type="demo" />
       </div>
       <div class="grid grid-cols-3 gap-4 py-12 md:py-24 max-w-4xl mx-auto">
         <div class="md:flex justify-center items-center text-center pb-6 md:pb-0">

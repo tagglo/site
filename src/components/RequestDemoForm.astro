@@ -1,9 +1,9 @@
 ---
-const {formId, buttonText} = Astro.props;
+const {formId, buttonText, type} = Astro.props;
 ---
 
-<astro-form-request data-formid={formId}></astro-form-request>
-<form id={formId} data-formId={formId} method="POST">
+<astro-form-request data-formid={formId} data-type={type}></astro-form-request>
+<form id={formId} data-formId={formId} data-type={type} method="POST">
   <div class="grid marker:grid-cols-1 md:grid-cols-2 gap-4">
     <div class="text-center">
       <input
@@ -35,6 +35,7 @@ const {formId, buttonText} = Astro.props;
       super();
 
       const formId = this.dataset.formid;
+      const formType = this.dataset.type;
 
       const errorEmail = document.querySelector(`#${formId}-error-email`) as HTMLDivElement;
       const successEmail = document.querySelector(`#${formId}-success-email`) as HTMLDivElement;
@@ -52,9 +53,8 @@ const {formId, buttonText} = Astro.props;
       function onFormSubmit(e) {
         e.preventDefault();
         const formData = new FormData(form);
-
         const data = Object.fromEntries(formData.entries());
-        console.log("form submitted", formId, data);
+        console.log("form submitted", formId, formType, data);
 
         if (data.email == "" || data.email == null || data.email == undefined) {
           errorEmail.style.display = "block";
@@ -75,6 +75,7 @@ const {formId, buttonText} = Astro.props;
         const backendUrl = import.meta.env.PUBLIC_SITE_BACKEND_URL + "/requestDemo";
         const postData = {
           email: data.email,
+          type: formType,
         };
 
         console.log(backendUrl, postData);

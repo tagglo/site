@@ -3,7 +3,6 @@ import {marked} from "marked";
 
 import Layout from "../../layouts/Layout.astro";
 import BloggPostinfoBar from "../../components/BloggPostinfoBar.astro";
-import RequestDemoSection from "../../components/sections/RequestDemoSection.astro";
 import RequestDemoForm from "../../components/RequestDemoForm.astro";
 
 //Componets
@@ -60,7 +59,7 @@ console.log(content);
         <h2 class="section-title">Contact us for a free demo</h2>
 
         <div class="max-w-3xl mx-auto border-2 border-black p-6 md:p-12 rounded-lg mg-12 md:mb-24">
-          <RequestDemoForm formId="requesttwo" buttonText="Request a demo" />
+          <RequestDemoForm formId="request-demo-article" buttonText="Request a demo" type="demo" />
         </div>
       </div>
     </div>
