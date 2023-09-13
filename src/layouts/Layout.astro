@@ -8,6 +8,9 @@ import "../assets/css/fonts.less";
 import "../assets/css/klaro.less";
 
 const {pageContent, faqStructuredData} = Astro.props;
+const ogImage = pageContent.frontmatter.image
+  ? pageContent.frontmatter.image
+  : "/img/welcome_to_tagglo_revolutionizing_tag-tracking.jpg";
 ---
 
 <!DOCTYPE html>
@@ -45,11 +48,7 @@ const {pageContent, faqStructuredData} = Astro.props;
     <meta name="og:type" property="og:type" content="website" />
     <meta name="og:url" property="og:url" content={Astro.url.href} />
     <meta name="og:site_name" property="og:site_name" content="Tagglo.se" />
-    <meta
-      name="og:image"
-      property="og:image"
-      content={Astro.url.host + "/Tagglo-opengraph-image.png"}
-    />
+    <meta name="og:image" property="og:image" content={Astro.url.href + ogImage} />
     <meta name="twitter:title" content={pageContent.frontmatter["meta-title"]} />
     <meta name="twitter:description" content={pageContent.frontmatter["meta-description"]} />
 
