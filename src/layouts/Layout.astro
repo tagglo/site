@@ -11,6 +11,8 @@ const {pageContent, faqStructuredData} = Astro.props;
 const ogImage = pageContent.frontmatter.image
   ? pageContent.frontmatter.image
   : "/img/welcome_to_tagglo_revolutionizing_tag-tracking.jpg";
+
+console.log(Astro.url.origin);
 ---
 
 <!DOCTYPE html>
@@ -48,7 +50,7 @@ const ogImage = pageContent.frontmatter.image
     <meta name="og:type" property="og:type" content="website" />
     <meta name="og:url" property="og:url" content={Astro.url.href} />
     <meta name="og:site_name" property="og:site_name" content="Tagglo.se" />
-    <meta name="og:image" property="og:image" content={Astro.url.href + ogImage} />
+    <meta name="og:image" property="og:image" content={Astro.url.origin + ogImage} />
     <meta name="twitter:title" content={pageContent.frontmatter["meta-title"]} />
     <meta name="twitter:description" content={pageContent.frontmatter["meta-description"]} />
 
