@@ -87,16 +87,16 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"demo-three.md": {
-  id: "demo-three.md",
-  slug: "demo-three",
+"navigating-in-tag-container-tags-mastering-google-tag-manager-for-digital-success.md": {
+  id: "navigating-in-tag-container-tags-mastering-google-tag-manager-for-digital-success.md",
+  slug: "navigating-in-tag-container-tags-mastering-google-tag-manager-for-digital-success",
   body: string,
   collection: "blog",
   data: any
 } & { render(): Render[".md"] },
-"demo-two.md": {
-  id: "demo-two.md",
-  slug: "demo-two",
+"understanding-tag-execution-in-gtm-the-critical-balance-of-success-and-failure.md": {
+  id: "understanding-tag-execution-in-gtm-the-critical-balance-of-success-and-failure.md",
+  slug: "understanding-tag-execution-in-gtm-the-critical-balance-of-success-and-failure",
   body: string,
   collection: "blog",
   data: any

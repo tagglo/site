@@ -25,7 +25,7 @@ buttonText: User for free,
 type: professional,
 title: Professional,
 price: $199 per month,
-description: "Free trial for 14 days No credit card required <br> <br> Advanced texts and support for professional web projects.",
+description: "Free trial for 14 days No credit card required. <br> <br> Tailored for businesses driving traffic through Google and Facebook ads, ensuring peak performance and data precision.",
 features:
 [
 { text: Track 6 tags per platform, active: true },
