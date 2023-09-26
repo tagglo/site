@@ -19,7 +19,7 @@ features: [
 { text: Email notifications, active: false },
 { text: Slack push notifications, active: false },
 ],
-buttonText: User for free,
+buttonText: Use for free,
 },
 {
 type: professional,
