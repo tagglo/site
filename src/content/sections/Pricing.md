@@ -42,7 +42,7 @@ buttonText: Sign up for professional,
 {
 type: enterprise,
 title: Enterprise,
-price: We have to negotiate...,
+price: Request quote.,
 description: "Everything in Professional and more.",
 features:
 [
