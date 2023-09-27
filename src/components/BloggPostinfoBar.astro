@@ -5,14 +5,14 @@ import CalendarIcon from "../assets/svg/blogg_calendar_icon.svg";
 import UserIcon from "../assets/svg/blogg_user_icon.svg";
 
 import {format} from "date-fns";
-import {en} from "date-fns/locale/index.js";
+import {enUS} from "date-fns/locale/index.js";
 
 const {author, date} = Astro.props;
 ---
 
 <div class="flex text-sm pb-3">
   <img src={CalendarIcon.src} width="18" height="18" alt="Calendar Icon" />
-  <span class="blogg-post-date pl-2">{format(new Date(date), "LLLL d, yyyy", {locale: en})}</span>
+  <span class="blogg-post-date pl-2">{format(new Date(date), "LLLL d, yyyy", {locale: enUS})}</span>
   <!-- <img class="ml-3" src={UserIcon.src} width="18" height="18" alt="Author Icon" />
   <div class="no-underline text-enklare-blue" class="pl-1">{author}</div> -->
 </div>
