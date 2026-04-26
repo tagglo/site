@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import HeaderExtension from "../components/HeaderExtension.astro";
 import Footer from "../components/Footer.astro";
 import "animate.css";
 import {Schema} from "astro-seo-schema";
@@ -7,7 +8,7 @@ import SignUpOverlay from "../components/SignUpOverlay.astro";
 import "../assets/css/fonts.less";
 import "../assets/css/klaro.less";
 
-const {pageContent, faqStructuredData} = Astro.props;
+const {pageContent, faqStructuredData, headerVariant} = Astro.props;
 const ogImage = pageContent.frontmatter.image
   ? pageContent.frontmatter.image
   : "/img/welcome_to_tagglo_revolutionizing_tag-tracking.jpg";
@@ -159,7 +160,7 @@ console.log(Astro.url.origin);
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <Header />
+    {headerVariant === "extension" ? <HeaderExtension /> : <Header />}
     <main><slot /></main>
     <SignUpOverlay />
     <Footer />

@@ -1,39 +1,422 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroSection from "../components/sections/HeroSection.astro";
+import * as page from "../content/site/IndexNew.md";
 
-import * as page from "../content/site/Settings.md";
-import FeaturesSection from "../components/sections/FeaturesSection.astro";
-import BenefitsSection from "../components/sections/BenefitsSection.astro";
-import PricingSection from "../components/sections/PricingSection.astro";
-import RequestDemoSection from "../components/sections/RequestDemoSection.astro";
-import FaqSection from "../components/sections/FaqSection.astro";
-import BloggSection from "../components/sections/BloggSection.astro";
-import HowItWorksSection from "../components/sections/HowItWorksSection.astro";
+// Feature list — each card maps to a screenshot under /public/img/gtm-companion/.
+const features = [
+  {
+    title: "Find and manage tags faster",
+    description:
+      "Browse all your tags in a powerful, sortable, and filterable data table. Global search across every tag property, 'Modified' badges that highlight unpublished changes, and a one-click toggle to hide paused tags so you can focus on what's active.",
+    image: "/img/gtm-companion/Tags_16_10.jpg",
+    alt: "Enhanced tag table inside Google Tag Manager with search, modified badges and paused-tag visibility",
+  },
+  {
+    title: "Find and manage triggers faster",
+    description:
+      "An enriched data table for triggers with the same powerful filtering and search capabilities as the tag table. Quickly find triggers by name, type, or any property — even in containers with hundreds of triggers.",
+    image: "/img/gtm-companion/Triggers_16_10.jpg",
+    alt: "Enhanced trigger table inside Google Tag Manager with search and modified badges",
+  },
+  {
+    title: "See your GTM setup at a glance",
+    description:
+      "A visual overview is injected above the draft changes section: total tags split by active and paused, trigger counts split by custom and built-in, template usage, and unlinked tag detection. Metrics update automatically as you work.",
+    image: "/img/gtm-companion/Overview_16_10.jpg",
+    alt: "Workspace overview dashboard with tag, trigger and template metrics in Google Tag Manager",
+  },
+  {
+    title: "Faster debugging in Preview Mode",
+    description:
+      "Search boxes for events, tags, and variables in Tag Assistant — plus visual color coding so you instantly see which tags fired, errored, or were paused. Search suggestions appear as you type and recent searches are remembered across sessions.",
+    image: "/img/gtm-companion/Debugging_16_10.jpg",
+    alt: "Google Tag Assistant Preview Mode with searchable events, searchable tags and color-coded firing outcomes",
+  },
+];
 
-//Faq structured data
-import * as faq from "../content/sections/Faq.md";
-let faqStructuredData: any = null;
-if (faq.frontmatter.faqs) {
-  faqStructuredData = faq.frontmatter.faqs.map((item: any, index: number) => ({
-    "@type": "Question",
-    position: index + 1,
-    name: item.title,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  }));
-}
+const audiences = [
+  {
+    title: "Digital analytics engineers",
+    description: "Managing complex, multi-tag containers across products and brands.",
+    icon: "/img/icon-diagram.svg",
+  },
+  {
+    title: "Marketing operations teams",
+    description: "Responsible for tag governance, QA, and release hygiene.",
+    icon: "/img/icon-crosshair.svg",
+  },
+  {
+    title: "Web developers",
+    description: "Implementing and debugging tracking setups for production.",
+    icon: "/img/icon-runningman.svg",
+  },
+  {
+    title: "Agencies",
+    description: "Managing GTM containers across multiple client accounts.",
+    icon: "/img/icon-piggy-bank.svg",
+  },
+  {
+    title: "Power users at scale",
+    description: "Anyone who finds GTM's native interface limiting in large containers.",
+    icon: "/img/icon-search.svg",
+  },
+  {
+    title: "Anyone who debugs daily",
+    description: "Faster search, filtering, and overviews in the tools you already use.",
+    icon: "/img/icon-clock.svg",
+  },
+];
+
+const steps = [
+  {
+    n: "1",
+    title: "Install the extension",
+    description:
+      "Add Tagglo GTM Companion to your browser. Nothing to configure to get started.",
+  },
+  {
+    n: "2",
+    title: "Open GTM or Tag Assistant",
+    description:
+      "Navigate to tagmanager.google.com or tagassistant.google.com. Enhanced tables and tools are injected automatically.",
+  },
+  {
+    n: "3",
+    title: "Work as you normally would",
+    description:
+      "As you switch containers, navigate, or submit changes, data stays in sync automatically.",
+  },
+  {
+    n: "4",
+    title: "Experience the difference",
+    description:
+      "A better GTM experience, right where you work — no separate app, no context switching.",
+  },
+];
 ---
 
-<Layout pageContent={page} faqStructuredData={faqStructuredData}>
-  <HeroSection />
-  <HowItWorksSection />
-  <FeaturesSection />
-  <BenefitsSection />
-  <PricingSection />
-  <RequestDemoSection />
-  <FaqSection />
-  <BloggSection />
+<Layout pageContent={page} headerVariant="extension">
+  <!-- =================== HERO =================== -->
+  <div class="pt-12 pb-24 md:pt-48 md:pb-40 dunes-right">
+    <div class="content-wrapper">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="section-heading">Browser extension for Google Tag Manager</div>
+        <h1 class="font-interBold text-4xl md:text-6xl text-center pt-6 pb-6 text-balance">
+          The ultimate tool for managing your Google Tag Manager container
+        </h1>
+        <p class="text-center text-base md:text-2xl font-interRegular pb-10">
+          Supercharge your Google Tag Manager workflow. Tagglo GTM Companion enhances the native GTM
+          web interface and Google Tag Assistant with advanced tables, workspace insights, and
+          debugging tools — all without leaving the tools you already use.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://chromewebstore.google.com/detail/tagglo-gtm-companion/agnanladhhogfjcldnhaiilamjabbjcc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-lg font-bold flex justify-center items-center text-white h-14 text-base tracking-wider shadow-lg cta-primary px-8"
+          >
+            Install extension
+          </a>
+          <a
+            href="#features"
+            class="rounded-lg font-interSemibold flex justify-center items-center h-14 text-base tracking-wider px-8 border-2 border-black bg-white text-black"
+          >
+            See what's inside
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-12 md:pt-20 max-w-3xl mx-auto">
+          <div class="md:flex justify-center items-center text-center">
+            <div
+              class="flex justify-center items-center bg-green-light w-9 md:w-12 h-9 md:h-12 rounded-full md:mr-4 mx-auto mb-3 md:mb-0"
+            >
+              <img class="w-3 md:w-5" src="/svg/icons/Icon-Checkmark.svg" alt="Checkmark icon" />
+            </div>
+            <div class="font-interSemibold text-xs md:text-lg">No setup</div>
+          </div>
+          <div class="md:flex justify-center items-center text-center">
+            <div
+              class="flex justify-center items-center bg-green-light w-9 md:w-12 h-9 md:h-12 rounded-full md:mr-4 mx-auto mb-3 md:mb-0"
+            >
+              <img class="w-3 md:w-5" src="/svg/icons/Icon-Checkmark.svg" alt="Checkmark icon" />
+            </div>
+            <div class="font-interSemibold text-xs md:text-lg">Zero config</div>
+          </div>
+          <div class="md:flex justify-center items-center text-center">
+            <div
+              class="flex justify-center items-center bg-green-light w-9 md:w-12 h-9 md:h-12 rounded-full md:mr-4 mx-auto mb-3 md:mb-0"
+            >
+              <img class="w-3 md:w-5" src="/svg/icons/Icon-Checkmark.svg" alt="Checkmark icon" />
+            </div>
+            <div class="font-interSemibold text-xs md:text-lg">Just install</div>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="pt-12 md:pt-16 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-left">
+            <div class="border-2 border-black bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <div
+                class="flex justify-center items-center bg-green-light w-10 h-10 md:w-12 md:h-12 rounded-full"
+              >
+                <img class="w-4 md:w-5" src="/svg/icons/Icon-Checkmark.svg" alt="" />
+              </div>
+              <div class="font-interBold text-lg md:text-xl pt-4 pb-2">
+                A clearer view of your GTM setup
+              </div>
+              <p class="font-interRegular text-sm md:text-base text-dark-gray">
+                Easily scan tags, triggers, and variables in one more intuitive overview.
+              </p>
+            </div>
+            <div class="border-2 border-black bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <div
+                class="flex justify-center items-center bg-green-light w-10 h-10 md:w-12 md:h-12 rounded-full"
+              >
+                <img class="w-4 md:w-5" src="/svg/icons/Icon-Checkmark.svg" alt="" />
+              </div>
+              <div class="font-interBold text-lg md:text-xl pt-4 pb-2">
+                Smarter search and filtering
+              </div>
+              <p class="font-interRegular text-sm md:text-base text-dark-gray">
+                Find active and paused tags faster with search and built-in filters.
+              </p>
+            </div>
+            <div class="border-2 border-black bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <div
+                class="flex justify-center items-center bg-green-light w-10 h-10 md:w-12 md:h-12 rounded-full"
+              >
+                <img class="w-4 md:w-5" src="/svg/icons/Icon-Checkmark.svg" alt="" />
+              </div>
+              <div class="font-interBold text-lg md:text-xl pt-4 pb-2">
+                A better Preview Mode experience
+              </div>
+              <p class="font-interRegular text-sm md:text-base text-dark-gray">
+                Spot fired and paused tags more easily and search through results with less
+                friction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== WHY =================== -->
+  <div class="py-12 md:py-24">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="section-heading">Why Tagglo GTM Companion</div>
+        <h2 class="section-title">A better GTM experience, right where you work</h2>
+        <p class="text-center text-base md:text-xl font-interRegular max-w-3xl mx-auto pb-10">
+          Google Tag Manager is essential for marketing and analytics teams — but navigating
+          containers with hundreds of tags, finding modified items, filtering triggers by type, or
+          searching through variables can be slow and frustrating.
+        </p>
+        <p class="text-center text-base md:text-xl font-interRegular max-w-3xl mx-auto">
+          Tagglo GTM Companion solves this by injecting rich, filterable data tables, at-a-glance
+          workspace metrics, and smart search directly into the GTM and Tag Assistant interfaces.
+          <strong>No separate app. No context switching.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== KEY FEATURES =================== -->
+  <div id="features" class="py-12 md:pt-12 md:pb-24 dunes-right">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="section-heading">Key features</div>
+        <h2 class="section-title">Everything you wish GTM already had</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left">
+          {
+            features.map((f) => (
+              <div class="border-2 border-black bg-white rounded-xl overflow-hidden flex flex-col">
+                <div class="screenshot-frame bg-desert">
+                  <img src={f.image} alt={f.alt} loading="lazy" />
+                </div>
+                <div class="p-6 md:p-8">
+                  <div class="font-interBold text-xl md:text-2xl pb-3">{f.title}</div>
+                  <p class="font-interRegular text-base md:text-lg text-dark-gray">
+                    {f.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== VARIABLES + SMART DATA SYNCING =================== -->
+  <div class="py-12 md:py-24">
+    <div class="content-wrapper">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div class="text-left">
+          <div class="section-heading">Variables &amp; smart syncing</div>
+          <h2 class="font-interBold text-2xl md:text-5xl pt-6 pb-6">
+            Always in sync, never in your way
+          </h2>
+          <p class="font-interRegular text-base md:text-lg pb-6">
+            The variable list is improved with search, filtering, and an option to hide built-in
+            variables so you can focus on your custom implementations. Under the hood, Tagglo uses
+            the same authenticated GTM APIs the web interface relies on — fetching tags, triggers,
+            variables, templates, folders and versions in parallel, then caching everything
+            locally.
+          </p>
+          <p class="font-interSemibold pb-3">Data refreshes automatically when:</p>
+          <ul class="font-interRegular text-base md:text-lg">
+            <li>You switch between containers or workspaces</li>
+            <li>You navigate between GTM pages</li>
+            <li>You submit changes or perform bulk actions</li>
+            <li>You close editing sheets</li>
+          </ul>
+        </div>
+        <div class="border-2 border-black bg-white rounded-xl overflow-hidden">
+          <img
+            class="w-full h-auto block"
+            src="/img/gtm-companion/Marquee-tile_1400x560.jpg"
+            alt="Tagglo GTM Companion product banner"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== WHO IS IT FOR =================== -->
+  <div class="py-12 md:pt-24 pb-24 md:pb-48 dunes-right">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="section-heading">Who it's for</div>
+        <h2 class="section-title">Built for the people who live in GTM</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {
+            audiences.map((a) => (
+              <div class="border-2 border-black bg-white rounded-xl p-6">
+                <div class="flex justify-center items-center bg-green-light w-12 h-12 rounded-full">
+                  <img style="width: 20px!important;" src={a.icon} alt={a.title} />
+                </div>
+                <div class="p-2 mt-2 text-left">
+                  <div class="font-interBold text-dark-gray">{a.title}</div>
+                  <p class="pt-2 text-dark-gray">{a.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== HOW IT WORKS =================== -->
+  <div class="py-12 md:py-24">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="section-heading">How it works</div>
+        <h2 class="section-title">From install to insight in under a minute</h2>
+        <p class="text-center text-base md:text-xl font-interRegular max-w-3xl mx-auto pb-12">
+          Tagglo GTM Companion runs entirely in your browser. It does not send your data to any
+          external server.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
+          {
+            steps.map((s) => (
+              <div class="border-2 border-black bg-white rounded-xl p-6 flex flex-col">
+                <div class="font-interBold text-3xl md:text-4xl bg-green-light w-12 h-12 rounded-full flex items-center justify-center">
+                  {s.n}
+                </div>
+                <div class="font-interBold text-lg md:text-xl pt-4 pb-2">{s.title}</div>
+                <p class="font-interRegular text-base text-dark-gray">{s.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== INSTALL / CTA =================== -->
+  <div id="install" class="py-12 md:pt-24 md:pb-48 dunes-right">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="section-heading">Get started</div>
+        <h2 class="section-title">Install it. Open GTM. Feel the difference.</h2>
+        <p class="text-center text-base md:text-xl font-interRegular max-w-3xl mx-auto pb-12">
+          Add Tagglo GTM Companion to your browser and the next time you open Google Tag Manager
+          or Tag Assistant, the enhanced experience is already there.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://chromewebstore.google.com/detail/tagglo-gtm-companion/agnanladhhogfjcldnhaiilamjabbjcc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-lg font-bold flex justify-center items-center text-white h-14 text-base tracking-wider shadow-lg cta-primary px-8"
+          >
+            Install extension
+          </a>
+          <a
+            href="mailto:info@tagglo.co?subject=GTM%20Companion%20feedback"
+            class="rounded-lg font-interSemibold flex justify-center items-center h-14 text-base tracking-wider px-8 border-2 border-black bg-white text-black"
+          >
+            Send us feedback
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== GET IN TOUCH =================== -->
+  <div class="py-12 md:py-24">
+    <div class="content-wrapper">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="section-heading">Get in touch</div>
+        <h2 class="font-interBold text-2xl md:text-5xl pt-6 pb-6">
+          Your feedback shapes the roadmap
+        </h2>
+        <p class="font-interRegular text-base md:text-lg pb-8">
+          We're continuously improving Tagglo GTM Companion based on user feedback. Have a feature
+          request, bug report, or question? Head to our support page on the Chrome Web Store and
+          let us know how we can make your GTM workflow even better.
+        </p>
+        <div class="flex justify-center">
+          <a
+            href="https://chromewebstore.google.com/detail/agnanladhhogfjcldnhaiilamjabbjcc/support"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-lg font-bold flex justify-center items-center text-white h-14 text-base tracking-wider shadow-lg cta-primary px-8"
+          >
+            Visit support page
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style lang="less">
+    .cta-primary {
+      background: #000 0% 0% no-repeat padding-box;
+    }
+    .cta-primary:hover {
+      background: #1a1a1a 0% 0% no-repeat padding-box;
+    }
+    .screenshot-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid #000;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  </style>
 </Layout>
