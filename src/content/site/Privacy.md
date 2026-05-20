@@ -1,57 +1,97 @@
 ---
-title: Privacy & Cookie Policy
-meta-title: Our Privacy & Cookie Policy - Tagglo
-meta-description: Read our Privacy & Cookie Policy. Welcome to tagglo.co!
+title: Privacy Policy
+meta-title: Privacy Policy - Tagglo
+meta-description: Read our Privacy Policy. Welcome to tagglo.co!
 indexed: true
 body: "
-Last Updated: 2023-09-08
+Last Updated: 2026-05-19
 
-## 1. Introduction
+## Introduction
 
-Welcome to Tagglo's privacy policy. We respect your privacy and are committed to safeguarding your personal information. This policy sets out how we collect, use, store, and disclose your information and the use of cookies on our website.
+Tagglo GTM Companion is a browser extension that enhances the Google Tag Manager interface with search, filtering, workspace overview, and debugging helper features.
 
-## 2. Information We Collect
+This Privacy Policy explains what data the extension accesses, stores, and sends when you use it.
 
-When you visit our website, we may collect and process the following types of information:
+## Data the Extension Accesses
 
-- Technical information: Such as your IP address, browser type, time zone settings, and information about your visit, like the pages you viewed or searched for, page response times, etc.
+The extension runs only on the following sites:
 
-- Information provided by third-party platforms: When you interact with our website through various advertising and social media platforms like LinkedIn, Google, and Twitter.
+- https://tagmanager.google.com/*
+- https://tagassistant.google.com/*
 
-## 3. How We Use Your Information
+When you use Google Tag Manager, the extension reads information from the current Google Tag Manager page and related Google Tag Manager API responses. This may include:
 
-We use the information we collect to:
+- Google Tag Manager account, container, and workspace IDs from the page URL.
+- Tag, trigger, variable, folder, template, issue, version, and workspace change data returned by Google Tag Manager.
+- The currently selected tag or workspace route.
+- Basic page state needed to show the extension side panel and tables.
 
-- Improve the functionality and user experience of our website.
+This data is used to display enhanced search, filtering, overview, and side panel features inside the browser extension.
 
-- Analyze and understand our website traffic.
+## Data Stored Locally
 
-- Optimize and measure the effectiveness of our advertising campaigns.
+The extension stores data locally in your browser to provide its features and remember state between interactions. This includes:
 
-## 4. Cookies
+- Extension metadata such as the extension ID and version.
+- A randomly generated analytics client ID.
+- A browser-session analytics session ID.
+- Temporary per-tab Google Tag Manager state in IndexedDB, including selected account/container/workspace IDs, fetched tag/trigger/variable summaries, route state, and timestamps.
+- Small UI state such as search terms on the Tag Assistant page and side panel state.
 
-Cookies are small files stored on your device. We use cookies to:
+Per-tab Google Tag Manager snapshots are stored in the browser and are removed when the related browser tab is closed. The extension also limits stored tab snapshots to recent tabs.
 
-- Analyze our web traffic using tools like Google Analytics.
+## Analytics
 
-- Understand and save your preferences for future visits.
+The extension sends limited usage analytics to Google Analytics 4 using the Google Analytics Measurement Protocol.
 
-- Compile aggregate data about site traffic and interaction.
+Analytics events may include:
 
-## 5. How to Control Cookies
+- Extension install or update events.
+- Google Tag Manager route/page view events, represented by extension route names such as `tags`, `triggers`, `variables`, or `overview`.
+- Tag Assistant debug page opened events.
+- Browser and device metadata such as browser, browser version, operating system, operating system version, UI language, and desktop category.
 
-Most web browsers allow you to control cookies through their settings. You can opt to decline cookies if your browser permits, but this may prevent you from taking full advantage of the website.
+The extension does not intentionally send the following to Google Analytics:
 
-## 6. Third-Party Platforms
+- Your name or email address.
+- Google Tag Manager account, container, or workspace IDs.
+- Tag, trigger, variable, folder, template, issue, version, or workspace change contents.
+- Click-level behavior inside Google Tag Manager, except what is implied by route changes.
 
-We use third-party platforms like Google Analytics, LinkedIn Ads, Google Ads, and Twitter Ads for analytics and advertising purposes. These platforms may use cookies, web beacons, and other storage technologies to collect or receive information from our website and elsewhere on the internet and use that information to provide measurement services and target ads.
+Google Analytics may process network information such as IP address as part of receiving analytics requests.
 
-## 7. Changes to this Policy
+## Data Sharing
 
-We may update our privacy/cookie policy from time to time. Any changes will be posted on this page, and if significant, we'll notify you directly.
+The extension sends requests to:
 
-## 8. Contact Us
+- Google Tag Manager and Tag Assistant, to read the Google Tag Manager data needed for extension features.
+- Google Analytics, to report limited usage analytics described above.
 
-If you have questions regarding this privacy policy, you can contact us at hey@tagglo.co.
+The extension does not sell user data. The extension does not share Google Tag Manager contents with third parties other than Google services required for the extension behavior described in this policy.
+
+## Remote Code
+
+The extension does not load or execute remote code. Extension code is packaged with the extension.
+
+## Data Retention
+
+Locally stored extension data remains in your browser until it is replaced, cleared by the extension, cleared by the browser, or removed when you uninstall the extension.
+
+Temporary per-tab Google Tag Manager snapshots are removed when tabs are closed and older snapshots may be evicted automatically.
+
+Analytics data is retained according to the Google Analytics property settings used by Tagglo.
+
+## User Control
+
+You can stop the extension from accessing Google Tag Manager and Tag Assistant data by disabling or uninstalling the extension in your browser.
+
+You can clear locally stored extension data through your browser's extension or site data controls.
+
+## Contact
+
+If you have questions about this Privacy Policy or the extension's data handling, contact:
+
+info@tagglo.co
 "
+
 ---
